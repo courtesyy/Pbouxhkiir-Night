@@ -21,13 +21,13 @@ Aniline: What is Texas?
 {robot}: Texas is the land that I hail from.
 Aniline: Where?
 {robot}: It's on Proxima B.
-*[Next turn] -> xenophage1
+*[Next] -> xenophage1
 
 ==xenophage1==
 Aniline: The xenophage said nothing.
 Aniline: I think she's cheating.
 Xenophage: Ø₣ ₱Ø₴₮ɄⱠ₳₮łØ₦₴ ฿Ɇ ₵ØɄ₦₮₳ł₦ɆĐ, ₵Ø₦₵ɆłVɆ'₦₮.
-Aniline: What does she mean?
+Aniline: What does that mean?
 {robot}: Translation models for her language are woefully underdeveloped, and underfunded.
 *[Next] -> xenophage2
 
@@ -78,7 +78,7 @@ Xenophage: ₩ł₮Ⱨ₳Ⱡ, Ø₦Ɇ₴ɆⱠ₣ ₳Ⱡ₴Ø ฿Ʉ₮₵Ⱨ.
 ==robot4==
 Aniline: Is it strange if particles of your dustcloud are sharing a binary orbit?
 {robot}: That isn't translating. What do you mean?
-Aniline: Is it weird to consort with other robots from the same dustcloud mind. Because, you are all the same person?
+Aniline: Is it weird to consort with other robots from the same dustcloud mind. Because, you are all the same robot?
 {robot}: I'm not answering that.
 
 
