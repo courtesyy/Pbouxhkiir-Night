@@ -1,3 +1,5 @@
+VAR robot = "3b42dd00-903a-47b8-87b8-47e0-4447-fcf1-2bed-a6a4-dcf3-484c-9f5420547c893ba1"
+
 ->start
 
 ==start==
@@ -11,43 +13,43 @@ Wager the fate of the Earth in a friendly game of Pbouxhkiir.
 ==texas1==
 Dealer: Place your bets, everybody.
 Aniline: Buy a bet!? I thought we are playing Quasar Battle.
-Robot: No, we're playing Texas Hold 'em.
+{robot}: No, we're playing Texas Hold 'em.
 Aniline: What is Texas?
 *[Next] -> texas2
 
 ==texas2==
-Robot: Texas is the land that I hail from.
+{robot}: Texas is the land that I hail from.
 Aniline: Where?
-Robot: It's on Proxima B.
+{robot}: It's on Proxima B.
 *[Next turn] -> xenophage1
 
 ==xenophage1==
 Aniline: The xenophage said nothing.
 Aniline: I think she's cheating.
-Xenophage: Of postulations be countained, conceive'nt.
+Xenophage: Ø₣ ₱Ø₴₮ɄⱠ₳₮łØ₦₴ ฿Ɇ ₵ØɄ₦₮₳ł₦ɆĐ, ₵Ø₦₵ɆłVɆ'₦₮.
 Aniline: What does she mean?
-Robot: Translation models for her language are woefully underdeveloped, and underfunded.
+{robot}: Translation models for her language are woefully underdeveloped, and underfunded.
 *[Next] -> xenophage2
 
 ==xenophage2==
-Robot: For example, did you hear about the Sector-U-74B Incident? 
+{robot}: For example, did you hear about the Sector-U-74B Incident? 
 Aniline: A cargo ship whose crew implodes it after a xenophage attack?
 Aniline: Also, does the monster eat 3.5 crewmates?
-Robot: Yes.
-Robot: The xenophage language, by default, makes no distinction between "give (assistance)" and "give (food)".
-Robot: It's quite troublesome for auto-translation software.
-Xenophage: Tacenda despite apparent berth, doeth the alimentation.
+{robot}: Yes.
+{robot}: The xenophage language, by default, makes no distinction between "give (assistance)" and "give (food)".
+{robot}: It's quite troublesome for auto-translation software.
+Xenophage: ₮₳₵Ɇ₦Đ₳ ĐɆ₴₱ł₮Ɇ ₳₱₱₳ⱤɆ₦₮ ฿ɆⱤ₮Ⱨ, ĐØɆ₮Ⱨ ₮ⱧɆ ₳Ⱡł₥Ɇ₦₮₳₮łØ₦.
 *[Next] -> human1
 
 ==human1==
-Robot: I'm surprised that our fourth player is a Xanthgrdanoiid.
+{robot}: I'm surprised that our fourth player is a Xanthgrdanoiid.
 Aniline: I think it's a Plob-Gokrian.
-Robot: It might be an Up-ggrett.
-Xenophage: Obviously Homo sapiens.
+{robot}: It might be a Ggrett.
+Xenophage: Ø฿VłØɄ₴ⱠɎ ⱧØ₥Ø ₴₳₱łɆ₦₴.
 *[Next] -> aniline1
 
 ==aniline1==
-Robot: You possess psychic abilities, correct?
+{robot}: You possess psychic abilities, correct?
 Aniline: Yes, it is correct. I know about the card that the 
 (talk about how poker is unfun with psychic abilities)
 *[Next] -> robot1
@@ -55,13 +57,13 @@ Aniline: Yes, it is correct. I know about the card that the
 ==robot1==
 Aniline: The translation software refers to you in the plural and singular.
 Aniline: It's because you're a dustcloud mind.
-Robot: It may be reasonable to assume this is due to our status as a singularity.
-Robot: However, it is likely mistranslating our language's gendered vocabulary.
+{robot}: It may be reasonable to assume this is due to our status as a singularity.
+{robot}: However, it is likely mistranslating our language's gendered vocabulary.
 Aniline: What do you mean?
-Robot: It's very hard to explain this concept to someone from your narrow minded and disconnected culture, but...
-Robot: I believe that there is a word in your language that approximates the concept that our Texas singularity inhabits.
+{robot}: It's very hard to explain this concept to someone from your narrow minded and disconnected culture, but...
+{robot}: I believe that there is a word in your language that approximates the concept that our singularity inhabits.
 Aniline: Can you tell me what it is?
-Robot: We're butch.
+{robot}: We're butch.
 Aniline: I know what butch is, idiot.
 *[Next] -> robot2
 
@@ -70,19 +72,20 @@ Aniline: I know this because I am also butch.
 *[Next] -> robot3
 
 ==robot3==
-Xenophage: Withal, oneself also butch.
+Xenophage: ₩ł₮Ⱨ₳Ⱡ, Ø₦Ɇ₴ɆⱠ₣ ₳Ⱡ₴Ø ฿Ʉ₮₵Ⱨ.
 *[Next] -> robot4
 
 ==robot4==
 Aniline: Is it strange if particles of your dustcloud are sharing a binary orbit?
-Robot: That isn't translating. What do you mean?
+{robot}: That isn't translating. What do you mean?
 Aniline: Is it weird to consort with other robots from the same dustcloud mind. Because, you are all the same person?
-Robot: I'm not answering that.
+{robot}: I'm not answering that.
 
 
 /*
 STYLE NOTES:
--Xenophage talks in a scary font.
+-Xenophage talks in a scary font. 
+(https://glyphy.io/font-generator/creepy-text temporarily using this for style preview)
 
 random bit ideas:
 -they mention the guy whose job it is to deal with spaceship infestations. xenophage hates him
