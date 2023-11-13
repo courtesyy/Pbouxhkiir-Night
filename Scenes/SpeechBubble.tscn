@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Sprites/UI/LineProfile.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/UI/BubbleRect.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/UI/LineProfileTaper.png" type="Texture" id=3]
+[ext_resource path="res://Fonts/SketchnoteRegular.TTF" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=2]
+extra_spacing_top = -2
+extra_spacing_bottom = -2
+font_data = ExtResource( 4 )
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0.00236967, 0.990991 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0135136 ), 0.0, 0.0, 0, 0 ]
+
+[node name="SpeechBubble" type="Node"]
+
+[node name="Bubble" type="NinePatchRect" parent="."]
+margin_right = 165.0
+margin_bottom = 123.0
+texture = ExtResource( 2 )
+patch_margin_left = 52
+patch_margin_top = 43
+patch_margin_right = 60
+patch_margin_bottom = 56
+
+[node name="MarginContainer" type="MarginContainer" parent="Bubble"]
+margin_left = 16.0
+margin_top = 14.0
+margin_right = 145.0
+margin_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Text" type="Label" parent="Bubble/MarginContainer"]
+margin_top = 27.0
+margin_right = 129.0
+margin_bottom = 66.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "I love eating cigarettes yum"
+align = 1
+autowrap = true
+
+[node name="TailBoxConnector" type="Line2D" parent="Bubble"]
+points = PoolVector2Array( -82, -73, -74, -50 )
+width = 15.0
+default_color = Color( 1, 1, 1, 1 )
+texture = ExtResource( 1 )
+texture_mode = 1
+
+[node name="TailPointer" type="Line2D" parent="Bubble"]
+points = PoolVector2Array( -54, -75, -49, -50 )
+width = 15.0
+width_curve = SubResource( 1 )
+default_color = Color( 1, 1, 1, 1 )
+texture = ExtResource( 3 )
+texture_mode = 1
