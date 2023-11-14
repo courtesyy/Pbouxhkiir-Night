@@ -1,131 +1,334 @@
-VAR robot = "3b42dd00-903a-47b8-87b8-47e0-4447-fcf1-2bed-a6a4-dcf3-484c-9f5420547c893ba1"
+
 
 ->start
 
 ==start==
-Pbouxhkiir Night
-Wager the fate of the Earth in a friendly game of Pbouxhkiir.
-!!How to play Pbouxhkiir!!
-"Raise": Use the two cards in your hand. If they form a more valuable set with the dealer's cards than your opponent's, you win the round. In order to raise, you must add money to the pot.
-"Fold": Do nothing. Useful if you think the cards in your hand cannot form a valuable set.
-*[Begin] -> texas1
+(Opener
+Cool Pbouxhkiir game
 
-==texas1==
-Dealer: Place your bets, everybody.
-Aniline: Buy a bet!? I thought we are playing Quasar Battle.
-{robot}: No, we're playing Texas Hold 'em.
-Aniline: What is Texas?
-*[Next] -> texas2
+Get a large amount of the same type of cards to win.
 
-==texas2==
-{robot}: Texas is the land that I hail from.
-Aniline: Where?
-{robot}: It's on Proxima B.
-*[Next] -> xenophage1
+THE GRAND PRIZE: 2 million and 130 thousand credits, and the honor of blowing up the Earth.
+*[begin]->turn1robot
 
-==xenophage1==
-Aniline: The xenophage said nothing.
-Aniline: I think she's cheating.
-Xenophage: Ø₣ ₱Ø₴₮ɄⱠ₳₮łØ₦₴ ฿Ɇ ₵ØɄ₦₮₳ł₦ɆĐ, ₵Ø₦₵ɆłVɆ'₦₮.
-Aniline: What does that mean?
-{robot}: Translation models for her language are woefully underdeveloped, and underfunded.
-*[Next] -> xenophage2
+//--------------------turn 1-----------------------------
+==turn1robot==
+ROBOT: Annie, do you have any worms?
+ANNIE: No, I DON’T. Amateur mistake. Go fish.
+ROBOT: …
+*[next]->turn1annie
 
-==xenophage2==
-{robot}: For example, did you hear about the Sector-U-74B Incident? 
-Aniline: A cargo ship whose crew implodes it after a xenophage attack?
-Aniline: Also, does the monster eat 3.5 crewmates?
-{robot}: Yes.
-{robot}: The xenophage language, by default, makes no distinction between "give (assistance)" and "give (food)".
-{robot}: It's quite troublesome for auto-translation software.
-Xenophage: ₮₳₵Ɇ₦Đ₳ ĐɆ₴₱ł₮Ɇ ₳₱₱₳ⱤɆ₦₮ ฿ɆⱤ₮Ⱨ, ĐØɆ₮Ⱨ ₮ⱧɆ ₳Ⱡł₥Ɇ₦₮₳₮łØ₦.
-*[Next] -> human1
+==turn1annie==
+ANNIE: Alright, now it’s my turn. 
+ANNIE: You have (card), I can feel it.
+ROBOT: I don’t. 
+ANNIE: Well, you’ll have one later.
+ROBOT: Sure.
+ANNIE: You can’t not have one forever.
+*[next]->turn1xeno
 
-==human1==
-{robot}: I'm surprised that our fourth player is a Xanthgrdanoiid.
-Aniline: I think it's a Plob-Gokrian.
-{robot}: It might be a Ggrett.
-Xenophage: Ø฿VłØɄ₴ⱠɎ ⱧØ₥Ø ₴₳₱łɆ₦₴.
-*[Next] -> aniline1
+==turn1xeno==
+XENOPHAGE: Ok, um, Annie, do you have any atoms?
+ANNIE: Yeahhh. Yeah I sure do. [pissed]
+XENOPHAGE: Thaaank you.
+//atom: xenopage -> annie
+*[next]->turn1player
 
-==aniline1==
-{robot}: You possess psychic abilities, correct?
-Aniline: Yes, it is correct. I know about the card that the 
-(talk about how poker is unfun with psychic abilities)
-*[Next] -> robot1
+//-----------turn 1 (player)-------------
+==turn1player==
+Choose one player to ask for a card.
+*[ROBOT (correct)] ->turn1playerrobottrue
+*[ROBOT (incorrect)] ->turn1playerrobotfalse
+*[ANNIE (correct)] ->turn1playerannietrue
+*[ANNIE (incorrect)] ->turn1playeranniefalse
+*[XENOPHAGE (correct)] ->turn1playerxenotrue
+*[XENOPHAGE (incorrect)] ->turn1playerxenofalse
+//---turn 1 player responses---
+==turn1playerrobottrue==
+ROBOT: Do I look like I’m made of (card)?
+ROBOT: Because I’m not. That wouldn’t be logical.
+ROBOT: ….FINE. HERE YOU GO.
+//transfer card
+*[next] -> turn2robot
+==turn1playerrobotfalse==
+ROBOT: Your logic circuits must be failing, because I do not.
+//go fish
+*[next] -> turn2robot
 
-==robot1==
-Aniline: The translation software refers to you in the plural and singular.
-Aniline: It's because you're a dustcloud mind.
-{robot}: It may be reasonable to assume this is due to our status as a singularity.
-{robot}: However, it is likely mistranslating our language's gendered vocabulary.
-Aniline: What do you mean?
-{robot}: It's very hard to explain this concept to someone from your narrow minded and disconnected culture, but...
-{robot}: I believe that there is a word in your language that approximates the concept that our singularity inhabits.
-Aniline: Can you tell me what it is?
-{robot}: We're butch.
-Aniline: I know what butch is, idiot.
-*[Next] -> robot2
+==turn1playerannietrue==
+ANNIE: God freaking dang it. Whatever, here you go
+//transfer card
+*[next] -> turn2robot
+==turn1playeranniefalse
+ANNIE: I knew you’d say that. No, go fish.
+//go fish
+*[next] -> turn2robot
 
-==robot2==
-Aniline: I know this because I am also butch.
-*[Next] -> robot3
+==turn1playerxenotrue==
+XENOPHAGE: Awwwww dang. Yeah, here you go.
+//transfer card
+*[next] -> turn2robot
+==turn1playerxenofalse==
+XENOPHAGE: Nope, sorry. Go fish!
+//go fish
+*[next] -> turn2robot
 
-==robot3==
-Xenophage: ₩ł₮Ⱨ₳Ⱡ, Ø₦Ɇ₴ɆⱠ₣ ₳Ⱡ₴Ø ฿Ʉ₮₵Ⱨ.
-*[Next] -> robot4
+//--------------------turn 2-----------------------------
+//everybody draw 1 card
+==turn2robot==
+ROBOT: I’ve put all of your dialogue into an AI text generator… 
+XENOPHAGE: Ah Christ, here we go again.
+ROBOT: It told me in your voice that you have a (card). Anyways, like I’ve been telling you, AI is creating trillions of new jobs…
+*[Has it]->turn2robotxenotrue
+*[Doesn't]->turn2robotxenofalse
+==turn2robotxenotrue==
+XENOPHAGE: Here’s the card. Just stop talking.
+*[next] -> turn2annie
+==turn2robotxenofalse==
+XENOPHAGE: I don’t have it. Stop talking.
+*[next] -> turn2annie
 
-==robot4==
-Aniline: Is it strange if particles of your dustcloud are sharing a binary orbit?
-{robot}: That isn't translating. What do you mean?
-Aniline: Is it weird to consort with other robots from the same dustcloud mind. Because, you are all the same robot?
-{robot}: I'm not answering that.
+==turn2annie==
+ANNIE: Let’s talk about something else. Like that lovely uterus card you have there.
+XENOPHAGE: Woah woah woah woooooooah.
+ROBOT: What the robot hell are you talking about.
+ANNIE: This one! The uterus one!
+XENOPHAGE: Buddy, that’s a spaceship
+ROBOT: Yes, it’s- wait no, that’s a raygun.
+ANNIE: Humans love to incorporate their reproductive biology into iconography.
+ROBOT: Human, is this true?
+*Yeah… -> turn2annieuterustrue
+*Humans actually don’t have uteruses. Uterusi? ->turn2annieuterusfalse
+==turn2annieuterustrue==
+ANNIE: See? See?
+XENOPHAGE: Well, I’ll be damned.
+*[next]->turn2anniecont
+==turn2annieuterusfalse==
+PLAYER: Humans actually don’t have uteruses. Uterusi?
+ROBOT: We’re playing with a Xentrati-style deck. Obviously, it’s a Xentrati uterus.
+*[next]->turn2anniecont
+==turn2anniecont==
+ANNIE: Whatever, do you have the card or not?
+*[Has it]->turn2annieplayertrue
+*[Doesn't]->turn2annieplayerfalse
+==turn2annieplayertrue==
+ANNIE: Cool, thanks. 
+*[next]->turn2xeno
+==turn2annieplayerfalse==
+ANNIE: God damn it. 
+*[next]->turn2xeno
 
+==turn2xeno==
+XENOPHAGE: Anyways, Annie, do you have any Worms?
+*[has it]->turn2xenoannietrue
+*[doesn't]->turn2xenoanniefalse
+==turn2xenoannietrue==
+ANNIE: Ughhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+XENOPHAGE: Jeez, sorry.
+*[next]->turn2player
+==turn2xenoanniefalse==
+ANNIE: I knew you’d ask. 
+XENOPHAGE: So do you have it, or-
+ANNIE: No, go fish.
+*[next]->turn2player
 
-/*
-STYLE NOTES:
--Xenophage talks in a scary font. 
-(https://glyphy.io/font-generator/creepy-text temporarily using this for style preview)
+//-----------turn 2 (player)-------------
+==turn2player==
+Choose one player to ask for a card.
+*[ROBOT (correct)] ->turn2playerrobottrue
+*[ROBOT (incorrect)] ->turn2playerrobotfalse
+*[ANNIE (correct)] ->turn2playerannietrue
+*[ANNIE (incorrect)] ->turn2playeranniefalse
+*[XENOPHAGE (correct)] ->turn2playerxenotrue
+*[XENOPHAGE (incorrect)] ->turn2playerxenofalse
+//---turn 2 player responses---
+==turn2playerrobottrue==
+ROBOT: You have a sharp mind, human. Take it and go.
+*[next] -> turn3robot
+==turn2playerrobotfalse==
+ROBOT: A total misplay. Go fish.
+*[next] -> turn3robot
 
-random bit ideas:
--they mention the guy whose job it is to deal with spaceship infestations. xenophage hates him
--(to the silent player character) "ive fed all of your dialogue into an ai voice generator to make you say incrimating things. ...oh dear, I didn't realize you felt that way about undocumented migrant laborers. ...you think we should do WHAT to babies?"
--they call over the bartender and he appears in a popup comic panel, he's just the heavy tf2 as a low budget star trek alien
--robot: "ok im going to consult the rest of my species" "they say its bullshit"
--robot: "i posted a picture of your hand in the hivemind groupchat and they all reacted to it with the pogbot emote"
--robot gets mad and turns off the translation software
--aniline: "I'm psychic so I know it's about to bluff" "that sounds unfun. why do you play poker" "because I hate you and I want you to lose."
--one of them gets so mad they decide to blow up their own planet
--one of them says "fold" and the xenomorph interprets it as a request to start folding all of the cards into elaborate origami
--"how are you" "yes"
--robot has to deal with a stupid computer/driver/hardware issue
--one of them talks about "blogging" but the auto translator mishears it as "logging"
--the robot shows you the hiveminds official webpage and it has a stamp for the better business bureau but the score is "F"
--"uhhhh pbouxkiir? we just call that 'poker' where im from" "I'll poke YOU"
+==turn2playerannietrue==
+ANNIE: Take it and leave.
+*[next] -> turn3robot
+==turn2playeranniefalse==
+ANNIE: All that gross shit in your skull, and you aren’t using any of it. I don’t.
+*[next] -> turn3robot
 
-gameplay bit ideas
--yugioh card shows up in your hand
--talking card: first time tells you to fold because it has to go back to its home dimension. second time it tells you to roll it up and use it as a straw (increases your hydration meter). third time it appears in somebody else's hand
--"That card is traditionally covered in tiny razors which will cut you if you pick it up"
--dealer: 500 credits? the minimum raise is 1000 credits. you have to put all of that in.
--"look, I have a straight." "pardon me?" "all 5 of my cards are a consecutive sequence of numbers. a straight." "ah, the auto translator was telling me that you only go through kemmer with members of a different gender"
--turn where you get slapped if you do the wrong thing. makes an hp bar appear on screen
--aniline is psychic and gets mad that a UI button is covering it up
--robot hivemind was made for an absurd poker-related purpose. this comes up mechanically
--turn where somebody knocks over all the poker chips on purpose
--you have to decide if the earth destruction button is real or a joke
--more and more UI elements appear until its a mess
+==turn2playerxenotrue==
+XENOPHAGE: Yup, here you go.
+*[next] -> turn3robot
+==turn2playerxenofalse==
+XENOPHAGE: Nope. Get your net.
+*[next] -> turn3robot
 
-ending bit ideas:
--"we blew up the earth. hahahahahahaha. just kidding. hey whats that liquid coming out of your visual orifices" "my god. it's dissolving out of its eyes." "that is so gross. make it stop. we won't blow up the planet ok?"
--alien draws a card, starts chuckling evilly, then yells UNO (uno is universally known throughout the galaxy)
+//--------------------turn 2-----------------------------
+//everybody draw 1 card
+==turn3robot==
+ROBOT: Xenophage, do you have any worms?
+*[has it]->turn3robotxenotrue
+*[doesn't]->turn3robotxenofalse
+==turn3robotxenotrue==
+XENOPHAGE: Ah, you got me.
+ROBOT: All according to plan.
+*[next]->turn3annie
+==turn3robotxenofalse==
+XENOPHAGE: Sorry, no dice. Go fish.
+ROBOT: Whatever.
+*[next]->turn3annie
 
+==turn3annie==
+ANNIE: Ok Computer, do you have any uterusi?
+ROBOT: I’m a robot.
+ANNIE: I swear to God- rayguns, do you have any rayguns?
+*[has it]->turn3annierobottrue
+*[doesn't]->turn3annierobotfalse
+==turn3annierobottrue==
+ROBOT: In that case, yes, and here you go.
+*[next]->turn3xeno
+==turn3annierobotfalse==
+ROBOT: My answer remains “no.”
+*[next]->turn3xeno
 
-other ideas:
--robot is light powered and needs to stay in well lit rooms
--an alien's gender is impossible to autotranslate so the autotranslator gives it different pronouns within one sentence until they whack the auto translation device a few times
--"well the galactic standard is xyz.... but the galactic standard was made by abc fuck them we're playing with my specific space stations rules because theyre the real ones" (rules change halfway through the game)
--4 suites: star, orbitals (electron orbital of corresponding element), worms/autoparoxymorphic paralarva/goop/spawn, ship/raygun/arrowhead
-*/
+==turn3xeno==
+XENOPHAGE: Annie, do you have any worms?
+*[has it]->turn3xenoannietrue
+*[doesn't]->turn3xenoanniefalse
+==turn3xenoannietrue==
+ANNIE: Wow that’s crazy! I do!! [manic expression]
+XENOPHAGE: Ok, well, I’ll take them.
+ANNIE: Sounds great!!!!!!!!!!
+*[next]->turn3player
+==turn3xenoanniefalse==
+ANNIE: I still don’t have any worms.
+XENOPHAGE: Okaaay, I’ll go fish.
+*[next]->turn3player
+
+//-----------turn 3 (player)-------------
+==turn3player==
+Choose one player to ask for a card.
+*[ROBOT (correct)] ->turn3playerrobottrue
+*[ROBOT (incorrect)] ->turn3playerrobotfalse
+*[ANNIE (correct)] ->turn3playerannietrue
+*[ANNIE (incorrect)] ->turn3playeranniefalse
+*[XENOPHAGE (correct)] ->turn3playerxenotrue
+*[XENOPHAGE (incorrect)] ->turn3playerxenofalse
+//---turn 3 player responses---
+==turn3playerrobottrue==
+ROBOT: Here, take it.
+*[next] -> turn3playercont
+==turn3playerrobotfalse==
+ROBOT: What an absurd question. Of course I don’t, go fish.
+*[next] -> turn3playercont
+
+==turn3playerannietrue==
+ANNIE: Take it and get out of here.
+*[next] -> turn3playercont
+==turn3playeranniefalse==
+ANNIE: Do I have any *wheeze* hahahaaaaa man. Do I have any (cards). Fuck yourself.
+*[next] -> turn3playercont
+
+==turn3playerxenotrue==
+XENOPHAGE: Sadly, I do.
+*[next] -> turn3playercont
+==turn3playerxenofalse==
+XENOPHAGE: Nada. Fish time.
+*[next] -> turn3playercont
+
+==turn3playercont==
+//card in your hand turns into talking card	
+TALKING CARD: Player! You are chosen, and thus I have revealed myself to you! Heed my words: keep your eyes open, and the best player can be read like a holo-book.
+*[next] -> turn4robot
+
+//--------------------turn 4-----------------------------
+//everybody draw 1 card
+==turn4robot==
+ROBOT: I used the AI again, and it told me your opinion on undocumented migrant farmworkers.
+ROBOT: I’m surprised that you’re advocating we do that.
+XENOPHAGE: Card. What card do you want.
+ROBOT: Raygun.
+*[has it]->turn4robotxenotrue
+*[doesn't]->turn4robotxenofalse
+==turn4robotxenotrue==
+XENOPHAGE: Here.
+*[next] -> turn4annie
+==turn4robotxenofalse==
+XENOPHAGE: Go fish.
+*[next] -> turn4annie
+
+==turn4annie==
+ANNIE: Hey human, you got any (cards)?
+*[has it]->turn4annieplayertrue
+*[doesn't]->turn4annieplayerfalse
+==turn4annieplayertrue==
+ANNIE: Heh, better play harder if you want that prize money. And the honor of blowing up that sweet, sweet planet.
+*[next] -> turn4anniecont
+==turn4annieplayerfalse==
+ANNIE: Crap. Guess you really want that prize money, huh? Oh, or you want to blow up that planet? Me too buddy, me too.
+*[next] -> turn4anniecont
+==turn4anniecont==
+XENOPHAGE: Annie, that’s why you’re in this? To blow up Earth?
+ANNIE: I mean, money is cool also. Both of the prizes appeal to me.
+ROBOT: Well, *I* hate the Earth.
+ANNIE: Yeah, you tell ‘em.
+XENOPHAGE: Wait, what’s wrong with Earth? I’ve never been.
+ROBOT: According to my logic circuits, humans are the stupidest, dumbest, dustiest life forms, and they (reddit forum argument that they clearly lost)
+XENOPHAGE: I’m uh. I’m sorry for bringing it up.
+*[next] -> turn4xeno 
+
+==turn4xeno==
+XENOPHAGE: Hey Annie, have any (card)?
+*[has it]->turn4xenoannietrue
+*[doesn't]->turn4xenoanniefalse
+==turn4xenoannietrue==
+ANNIE: Hey Annie, do you have a problem?
+XENOPHAGE: Annie…
+ANNIE: Yes, YES I have (card). 
+*[next] -> turn4player
+==turn4xenoanniefalse==
+ANNIE: As if! As IF I would have (card).
+XENOPHAGE: Alright, I’ll go fish.
+*[next] -> turn4player
+
+//-----------turn 4 (player)-------------
+==turn4player==
+TALKING CARD: Your next decision will be quite the unwise one! Hee hoo!
+*[ROBOT (correct)] ->turn4playerrobottrue
+*[ROBOT (incorrect)] ->turn4playerrobotfalse
+*[ANNIE (correct)] ->turn4playerannietrue
+*[ANNIE (incorrect)] ->turn4playeranniefalse
+*[XENOPHAGE (correct)] ->turn4playerxenotrue
+*[XENOPHAGE (incorrect)] ->turn4playerxenofalse
+//---turn 4 player responses---
+==turn4playerrobottrue==
+ROBOT: What an astute mind! Yes, yes I do.
+*[next] -> turn5robot
+==turn4playerrobotfalse==
+ROBOT: No, I don’t. See, this is why AI will replace most jobs within the next 10 years.
+XENOPHAGE: You said it wasn’t gonna do that.
+ROBOT: No, I said it’d make new jobs. You can’t have new jobs without eliminating old jobs. The job market wouldn’t fit all of them.
+XENOPHAGE: I hope your job goes first.
+*[next] -> turn5robot
+
+==turn4playerannietrue==
+ANNIE: Yeah, here.
+ANNIE: Wow, really happy about that huh? It’s just a game. It’s just a game, dude. It’s sad that you care this much.
+*[next] -> turn5robot
+==turn4playeranniefalse==
+ANNIE: No, but I do have go fish.
+*[next] -> turn5robot
+
+==turn4playerxenotrue==
+XENOPHAGE: Dang, you’re good!
+*[next] -> turn5robot
+==turn4playerxenofalse==
+XENOPHAGE: ‘Fraid not, go fish.
+*[next] -> turn5robot
+
+//--------------------turn 5-----------------------------
+//everybody draw 1 card
+==turn5robot==
+
 
     -> END
