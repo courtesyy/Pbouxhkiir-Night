@@ -14,6 +14,15 @@ config/name="Pbouxhkiir Night"
 run/main_scene="res://Scenes/RootScene.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=1280
+window/size/height=720
+window/size/test_width=960
+window/size/test_height=540
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/parappatherapper.png-dc49d4e2b757fac6994aa10a313b2715.stex"
+path="res://.import/LineProfileXeno.png-97ea6c8a863e25e5c4c9b3e24da5efaf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/parappatherapper.png"
-dest_files=[ "res://.import/parappatherapper.png-dc49d4e2b757fac6994aa10a313b2715.stex" ]
+source_file="res://Sprites/UI/LineProfileXeno.png"
+dest_files=[ "res://.import/LineProfileXeno.png-97ea6c8a863e25e5c4c9b3e24da5efaf.stex" ]
 
 [params]
 
