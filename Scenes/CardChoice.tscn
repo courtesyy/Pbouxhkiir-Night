@@ -1,10 +1,16 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/CardChoice.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/SketchnoteRegular.TTF" type="DynamicFontData" id=2]
-[ext_resource path="res://Sprites/iconShip.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/iconWorm.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/iconOrbit.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/UI/iconWorm.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/UI/iconShip.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/UI/iconOrbit.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/UI/iconOrbitHover.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/UI/iconShipHover.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/UI/iconWormHover.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/UI/BackHover.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/UI/BackNormal.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/Characters.tscn" type="PackedScene" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
@@ -12,133 +18,106 @@ outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 654, 371.5 )
+
 [node name="CardChoice" type="Node"]
 script = ExtResource( 1 )
 
+[node name="Characters" parent="." instance=ExtResource( 11 )]
+
 [node name="Prompt" type="Label" parent="."]
-margin_left = 390.0
+margin_left = 25.0
 margin_top = 34.0
-margin_right = 892.0
+margin_right = 1260.0
 margin_bottom = 68.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "It's your turn! Ask somebody for a card."
+align = 1
+autowrap = true
 
-[node name="XenoOptions" type="HFlowContainer" parent="."]
-margin_left = 29.0
-margin_top = 561.0
-margin_right = 379.0
-margin_bottom = 710.0
+[node name="AreaOther" type="Area2D" parent="."]
 
-[node name="XenoOrbit" type="TextureButton" parent="XenoOptions"]
-margin_right = 113.0
-margin_bottom = 149.0
-shortcut_in_tooltip = false
-texture_normal = ExtResource( 5 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaOther"]
+position = Vector2( 644, 361.5 )
+shape = SubResource( 2 )
 
-[node name="XenoShip" type="TextureButton" parent="XenoOptions"]
-margin_left = 117.0
-margin_right = 230.0
-margin_bottom = 149.0
-shortcut_in_tooltip = false
-texture_normal = ExtResource( 3 )
+[node name="AreaXeno" type="Area2D" parent="."]
+priority = 1.0
 
-[node name="XenoWorm" type="TextureButton" parent="XenoOptions"]
-margin_left = 234.0
-margin_right = 347.0
-margin_bottom = 149.0
-shortcut_in_tooltip = false
-texture_normal = ExtResource( 4 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AreaXeno"]
+polygon = PoolVector2Array( 332, 554, -44, 592, 0, 0, 205, -37, 258, 25, 278, 85, 259, 163, 231, 211, 218, 247, 213, 332, 235, 272, 285, 234, 334, 236, 365, 272, 384, 317, 384, 482, 366, 510, 328, 500 )
 
-[node name="AnnieOptions" type="HFlowContainer" parent="."]
-margin_left = 468.0
-margin_top = 561.0
-margin_right = 818.0
-margin_bottom = 710.0
+[node name="AreaAnnie" type="Area2D" parent="."]
+position = Vector2( 418, 5 )
+priority = 1.0
 
-[node name="XenoOrbit" type="TextureButton" parent="AnnieOptions"]
-margin_right = 113.0
-margin_bottom = 149.0
-shortcut_in_tooltip = false
-texture_normal = ExtResource( 5 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AreaAnnie"]
+polygon = PoolVector2Array( 249, 537, 109, 539, 143, 523, 150, 504, 108, 485, 83, 459, 85, 418, 114, 361, 170, 320, 289, 168, 299, 184, 236, 266, 235, 325, 230, 396, 221, 451, 205, 493 )
 
-[node name="XenoShip" type="TextureButton" parent="AnnieOptions"]
-margin_left = 117.0
-margin_right = 230.0
-margin_bottom = 149.0
-shortcut_in_tooltip = false
-texture_normal = ExtResource( 3 )
+[node name="AreaRobot" type="Area2D" parent="."]
+position = Vector2( 866, 41 )
+priority = 1.0
 
-[node name="XenoWorm" type="TextureButton" parent="AnnieOptions"]
-margin_left = 234.0
-margin_right = 347.0
-margin_bottom = 149.0
-shortcut_in_tooltip = false
-texture_normal = ExtResource( 4 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AreaRobot"]
+polygon = PoolVector2Array( 369, 529, 157, 518, -30, 509, 33, 422, 28, 356, -26, 341, -87, 252, -19, 218, -18, 208, 60, 184, 52, 100, 66, 70, 81, 20, 114, 4, 156, 6, 189, 65, 200, 73, 213, 125, 203, 166, 223, 133, 269, 117, 318, 134, 342, 190, 324, 239, 324, 353, 282, 354, 272, 406, 339, 449 )
 
-[node name="RobotOptions" type="HFlowContainer" parent="."]
-margin_left = 901.0
-margin_top = 561.0
-margin_right = 1251.0
-margin_bottom = 710.0
-
-[node name="XenoOrbit" type="TextureButton" parent="RobotOptions"]
-margin_right = 113.0
-margin_bottom = 149.0
-shortcut_in_tooltip = false
-texture_normal = ExtResource( 5 )
-
-[node name="XenoShip" type="TextureButton" parent="RobotOptions"]
-margin_left = 117.0
-margin_right = 230.0
-margin_bottom = 149.0
-shortcut_in_tooltip = false
-texture_normal = ExtResource( 3 )
-
-[node name="XenoWorm" type="TextureButton" parent="RobotOptions"]
-margin_left = 234.0
-margin_right = 347.0
-margin_bottom = 149.0
-shortcut_in_tooltip = false
-texture_normal = ExtResource( 4 )
-
-[node name="TooltipParent" type="Control" parent="."]
+[node name="Menu" type="Control" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="TooltipXeno" type="Label" parent="TooltipParent"]
-visible = false
-margin_left = 3.0
-margin_top = -37.0
-margin_right = 408.0
-margin_bottom = -3.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_fonts/font = SubResource( 1 )
-text = "Ask the xenophage for this card."
-valign = 2
+[node name="Cards" type="HFlowContainer" parent="Menu"]
+margin_left = 457.0
+margin_top = 190.0
+margin_right = 807.0
+margin_bottom = 339.0
 
-[node name="TooltipAnnie" type="Label" parent="TooltipParent"]
-visible = false
-margin_left = 3.0
-margin_top = -37.0
-margin_right = 316.0
-margin_bottom = -3.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_fonts/font = SubResource( 1 )
-text = "Ask Aniline for this card."
-valign = 2
+[node name="Orbit" type="TextureButton" parent="Menu/Cards"]
+margin_right = 113.0
+margin_bottom = 149.0
+shortcut_in_tooltip = false
+texture_normal = ExtResource( 5 )
+texture_hover = ExtResource( 6 )
 
-[node name="TooltipRobot" type="Label" parent="TooltipParent"]
-visible = false
-margin_left = 3.0
-margin_top = -144.0
-margin_right = 449.0
-margin_bottom = 1.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_fonts/font = SubResource( 1 )
-text = "Ask 3b42dd00-903a-47b8-87b8-47e0-4447-fcf1-2bed-a6a4-dcf3-484c-9f5420547c893ba1 for this card."
-valign = 2
-autowrap = true
+[node name="Ship" type="TextureButton" parent="Menu/Cards"]
+margin_left = 117.0
+margin_right = 230.0
+margin_bottom = 149.0
+shortcut_in_tooltip = false
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 7 )
 
-[connection signal="mouse_entered" from="XenoOptions/XenoOrbit" to="." method="_on_XenoOrbit_mouse_entered"]
-[connection signal="mouse_exited" from="XenoOptions/XenoOrbit" to="." method="_on_XenoOrbit_mouse_exited"]
+[node name="Worm" type="TextureButton" parent="Menu/Cards"]
+margin_left = 234.0
+margin_right = 347.0
+margin_bottom = 149.0
+shortcut_in_tooltip = false
+texture_normal = ExtResource( 3 )
+texture_hover = ExtResource( 8 )
+
+[node name="Back" type="TextureButton" parent="Menu"]
+margin_left = 547.0
+margin_top = 347.0
+margin_right = 719.0
+margin_bottom = 444.0
+texture_normal = ExtResource( 10 )
+texture_hover = ExtResource( 9 )
+
+[node name="BackOut" type="Area2D" parent="Menu"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Menu/BackOut"]
+polygon = PoolVector2Array( 1365, 766, -23, 739, -78, 262, 450, 234, 458, 346, 546, 347, 553, 442, 723, 446, 720, 346, 808, 339, 809, 184, 453, 187, 393, 431, -33, 460, 0, 0, 1334, -34 )
+
+[connection signal="mouse_entered" from="AreaOther" to="." method="_on_AreaOther_mouse_entered"]
+[connection signal="input_event" from="AreaXeno" to="." method="_on_AreaXeno_input_event"]
+[connection signal="mouse_entered" from="AreaXeno" to="." method="_on_AreaXeno_mouse_entered"]
+[connection signal="input_event" from="AreaAnnie" to="." method="_on_AreaAnnie_input_event"]
+[connection signal="mouse_entered" from="AreaAnnie" to="." method="_on_AreaAnnie_mouse_entered"]
+[connection signal="input_event" from="AreaRobot" to="." method="_on_AreaRobot_input_event"]
+[connection signal="mouse_entered" from="AreaRobot" to="." method="_on_AreaRobot_mouse_entered"]
+[connection signal="pressed" from="Menu/Cards/Orbit" to="." method="_on_Orbit_pressed"]
+[connection signal="pressed" from="Menu/Cards/Ship" to="." method="_on_Ship_pressed"]
+[connection signal="pressed" from="Menu/Cards/Worm" to="." method="_on_Worm_pressed"]
+[connection signal="pressed" from="Menu/Back" to="." method="_on_Back_pressed"]
+[connection signal="input_event" from="Menu/BackOut" to="." method="_on_BackOut_input_event"]

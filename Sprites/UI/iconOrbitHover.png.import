@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/iconOrbit.png-f0bd23f2788511dcbc8a36ebc9d36b87.stex"
+path="res://.import/iconOrbitHover.png-569af02e5904863348a3509251f47bef.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/iconOrbit.png"
-dest_files=[ "res://.import/iconOrbit.png-f0bd23f2788511dcbc8a36ebc9d36b87.stex" ]
+source_file="res://Sprites/UI/iconOrbitHover.png"
+dest_files=[ "res://.import/iconOrbitHover.png-569af02e5904863348a3509251f47bef.stex" ]
 
 [params]
 
