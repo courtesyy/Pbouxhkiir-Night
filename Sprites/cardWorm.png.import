@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/parappatherapper.png-dc49d4e2b757fac6994aa10a313b2715.stex"
+path="res://.import/cardWorm.png-108b6285112f310383f87da9ba9d91ec.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/parappatherapper.png"
-dest_files=[ "res://.import/parappatherapper.png-dc49d4e2b757fac6994aa10a313b2715.stex" ]
+source_file="res://Sprites/cardWorm.png"
+dest_files=[ "res://.import/cardWorm.png-108b6285112f310383f87da9ba9d91ec.stex" ]
 
 [params]
 
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0
