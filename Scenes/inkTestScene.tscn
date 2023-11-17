@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/PokerStoryPlayer.gd" type="Script" id=1]
-[ext_resource path="res://Ink/alienpoker.ink" type="Resource" id=2]
+[ext_resource path="res://Ink/alienpoker.ink.json" type="Resource" id=2]
 
 [node name="PokerStoryPlayerNode" type="Node"]
 script = ExtResource( 1 )
@@ -18,3 +18,13 @@ text = "LOADING..."
 [node name="ChoicesParent" type="Node2D" parent="."]
 
 [node name="SpeechBubblesParent" type="Node2D" parent="."]
+
+[node name="Endings" type="Node2D" parent="."]
+
+[node name="Neutral" type="Node2D" parent="Endings"]
+
+[node name="Annie" type="Node2D" parent="Endings"]
+
+[node name="Xeno" type="Node2D" parent="Endings"]
+
+[node name="Robot" type="Node2D" parent="Endings"]

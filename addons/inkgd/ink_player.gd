@@ -353,21 +353,28 @@ func destroy() -> void:
 
 ## Continues the story.
 func continue_story() -> String:
+	print_debug("calling continue_story in ink_player")
 	if _story == null:
+		print_debug("story is null")
 		_push_null_story_error()
 		return ""
 
 	var text: String = ""
-	if self.can_continue:
+	if self.can_continue: #its this
+		print_debug("self.can_continue")
 		_story.continue()
 
 		text = self.current_text
+		print_debug("text is ", text)
 
 	elif self.has_choices:
+		print_debug("self_has_choices")
 		emit_signal("prompt_choices", self.current_choices)
 	else:
+		print_debug("ended")
 		emit_signal("ended")
 
+	print_debug("returning text ", text)
 	return text
 
 ## An "asynchronous" version of `continue_story` that only partially evaluates

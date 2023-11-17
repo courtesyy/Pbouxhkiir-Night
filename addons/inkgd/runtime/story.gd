@@ -95,8 +95,12 @@ func get_has_error(): return self.state.has_error
 var has_warning setget , get_has_warning # bool
 func get_has_warning(): return self.state.has_warning
 
+
+# this breaks 
 var variables_state setget , get_variables_state # VariablesState
 func get_variables_state(): return self.state.variables_state
+
+
 
 var list_definitions setget , get_list_definitions # ListDefinitionsOrigin
 func get_list_definitions():
@@ -292,10 +296,15 @@ func continue() -> String:
 	self.continue_async(0)
 	return self.current_text
 
+ 
 
+# now this breaks 
 var can_continue: bool setget , get_continue
 func get_continue() -> bool:
+	print_debug("get_continue called in story can_continue:", self.state.can_continue)
 	return self.state.can_continue
+
+
 
 
 var async_continue_complete: bool setget , get_async_continue_complete

@@ -5,8 +5,8 @@ extends Node
 
 
 #VARIABLES TO OBSERVE 
-var variablesArray = ["card", "ending"]
-
+#var variablesArray = ["card", "ending"]
+var variablesArray = ["RobotRage"];
 
 
 
@@ -106,13 +106,17 @@ func _ready():
 	_profiler.start()
 	_ink_player.create_story()
 
+	print_debug("finished creating story")
+
 
 # ############################################################################ #
 # Private Methods
 # ############################################################################ #
 
 func _continue_story():
+	print_debug("calling continue_story")
 	if USE_SIGNALS:
+		print_debug("using signals")
 		_ink_player.continue_story()
 	else:
 		while _ink_player.can_continue:
@@ -134,7 +138,7 @@ func _loaded(successfully: bool):
 		return
 
 	_profiler.stop()
-	print("Created The Intercept in %d ms." % _profiler.milliseconds_elaspsed)
+	print_debug("Created the story in %d ms." % _profiler.milliseconds_elaspsed)
 
 	_bind_externals()
 	_evaluate_functions()
@@ -143,6 +147,8 @@ func _loaded(successfully: bool):
 
 
 func _continued(text, tags):
+
+	print_debug("called continued signal reciever")
 	_add_label(text)
 
 	_ink_player.continue_story()
@@ -155,7 +161,7 @@ func _add_label(text):
 #	label.text = text
 #
 #	_story_vbox_container.add_child(label)
-	print("displaying: ", text)
+	print_debug("displaying: ", text)
 	pass
 
 
@@ -173,13 +179,13 @@ func _ended():
 	var winner = _ink_player.get_variable("ending")
 
 	if(winner == "annie"):
-		print("ANNIE ENDING")
+		print_debug("ANNIE ENDING")
 	elif(winner == "robot"):
-		print("ROBOT ENDING")
+		print_debug("ROBOT ENDING")
 	elif(winner == "xeno"):
-		print("XENO ENDING")
+		print_debug("XENO ENDING")
 	elif(winner == "neutral"):
-		print("NEUTRAL ENDING")
+		print_debug("NEUTRAL ENDING")
 
 
 
@@ -216,8 +222,8 @@ func _error_encountered(message, type):
 ## exported properties. The sole purpose of this method is to faccilitate
 ## the creation of multiple examples. For context, see main.tscn.
 func _override_story():
-	#if ink_file != null:
-	##	_ink_player.ink_file = ink_file
+	if ink_file != null:
+		_ink_player.ink_file = ink_file
 
 	#if !title.empty():
 	#	_title_label.text = title
@@ -249,17 +255,18 @@ func _bind_externals():
 func _evaluate_functions():
 	## An example of how to evaluate functions. Both Crime Scene and
 	## the Intercept declare thse dummy functions.
-	var result = _ink_player.evaluate_function("test_function", [3, 4])
-	print(
-			"function 'test_function': [Text Output: '%s'] [Return Value: %s]" % \
-			[result.text_output.replace("\n", "\\n"), result.return_value]
-	)
+	#var result = _ink_player.evaluate_function("test_function", [3, 4])
+	#print(
+	#		"function 'test_function': [Text Output: '%s'] [Return Value: %s]" % \
+	#		[result.text_output.replace("\n", "\\n"), result.return_value]
+	#)
 
-	var result_output = _ink_player.evaluate_function("test_function_output", [3, 4, 5])
-	print(
-			"function 'test_function_output': [Text Output: '%s'] [Return Value: %s]" % \
-			[result_output.text_output.replace("\n", "\\n"), result_output.return_value]
-	)
+	#var result_output = _ink_player.evaluate_function("test_function_output", [3, 4, 5])
+	#print(
+	#		"function 'test_function_output': [Text Output: '%s'] [Return Value: %s]" % \
+	#		[result_output.text_output.replace("\n", "\\n"), result_output.return_value]
+	#)
+	pass
 
 
 func _remove_loading_overlay():

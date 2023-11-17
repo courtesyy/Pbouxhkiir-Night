@@ -408,6 +408,10 @@ config/name="Pbouxhkiir Night"
 run/main_scene="res://Scenes/RootScene.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+__InkRuntime="*res://addons/inkgd/runtime/static/ink_runtime.gd"
+
 [display]
 
 window/size/width=1280
@@ -416,6 +420,10 @@ window/size/test_width=960
 window/size/test_height=540
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/inkgd/plugin.cfg" )
 
 [gui]
 

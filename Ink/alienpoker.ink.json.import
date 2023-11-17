@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+path="res://.import/alienpoker.ink.json-7fadfbcc79dd878819c45c876cffd4af.res"
+
+[deps]
+
+source_file="res://Ink/alienpoker.ink.json"
+dest_files=[ "res://.import/alienpoker.ink.json-7fadfbcc79dd878819c45c876cffd4af.res" ]
+
+[params]
+
+compress=true
