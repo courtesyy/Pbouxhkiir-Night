@@ -5,8 +5,8 @@ extends Node
 
 
 #VARIABLES TO OBSERVE 
-var variablesArray = ["varName1", "varName2"]
-
+#todo: card, ending 
+var variablesArray = ["RobotRage"];
 
 
 
@@ -79,11 +79,13 @@ var _ink_player = InkPlayerFactory.create()
 # Node
 # ############################################################################ #
 
-onready var _story_margin_container = $StoryMarginContainer
-onready var _story_vbox_container = $StoryMarginContainer/StoryScrollContainer/StoryVBoxContainer
-onready var _loading_animation_player = $LoadingAnimationPlayer
-onready var _title_label = $LoadingAnimationPlayer/CenterContainer/VBoxContainer/TitleLabel
-
+#onready var _story_margin_container = $StoryMarginContainer
+#onready var _story_vbox_container = $StoryMarginContainer/StoryScrollContainer/StoryVBoxContainer
+#onready var _loading_animation_player = $LoadingAnimationPlayer
+#onready var _title_label = $LoadingAnimationPlayer/CenterContainer/VBoxContainer/TitleLabel
+onready var loadingScreen = $LoadingScreen
+onready var choicesParent = $ChoicesParent
+onready var speechBubblesParent = $SpeechBubblesParent
 
 # ############################################################################ #
 # Lifecycle
@@ -104,13 +106,17 @@ func _ready():
 	_profiler.start()
 	_ink_player.create_story()
 
+	print_debug("finished creating story")
+
 
 # ############################################################################ #
 # Private Methods
 # ############################################################################ #
 
 func _continue_story():
+	print_debug("calling continue_story")
 	if USE_SIGNALS:
+		print_debug("using signals")
 		_ink_player.continue_story()
 	else:
 		while _ink_player.can_continue:
@@ -132,7 +138,7 @@ func _loaded(successfully: bool):
 		return
 
 	_profiler.stop()
-	print("Created The Intercept in %d ms." % _profiler.milliseconds_elaspsed)
+	print_debug("Created the story in %d ms." % _profiler.milliseconds_elaspsed)
 
 	_bind_externals()
 	_evaluate_functions()
@@ -141,40 +147,50 @@ func _loaded(successfully: bool):
 
 
 func _continued(text, tags):
+
+	print_debug("called continued signal reciever")
 	_add_label(text)
 
 	_ink_player.continue_story()
 
 
+# display new line from the script 
+#so in this case, reveal next speech bubble
 func _add_label(text):
-	var label = LineLabel.instance()
-	label.text = text
-
-	_story_vbox_container.add_child(label)
+#	var label = LineLabel.instance()
+#	label.text = text
+#
+#	_story_vbox_container.add_child(label)
+	print_debug("displaying: ", text)
+	pass
 
 
 func _prompt_choices(choices):
 	if !choices.empty():
 		_current_choice_container = ChoiceContainer.instance()
-		_story_vbox_container.add_child(_current_choice_container)
+		choicesParent.add_child(_current_choice_container)
 
 		_current_choice_container.create_choices(choices)
 		_current_choice_container.connect("choice_selected", self, "_choice_selected")
 
 
 func _ended():
-	# End of story: let's check whether you took the cup of tea.
-	##var teacup = _ink_player.get_variable("teacup")
 
-	#if teacup:
-	#	print("Took the tea.")
-	#else:
-	##	print("Didn't take the tea.")
-	pass
+	var winner = _ink_player.get_variable("ending")
+
+	if(winner == "annie"):
+		print_debug("ANNIE ENDING")
+	elif(winner == "robot"):
+		print_debug("ROBOT ENDING")
+	elif(winner == "xeno"):
+		print_debug("XENO ENDING")
+	elif(winner == "neutral"):
+		print_debug("NEUTRAL ENDING")
+
 
 
 func _choice_selected(index):
-	_story_vbox_container.remove_child(_current_choice_container)
+	choicesParent.remove_child(_current_choice_container)
 	_current_choice_container.queue_free()
 
 	_ink_player.choose_choice_index(index)
@@ -209,9 +225,10 @@ func _override_story():
 	if ink_file != null:
 		_ink_player.ink_file = ink_file
 
-	if !title.empty():
-		_title_label.text = title
+	#if !title.empty():
+	#	_title_label.text = title
 
+	pass
 
 func _should_show_debug_menu(debug):
 	# Contrived external function example, where
@@ -238,24 +255,25 @@ func _bind_externals():
 func _evaluate_functions():
 	## An example of how to evaluate functions. Both Crime Scene and
 	## the Intercept declare thse dummy functions.
-	var result = _ink_player.evaluate_function("test_function", [3, 4])
-	print(
-			"function 'test_function': [Text Output: '%s'] [Return Value: %s]" % \
-			[result.text_output.replace("\n", "\\n"), result.return_value]
-	)
+	#var result = _ink_player.evaluate_function("test_function", [3, 4])
+	#print(
+	#		"function 'test_function': [Text Output: '%s'] [Return Value: %s]" % \
+	#		[result.text_output.replace("\n", "\\n"), result.return_value]
+	#)
 
-	var result_output = _ink_player.evaluate_function("test_function_output", [3, 4, 5])
-	print(
-			"function 'test_function_output': [Text Output: '%s'] [Return Value: %s]" % \
-			[result_output.text_output.replace("\n", "\\n"), result_output.return_value]
-	)
+	#var result_output = _ink_player.evaluate_function("test_function_output", [3, 4, 5])
+	#print(
+	#		"function 'test_function_output': [Text Output: '%s'] [Return Value: %s]" % \
+	#		[result_output.text_output.replace("\n", "\\n"), result_output.return_value]
+	#)
+	pass
 
 
 func _remove_loading_overlay():
-	remove_child(_loading_animation_player)
-	_story_margin_container.show()
-	_loading_animation_player.queue_free()
-	_loading_animation_player = null
+	remove_child(loadingScreen)
+	#_story_margin_container.show()
+	loadingScreen.queue_free()
+	loadingScreen = null
 
 
 func _connect_signals():
