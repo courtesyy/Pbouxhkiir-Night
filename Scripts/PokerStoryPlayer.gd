@@ -5,7 +5,7 @@ extends Node
 
 
 #VARIABLES TO OBSERVE 
-var variablesArray = ["varName1", "varName2"]
+var variablesArray = ["card", "ending"]
 
 
 
@@ -79,11 +79,13 @@ var _ink_player = InkPlayerFactory.create()
 # Node
 # ############################################################################ #
 
-onready var _story_margin_container = $StoryMarginContainer
-onready var _story_vbox_container = $StoryMarginContainer/StoryScrollContainer/StoryVBoxContainer
-onready var _loading_animation_player = $LoadingAnimationPlayer
-onready var _title_label = $LoadingAnimationPlayer/CenterContainer/VBoxContainer/TitleLabel
-
+#onready var _story_margin_container = $StoryMarginContainer
+#onready var _story_vbox_container = $StoryMarginContainer/StoryScrollContainer/StoryVBoxContainer
+#onready var _loading_animation_player = $LoadingAnimationPlayer
+#onready var _title_label = $LoadingAnimationPlayer/CenterContainer/VBoxContainer/TitleLabel
+onready var loadingScreen = $LoadingScreen
+onready var choicesParent = $ChoicesParent
+onready var speechBubblesParent = $SpeechBubblesParent
 
 # ############################################################################ #
 # Lifecycle
@@ -146,35 +148,43 @@ func _continued(text, tags):
 	_ink_player.continue_story()
 
 
+# display new line from the script 
+#so in this case, reveal next speech bubble
 func _add_label(text):
-	var label = LineLabel.instance()
-	label.text = text
-
-	_story_vbox_container.add_child(label)
+#	var label = LineLabel.instance()
+#	label.text = text
+#
+#	_story_vbox_container.add_child(label)
+	print("displaying: ", text)
+	pass
 
 
 func _prompt_choices(choices):
 	if !choices.empty():
 		_current_choice_container = ChoiceContainer.instance()
-		_story_vbox_container.add_child(_current_choice_container)
+		choicesParent.add_child(_current_choice_container)
 
 		_current_choice_container.create_choices(choices)
 		_current_choice_container.connect("choice_selected", self, "_choice_selected")
 
 
 func _ended():
-	# End of story: let's check whether you took the cup of tea.
-	##var teacup = _ink_player.get_variable("teacup")
 
-	#if teacup:
-	#	print("Took the tea.")
-	#else:
-	##	print("Didn't take the tea.")
-	pass
+	var winner = _ink_player.get_variable("ending")
+
+	if(winner == "annie"):
+		print("ANNIE ENDING")
+	elif(winner == "robot"):
+		print("ROBOT ENDING")
+	elif(winner == "xeno"):
+		print("XENO ENDING")
+	elif(winner == "neutral"):
+		print("NEUTRAL ENDING")
+
 
 
 func _choice_selected(index):
-	_story_vbox_container.remove_child(_current_choice_container)
+	choicesParent.remove_child(_current_choice_container)
 	_current_choice_container.queue_free()
 
 	_ink_player.choose_choice_index(index)
@@ -206,12 +216,13 @@ func _error_encountered(message, type):
 ## exported properties. The sole purpose of this method is to faccilitate
 ## the creation of multiple examples. For context, see main.tscn.
 func _override_story():
-	if ink_file != null:
-		_ink_player.ink_file = ink_file
+	#if ink_file != null:
+	##	_ink_player.ink_file = ink_file
 
-	if !title.empty():
-		_title_label.text = title
+	#if !title.empty():
+	#	_title_label.text = title
 
+	pass
 
 func _should_show_debug_menu(debug):
 	# Contrived external function example, where
@@ -252,10 +263,10 @@ func _evaluate_functions():
 
 
 func _remove_loading_overlay():
-	remove_child(_loading_animation_player)
-	_story_margin_container.show()
-	_loading_animation_player.queue_free()
-	_loading_animation_player = null
+	remove_child(loadingScreen)
+	#_story_margin_container.show()
+	loadingScreen.queue_free()
+	loadingScreen = null
 
 
 func _connect_signals():
