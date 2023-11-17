@@ -5,7 +5,7 @@ extends Node
 
 
 #VARIABLES TO OBSERVE 
-#var variablesArray = ["card", "ending"]
+#todo: card, ending 
 var variablesArray = ["RobotRage"];
 
 

@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/PokerStoryPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Ink/alienpoker.ink.json" type="Resource" id=2]
 
-[node name="PokerStoryPlayerNode" type="Node"]
+[node name="PokerStoryPlayer" type="Node"]
 script = ExtResource( 1 )
 ink_file = ExtResource( 2 )
 title = "Pbouxhkiir Night at Primox Alpha"
