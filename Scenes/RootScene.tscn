@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
+[ext_resource path="res://Scenes/splashscreen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/BG.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/CardChoice.tscn" type="PackedScene" id=4]
 
 [node name="RootScene" type="Node2D"]
 
@@ -12,4 +12,4 @@ z_index = -1
 texture = ExtResource( 2 )
 centered = false
 
-[node name="CardChoice" parent="." instance=ExtResource( 4 )]
+[node name="splashscreen" parent="." instance=ExtResource( 1 )]
