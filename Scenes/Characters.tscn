@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/Characters/annieNormal.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Characters/xenoNormal.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Characters/robotNormal.png" type="Texture" id=3]
+
+[node name="Characters" type="Node"]
+
+[node name="Xeno" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Annie" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Robot" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+centered = false

@@ -1,52 +1,84 @@
 extends Node
 
-var tooltipwidth = 0
-var mousepos = Vector2(0,0)
+enum choices {nobody, xeno, annie, robot}
+var choicefocus = choices.nobody
+var defaulttext = "Your turn! Poke a player to get a card."
 
 func _ready():
-	pass
+	choicefocus = choices.nobody
+	$Prompt.text = defaulttext
+	$Menu.visible = false
 	
-func showSelf(name):
-	name.visible = true
-	tooltipwidth = name.rect_size.x
+
+#hover over robot
+func _on_AreaRobot_mouse_entered():
+	if choicefocus == choices.nobody:
+		$Prompt.text = "Poke 3b42dd00-903a-47b8-87b8-47e0-4447-fcf1-2bed-a6a4-dcf3-484c-9f5420547c893ba1 for a card?"
+
+#hover over annie
+func _on_AreaAnnie_mouse_entered():
+	if choicefocus == choices.nobody:
+		$Prompt.text = "Poke Aniline for a card?"
+
+#hover over xeno
+func _on_AreaXeno_mouse_entered():
+	if choicefocus == choices.nobody:
+		$Prompt.text = "Poke the xenophage for a card?"
+
+#hover over nobody
+func _on_AreaOther_mouse_entered():
+	if choicefocus == choices.nobody:
+		$Prompt.text = "Your turn! Poke a player to get a card."
+
+
+#select xeno
+func _on_AreaXeno_input_event(_viewport, event, _shape_idx):
+	if choicefocus == choices.nobody:
+		if event is InputEventMouseButton:
+			if event.button_index == BUTTON_LEFT and event.pressed:
+				choicefocus = choices.xeno
+				$Prompt.text = "Poke for which card?"
+				$Menu.visible = true
+
+#select annie
+func _on_AreaAnnie_input_event(_viewport, event, _shape_idx):
+	if choicefocus == choices.nobody:
+		if event is InputEventMouseButton:
+			if event.button_index == BUTTON_LEFT and event.pressed:
+				choicefocus = choices.annie
+				$Prompt.text = "Poke for which card?"
+				$Menu.visible = true
+
+#select robot
+func _on_AreaRobot_input_event(_viewport, event, _shape_idx):
+	if choicefocus == choices.nobody:
+		if event is InputEventMouseButton:
+			if event.button_index == BUTTON_LEFT and event.pressed:
+				choicefocus = choices.robot
+				$Prompt.text = "Poke for which card?"
+				$Menu.visible = true
+
+#back button
+func _on_Back_pressed():
+	choicefocus = choices.nobody
+	$Menu.visible = false
+	$Prompt.text = defaulttext
+
+
+#click outside buttons to back out
+func _on_BackOut_input_event(_viewport, event, _shape_idx):
+	if event is InputEventMouseButton:
+			if event.button_index == BUTTON_LEFT and event.pressed:
+				choicefocus = choices.nobody
+				$Menu.visible = false
+				$Prompt.text = defaulttext
+
+#emit usable signal that gives
+func _on_Orbit_pressed():
+	emit_signal("card_selected", "orbit", choicefocus)
+
+func _on_Ship_pressed():
+	emit_signal("card_selected", "ship", choicefocus)
 	
-func hideSelf(name):
-	name.visible = false
-
-func _process(_delta):
-	mousepos = get_viewport().get_mouse_position()
-	#only display if within bounds
-	if mousepos.y >= 563 && mousepos.y <= 710:
-		if mousepos.x >= 28 && mousepos.x <= 376:
-			showSelf($TooltipParent/TooltipXeno)
-			hideSelf($TooltipParent/TooltipAnnie)
-			hideSelf($TooltipParent/TooltipRobot)
-		if mousepos.x >= 467 && mousepos.x <= 815:		
-			hideSelf($TooltipParent/TooltipXeno)
-			showSelf($TooltipParent/TooltipAnnie)
-			hideSelf($TooltipParent/TooltipRobot)
-		if mousepos.x >= 901 && mousepos.x <= 1248:
-			hideSelf($TooltipParent/TooltipXeno)
-			hideSelf($TooltipParent/TooltipAnnie)
-			showSelf($TooltipParent/TooltipRobot)
-		if (mousepos.x <28) || (mousepos.x >376 && mousepos.x <467) ||(mousepos.x >815 && mousepos.x <901) ||(mousepos.x >1248) :
-			hideSelf($TooltipParent/TooltipXeno)
-			hideSelf($TooltipParent/TooltipAnnie)
-			hideSelf($TooltipParent/TooltipRobot)
-	else:
-		hideSelf($TooltipParent/TooltipXeno)
-		hideSelf($TooltipParent/TooltipAnnie)
-		hideSelf($TooltipParent/TooltipRobot)
-	#show up on right or left side
-	if mousepos.x < get_viewport().size.x/2:
-		$TooltipParent.rect_position = mousepos - Vector2(0,0)
-	else:
-		$TooltipParent.rect_position = mousepos - Vector2(tooltipwidth,0)
-
-#show when hovering over buttons
-
-func _on_XenoOrbit_mouse_entered():
-	showSelf($TooltipParent/TooltipXeno)
-
-func _on_XenoOrbit_mouse_exited():
-	hideSelf($TooltipParent/TooltipXeno)
+func _on_Worm_pressed():
+	emit_signal("card_selected", "worm", choicefocus)
