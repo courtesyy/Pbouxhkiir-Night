@@ -6,6 +6,12 @@ randomCardType()
 var card #used to store a given turn's card choice
 */
 
+VAR RobotRage = 0
+VAR AnnieRage = 0
+VAR XenoRage = 0
+
+-> start
+
 ==start==
 
 Cool Pbouxhkiir game
@@ -34,10 +40,10 @@ ANNIE: You can’t not have one forever.
 *[next]->turn1xeno
 
 ==turn1xeno==
-XENOPHAGE: Ok, um, Annie, do you have any atoms?
+XENOPHAGE: Ok, um, Annie, do you have any orbit?
 ANNIE: Yeahhh. Yeah I sure do. [pissed]
 XENOPHAGE: Thaaank you.
-//moveCard(annie,xeno,atom)
+//moveCard(annie,xeno,orbit)
 *[next]->turn1player
 
 //-----------turn 1 (player)-------------
