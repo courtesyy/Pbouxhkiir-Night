@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/splashscreen.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/BG.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/splash screen.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/splashScreen0.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/splashScreen1.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/splashScreen3.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/splashScreen2.png" type="Texture" id=6]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
@@ -14,14 +17,6 @@ script = ExtResource( 1 )
 texture = ExtResource( 2 )
 centered = false
 
-[node name="SplashScreen" type="Sprite" parent="TitleBg1"]
-texture = ExtResource( 3 )
-centered = false
-
-[node name="Overlay" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-
 [node name="Proceed" type="Button" parent="."]
 margin_right = 1285.0
 margin_bottom = 726.0
@@ -30,5 +25,23 @@ custom_styles/pressed = SubResource( 1 )
 custom_styles/focus = SubResource( 1 )
 custom_styles/disabled = SubResource( 1 )
 custom_styles/normal = SubResource( 1 )
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="0" type="Sprite" parent="Sprites"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="1" type="Sprite" parent="Sprites"]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="2" type="Sprite" parent="Sprites"]
+texture = ExtResource( 6 )
+centered = false
+
+[node name="3" type="Sprite" parent="Sprites"]
+texture = ExtResource( 5 )
+centered = false
 
 [connection signal="pressed" from="Proceed" to="." method="_on_Proceed_pressed"]
