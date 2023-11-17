@@ -1,8 +1,17 @@
-extends Node
+extends CanvasItem
+
+onready var textLabel = $BubbleMargin/TextMargin/Text
 
 func _ready():
 	pass
 
+# called when displayed for the first time
+func display():
+	print_debug("displaying a bubble")
+	#set this visible so the other event triggers on visibility change 
+	#on visibiliyu change, it will play a sound
+	show();
 
-#when shown, make a noise 
-#bubbles change "[card]" to card name
+func setText(text):
+	textLabel.text = text
+
