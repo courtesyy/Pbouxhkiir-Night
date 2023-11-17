@@ -207,11 +207,7 @@ func get_current_choices() -> Array:
 		_push_null_story_error()
 		return []
 
-	var text_choices = []
-	for choice in _story.current_choices:
-		text_choices.append(choice.text)
-
-	return text_choices
+	return _story.current_choices.duplicate()
 
 
 ## The current tags. Empty is there are no tags for the current line.
@@ -254,6 +250,26 @@ func get_current_flow_name() -> String:
 		return ""
 
 	return _story.state.current_flow_name
+
+
+## The names of all flows currently alive.
+var alive_flow_names: Array setget , get_alive_flow_names
+func get_alive_flow_names() -> Array:
+	if _story == null:
+		_push_null_story_error()
+		return []
+
+	return _story.alive_flow_names
+
+
+## `true` if the current flow is the default flow.
+var current_flow_is_default_flow: bool setget , get_current_flow_is_default_flow
+func get_current_flow_is_default_flow() -> bool:
+	if _story == null:
+		_push_null_story_error()
+		return false
+
+	return _story.current_flow_is_default_flow
 
 
 ## The current story path.
@@ -353,28 +369,21 @@ func destroy() -> void:
 
 ## Continues the story.
 func continue_story() -> String:
-	print_debug("calling continue_story in ink_player")
 	if _story == null:
-		print_debug("story is null")
 		_push_null_story_error()
 		return ""
 
 	var text: String = ""
-	if self.can_continue: #its this
-		print_debug("self.can_continue")
+	if self.can_continue:
 		_story.continue()
 
 		text = self.current_text
-		print_debug("text is ", text)
 
 	elif self.has_choices:
-		print_debug("self_has_choices")
 		emit_signal("prompt_choices", self.current_choices)
 	else:
-		print_debug("ended")
 		emit_signal("ended")
 
-	print_debug("returning text ", text)
 	return text
 
 ## An "asynchronous" version of `continue_story` that only partially evaluates
