@@ -13,4 +13,3 @@ texture = ExtResource( 2 )
 centered = false
 
 [node name="splashscreen" parent="." instance=ExtResource( 1 )]
-visible = false

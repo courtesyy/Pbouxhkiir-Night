@@ -40,7 +40,6 @@ VAR XenoRage = 0
 -> start
 
 
-
 ==start==
 
 
@@ -401,20 +400,22 @@ XENOPHAGE: I’m uh. I’m sorry for bringing it up.
 
 ==turn4xeno==
 ~card = randomCardType()
-XENOPHAGE: Hey Annie, do you have any {card}s?
+XENOPHAGE: Annie, do you have any {card}s?
+ANNIE: Yknow, I’m getting a real sense of deja vu.
+XENOPHAGE: Really?
+ANNIE: Yeahhh. Something about this feels familiar.
+XENOPHAGE: Probably your imagination.
 *[has it]->turn4xenoannietrue
 *[doesn't]->turn4xenoanniefalse
 ==turn4xenoannietrue==
-ANNIE: Hey xenophage, do you have a problem?
-XENOPHAGE: Annie…
-ANNIE: Yes, YES I have it.
+ANNIE: Yeah, probably. Here’s your card, I guess.
 ~moveCard("annie","xeno",card)
-*[next] -> turn4player
+*[next]->turn4player
 ==turn4xenoanniefalse==
-ANNIE: As if! As IF I would have one.
-XENOPHAGE: Alright, I’ll go fish.
-~drawCard("annie")
-*[next] -> turn4player
+ANNIE: Yeah, probably. Don’t have your card, by the way.
+~drawCard("xeno")
+*[next]->turn4player
+
 
 //-----------turn 4 (player)-------------
 ==turn4player==
@@ -674,21 +675,21 @@ ANNIE: You can just say “go fish.” Just say “go fish.”
 
 ==turn7xeno==
 ~card = randomCardType()
-XENOPHAGE: Annie, do you have any {card}s?
-ANNIE: Yknow, I’m getting a real sense of deja vu. 
-XENOPHAGE: Really?
-ANNIE: Yeahhh. Something about this feels familiar.
-XENOPHAGE: Probably your imagination.
+XENOPHAGE: Hey Annie, do you have any {card}s?
+ANNIE: Hey Xenophage, do you have a problem?
+XENOPHAGE: Annie…
 *[has it]->turn7xenoannietrue
 *[doesn't]->turn7xenoanniefalse
 ==turn7xenoannietrue==
-ANNIE: Yeah, probably. Here’s your card, I guess.
+ANNIE: Yes, YES I have it.
 ~moveCard("annie","xeno",card)
-*[next]->turn7player
+*[next] -> turn7player
 ==turn7xenoanniefalse==
-ANNIE: Yeah, probably. Don’t have your card, by the way.
-~drawCard("xeno")
-*[next]->turn7player
+ANNIE: As if! As IF I would have one.
+XENOPHAGE: Alright, I’ll go fish. Yeesh.
+~drawCard("annie")
+*[next] -> turn7player
+
 
 //-----------turn 7 (player)-------------
 ==turn7player==

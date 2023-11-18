@@ -7,7 +7,6 @@
 [sub_resource type="Animation" id=2]
 resource_name = "EarthExplosion"
 length = 2.8
-loop = true
 tracks/0/type = "audio"
 tracks/0/path = NodePath("AnimationPlayer/AudioStreamPlayer")
 tracks/0/interp = 1

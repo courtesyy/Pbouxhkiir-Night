@@ -46,18 +46,19 @@ margin_right = 473.0
 margin_bottom = 142.0
 
 [node name="BubbleMargin" parent="Dialogues/SpeechBubbleAnnie" index="0"]
-margin_right = 151.0
+margin_top = 18.0
+margin_right = 172.0
 margin_bottom = 76.0
 
 [node name="Bubble" parent="Dialogues/SpeechBubbleAnnie/BubbleMargin" index="0"]
-margin_right = 151.0
-margin_bottom = 98.0
+margin_right = 172.0
+margin_bottom = 58.0
 
 [node name="Text" parent="Dialogues/SpeechBubbleAnnie/BubbleMargin" index="1"]
-margin_top = 25.0
-margin_right = 151.0
-margin_bottom = 72.0
-text = "Yeahhh. Yeah I sure do."
+margin_top = 18.0
+margin_right = 172.0
+margin_bottom = 40.0
+text = "Nope. No, I do not."
 
 [node name="TailBoxConnector" parent="Dialogues/SpeechBubbleAnnie/Tails" index="0"]
 visible = false
@@ -84,7 +85,7 @@ margin_bottom = 75.0
 margin_top = 22.0
 margin_right = 143.0
 margin_bottom = 53.0
-text = "Thaaank you."
+text = "Ah well."
 
 [node name="TailBoxConnector" parent="Dialogues/SpeechBubbleXeno2/Tails" index="0"]
 points = PoolVector2Array( -130, -332, -126, -292, -119, -271, -106, -255, -79, -240, -71, -217, -73, -199 )
