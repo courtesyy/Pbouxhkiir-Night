@@ -6,14 +6,16 @@ extends Node
 # has a bunch of cards 
 # could potentially control layout
 
-var cards = []
+func _ready():
+	# when we start, load our children as our hand
+	# then, shuffle ourself 
+	pass
 
-func addCard(card):
-	pass 
-
+# does this hand have a card of a suit?
 func hasCard(suit):
 	pass 
 
-func takeCard(card, newHand):
+# take a card out of this hand and put it in the other hand 
+func giveCard(card, newHand):
 	pass
 
