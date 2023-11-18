@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scenes/Dialogues/DialogueParent.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/SpeechBubbleRobot.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/SpeechBubbleAnnie.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Dialogues/-DialogueParent.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Bubbles/SpeechBubbleRobot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Bubbles/SpeechBubbleAnnie.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/Characters/annieRight.png" type="Texture" id=4]
 
 [node name="turn1robot" instance=ExtResource( 1 )]

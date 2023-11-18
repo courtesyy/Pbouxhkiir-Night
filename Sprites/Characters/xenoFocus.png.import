@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cardTalking.png-ae36c35f9f0da77e6ba57794aad8f5cb.stex"
+path="res://.import/xenoFocus.png-24484d2339bf01e30f824c6a9e3529fa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cardTalking.png"
-dest_files=[ "res://.import/cardTalking.png-ae36c35f9f0da77e6ba57794aad8f5cb.stex" ]
+source_file="res://Sprites/Characters/xenoFocus.png"
+dest_files=[ "res://.import/xenoFocus.png-24484d2339bf01e30f824c6a9e3529fa.stex" ]
 
 [params]
 

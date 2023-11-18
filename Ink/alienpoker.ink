@@ -20,12 +20,13 @@ changeSprite(char, sprite) (change a character sprite ($Xeno, $Annie, $Robot) in
 
 Important values:
 Card: “orbit”, “ship”, “worm”, "rahma", "raye", "cool worm", "byleth"
-Joke cards: "AI1", "AI2", "AI3", "you won"
+Event cards: "AI1", "AI2", "AI3"
+Joke cards: "you won", "yugioh"
 Char: “xeno”, “annie”, “robot” 
 */
 
 //Variables:
-VAR ending = "neutral" //values: annie, robot, xeno, neutral. Determines which splash screen shows at the end. (not done)
+VAR ending = "neutral" //values: annie, robot, xeno, neutral. Determines which splash screen shows at the end.
 VAR choiceMode = "card" //values are either “card” or “dialogue”. Set this before a choice comes up to display the correct UI.
 VAR card = "none" //used per-turn to store the card used, e.g. if we generate a random card that turn
 
@@ -110,7 +111,7 @@ ANNIE: Whatever, here’s your card.
 //moveCard("annie","player",card)
 ~AnnieRage++
 *[next] -> turn2robot
-==turn1playeranniefalse
+==turn1playeranniefalse==
 ANNIE: I knew you’d ask for that.
 ANNIE: No, go fish.
 //drawCardPlayer()
