@@ -4,7 +4,7 @@
 [ext_resource path="res://Sprites/Characters/xenoNormal.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Characters/robotNormal.png" type="Texture" id=3]
 
-[node name="Characters" type="Node"]
+[node name="Characters" type="Control"]
 
 [node name="Xeno" type="Sprite" parent="."]
 texture = ExtResource( 2 )

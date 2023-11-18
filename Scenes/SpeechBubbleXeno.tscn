@@ -9,6 +9,10 @@
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 150, 150 )
+margin_left = 35.0
+margin_right = 30.0
+margin_top = 33.0
+margin_bottom = 33.0
 
 [sub_resource type="DynamicFont" id=2]
 size = 22
