@@ -82,3 +82,9 @@ func _on_Ship_pressed():
 	
 func _on_Worm_pressed():
 	emit_signal("card_selected", "worm", choicefocus)
+
+func _on_Raye_pressed():
+	emit_signal("card_selected", "raye", choicefocus)
+
+func _on_Coolworm_toggled(button_pressed):
+	emit_signal("card_selected", "cool worm", choicefocus)

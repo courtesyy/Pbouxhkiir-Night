@@ -19,9 +19,8 @@ randomCardType() (pick random card type) (not done)
 changeSprite(char, sprite) (change a character sprite ($Xeno, $Annie, $Robot) in “Characters.tscn” to a different sprite) (not done)
 
 Important values:
-Card: “orbit”, “ship”, “worm”, "rahma", "raye", "cool worm", "byleth"
+Card: “orbit”, “ship”, “worm”, "raye", "cool worm"
 Event cards: "AI1", "AI2", "AI3"
-Joke cards: "you won", "yugioh"
 Char: “xeno”, “annie”, “robot” 
 */
 
@@ -58,7 +57,8 @@ The winner of tonight’s game will receive 83 quintillion CHAGbucks™, and be 
 
 //--------------------turn 1-----------------------------
 ==turn1robot==
-ROBOT: Annie, do you have any worms?
+//card = randomCardType()
+ROBOT: Annie, do you have any {card}s?
 ANNIE: No, I DON’T. Amateur mistake. Go fish.
 ROBOT: …
 //drawCard("robot")
@@ -75,10 +75,11 @@ ANNIE: You can’t not have one forever.
 *[next]->turn1xeno
 
 ==turn1xeno==
-XENOPHAGE: Ok, um, Annie, do you have any rahmas?
+//card = randomCardType()
+XENOPHAGE: Ok, um, Annie, do you have any {card}s?
 ANNIE: Yeahhh. Yeah I sure do.
 XENOPHAGE: Thaaank you.
-//moveCard("annie","xeno","rahma")
+//give xenophage a card
 *[next]->turn1player
 
 //-----------turn 1 (player)-------------
@@ -887,6 +888,6 @@ ROBOT: Now.
 ==endingxeno5==
 YOU LOST!!!!!!!!
 While you were busy being torn to pieces, chewed, then regurgitated into the awaiting mandibles of autoparoxymorphic paralarvae, Aniline and 3b42dd00-903a-47b8-87b8-47e0-4447-fcf1-2bed-a6a4-dcf3-484c-9f5420547c893ba1 both pressed the detonation button simultaneously. The Earth was destroyed, of course, but at least you weren’t around to see it.
-
+-> END
 
 	-> END

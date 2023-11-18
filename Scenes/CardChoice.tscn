@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/CardChoice.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/SketchnoteRegular.TTF" type="DynamicFontData" id=2]
@@ -11,6 +11,10 @@
 [ext_resource path="res://Sprites/UI/BackHover.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/UI/BackNormal.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/Characters.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Sprites/UI/iconCoolwormHover.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/UI/iconRaye.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/UI/iconCoolworm.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/UI/iconRayeHover.png" type="Texture" id=19]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
@@ -63,15 +67,14 @@ priority = 1.0
 polygon = PoolVector2Array( 369, 529, 157, 518, -30, 509, 33, 422, 28, 356, -26, 341, -87, 252, -19, 218, -18, 208, 60, 184, 52, 100, 66, 70, 81, 20, 114, 4, 156, 6, 189, 65, 200, 73, 213, 125, 203, 166, 223, 133, 269, 117, 318, 134, 342, 190, 324, 239, 324, 353, 282, 354, 272, 406, 339, 449 )
 
 [node name="Menu" type="Control" parent="."]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="Cards" type="HFlowContainer" parent="Menu"]
-margin_left = 457.0
+margin_left = 342.0
 margin_top = 190.0
-margin_right = 807.0
-margin_bottom = 339.0
+margin_right = 952.0
+margin_bottom = 492.0
 
 [node name="Orbit" type="TextureButton" parent="Menu/Cards"]
 margin_right = 113.0
@@ -96,6 +99,22 @@ shortcut_in_tooltip = false
 texture_normal = ExtResource( 3 )
 texture_hover = ExtResource( 8 )
 
+[node name="Raye" type="TextureButton" parent="Menu/Cards"]
+margin_left = 351.0
+margin_right = 464.0
+margin_bottom = 149.0
+shortcut_in_tooltip = false
+texture_normal = ExtResource( 15 )
+texture_hover = ExtResource( 19 )
+
+[node name="Coolworm" type="TextureButton" parent="Menu/Cards"]
+margin_left = 468.0
+margin_right = 581.0
+margin_bottom = 149.0
+shortcut_in_tooltip = false
+texture_normal = ExtResource( 17 )
+texture_hover = ExtResource( 14 )
+
 [node name="Back" type="TextureButton" parent="Menu"]
 margin_left = 547.0
 margin_top = 347.0
@@ -107,7 +126,7 @@ texture_hover = ExtResource( 9 )
 [node name="BackOut" type="Area2D" parent="Menu"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Menu/BackOut"]
-polygon = PoolVector2Array( 1365, 766, -23, 739, -78, 262, 450, 234, 458, 346, 546, 347, 553, 442, 723, 446, 720, 346, 808, 339, 809, 184, 453, 187, 393, 431, -33, 460, 0, 0, 1334, -34 )
+polygon = PoolVector2Array( 1365, 766, -23, 739, -78, 262, 392, 344, 546, 347, 553, 442, 721, 444, 720, 346, 929, 343, 929, 185, 339, 187, 340, 344, 375, 345, 283, 369, -33, 460, 0, 0, 1334, -34 )
 
 [connection signal="mouse_entered" from="AreaOther" to="." method="_on_AreaOther_mouse_entered"]
 [connection signal="input_event" from="AreaXeno" to="." method="_on_AreaXeno_input_event"]
@@ -119,5 +138,7 @@ polygon = PoolVector2Array( 1365, 766, -23, 739, -78, 262, 450, 234, 458, 346, 5
 [connection signal="pressed" from="Menu/Cards/Orbit" to="." method="_on_Orbit_pressed"]
 [connection signal="pressed" from="Menu/Cards/Ship" to="." method="_on_Ship_pressed"]
 [connection signal="pressed" from="Menu/Cards/Worm" to="." method="_on_Worm_pressed"]
+[connection signal="pressed" from="Menu/Cards/Raye" to="." method="_on_Raye_pressed"]
+[connection signal="toggled" from="Menu/Cards/Coolworm" to="." method="_on_Coolworm_toggled"]
 [connection signal="pressed" from="Menu/Back" to="." method="_on_Back_pressed"]
 [connection signal="input_event" from="Menu/BackOut" to="." method="_on_BackOut_input_event"]
