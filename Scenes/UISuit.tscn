@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Card.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Cards/cardOrbit.png" type="Texture" id=2]
+
+[node name="Card" type="MarginContainer"]
+anchor_right = 0.149
+anchor_bottom = 0.394
+margin_right = 0.279999
+margin_bottom = 0.319977
+script = ExtResource( 1 )
+cardtype = "worm"
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false

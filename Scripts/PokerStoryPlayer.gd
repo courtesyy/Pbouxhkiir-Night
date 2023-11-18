@@ -250,6 +250,7 @@ func _bind_externals():
 
 	_ink_player.observe_variables(variablesArray, self, "_observe_variables")
 	_ink_player.bind_external_function("should_show_debug_menu", self, "_should_show_debug_menu")
+	bindPokerFunctions()
 
 
 func _evaluate_functions():
@@ -287,3 +288,67 @@ func _connect_optional_signals():
 
 	_ink_player.connect("exception_raised", self, "_exception_raised")
 	_ink_player.connect("error_encountered", self, "_error_encountered")
+
+
+
+##### mine 
+
+#exteneral fuctions 
+
+func bindPokerFunctions():
+	_ink_player.bind_external_function("drawCard", self, "drawCard")
+	_ink_player.bind_external_function("drawCardPlayer", self, "drawCardPlayer")
+	_ink_player.bind_external_function("moveCard", self, "moveCard")
+	_ink_player.bind_external_function("giveCardPlayer", self, "giveCardPlayer")
+	_ink_player.bind_external_function("drawCardAll", self, "drawCardAll")
+	_ink_player.bind_external_function("checkCard", self, "checkCard")
+	_ink_player.bind_external_function("randomCardType", self, "randomCardType")
+	_ink_player.bind_external_function("changeSprite", self, "changeSprite")
+
+# give a given character a card from the deck. "robot" "annie" or "xeno"
+func drawCard(character):
+	print_debug("called draw card for ", character)
+	pass 
+
+# give the player a card from the deck 
+func drawCardPlayer():
+	print_debug("called draw card for player")
+	pass
+
+# move a card from one hand to another
+func moveCard(from, to, card):
+	print_debug("called move card")
+	pass
+
+# force give the player a specific card (these are stored in a special hand)
+func giveCardPlayer(card):
+	print_debug("called give card player ", card)
+	pass 
+
+# all 4 players draw a card (at the beginning of each turn)
+func drawCardAll():
+	drawCardPlayer()
+	drawCard("robot")
+	drawCard("annie")
+	drawCard("xeno")
+
+# return true if a character has the card, false if not 
+# this is unused 
+func checkCard(character):
+	pass 
+
+# pick a random card type to ask for 
+func randomCardType():
+	print_debug("called pick random")
+	pass 
+
+# change a character sprite ($Xeno, $Annie, $Robot) in “Characters.tscn” to a different sprite
+# looks unused
+func changeSprite():
+	pass
+
+# load next chunk of dialogue
+var sceneIndex = 0 
+export (Array, PackedScene) var sceneList
+func nextScene():
+	pass
