@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cardTalkingWet.png-538c9ba2be3379722356bbc15e92688b.stex"
+path="res://.import/cardRaye.png-5f0b5ad887fc8fde14bb7f6cd4a08bde.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cardTalkingWet.png"
-dest_files=[ "res://.import/cardTalkingWet.png-538c9ba2be3379722356bbc15e92688b.stex" ]
+source_file="res://Sprites/Cards/cardRaye.png"
+dest_files=[ "res://.import/cardRaye.png-5f0b5ad887fc8fde14bb7f6cd4a08bde.stex" ]
 
 [params]
 

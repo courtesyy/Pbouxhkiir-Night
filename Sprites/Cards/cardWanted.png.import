@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cardOrbit.png-13d2c36c40fbdb00c712d100c910a119.stex"
+path="res://.import/cardWanted.png-4812f492d1b1f6fff1bd1f5cca07e2c5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cardOrbit.png"
-dest_files=[ "res://.import/cardOrbit.png-13d2c36c40fbdb00c712d100c910a119.stex" ]
+source_file="res://Sprites/Cards/cardWanted.png"
+dest_files=[ "res://.import/cardWanted.png-4812f492d1b1f6fff1bd1f5cca07e2c5.stex" ]
 
 [params]
 

@@ -9,9 +9,13 @@
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 150, 150 )
+margin_left = 35.0
+margin_right = 30.0
+margin_top = 33.0
+margin_bottom = 33.0
 
 [sub_resource type="DynamicFont" id=2]
-size = 22
+size = 27
 font_data = ExtResource( 5 )
 
 [node name="SpeechBubbleXeno" instance=ExtResource( 1 )]
@@ -20,8 +24,8 @@ font_data = ExtResource( 5 )
 custom_styles/panel = SubResource( 1 )
 
 [node name="Text" parent="BubbleMargin" index="1"]
-margin_top = 11.0
-margin_bottom = 95.0
+margin_top = 4.0
+margin_bottom = 103.0
 custom_colors/font_color = Color( 0.768627, 1, 0.145098, 1 )
 custom_fonts/font = SubResource( 2 )
 
