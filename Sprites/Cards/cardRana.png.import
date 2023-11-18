@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cardByleth.png-8dedf3427a1695bbba6e01febcd79abf.stex"
+path="res://.import/cardRana.png-e318b5412143718eb61a38f0069e1588.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Cards/cardByleth.png"
-dest_files=[ "res://.import/cardByleth.png-8dedf3427a1695bbba6e01febcd79abf.stex" ]
+source_file="res://Sprites/Cards/cardRana.png"
+dest_files=[ "res://.import/cardRana.png-e318b5412143718eb61a38f0069e1588.stex" ]
 
 [params]
 

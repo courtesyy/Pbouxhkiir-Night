@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cardDiscover.png-ebf3f3ae686b68196ffba39e32476ac2.stex"
+path="res://.import/cardTed.png-96528867ac5d315ed2a16a8ee76ab216.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Cards/cardDiscover.png"
-dest_files=[ "res://.import/cardDiscover.png-ebf3f3ae686b68196ffba39e32476ac2.stex" ]
+source_file="res://Sprites/Cards/cardTed.png"
+dest_files=[ "res://.import/cardTed.png-96528867ac5d315ed2a16a8ee76ab216.stex" ]
 
 [params]
 
