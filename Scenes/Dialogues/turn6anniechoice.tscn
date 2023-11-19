@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/DialogueChoice.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/ChoiceBubble.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/Characters/annieCard2.png" type="Texture" id=3]
+[ext_resource path="res://Sounds/menuhover.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Sounds/menuselect.mp3" type="AudioStream" id=5]
 [ext_resource path="res://Scenes/Characters.tscn" type="PackedScene" id=11]
 
 [node name="CardChoice" type="Node"]
@@ -34,6 +36,16 @@ margin_bottom = 294.0
 
 [node name="Text" parent="Menu/ChoiceBubble2/BubbleMargin" index="1"]
 text = "It’s really good, actually."
+
+[node name="Hover" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 610, 331 )
+stream = ExtResource( 4 )
+bus = "SFX"
+
+[node name="Select" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 610, 331 )
+stream = ExtResource( 5 )
+bus = "SFX"
 
 [connection signal="pressed" from="Menu/ChoiceBubble/BubbleMargin/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Menu/ChoiceBubble2/BubbleMargin/Button" to="." method="_on_Button2_pressed"]
