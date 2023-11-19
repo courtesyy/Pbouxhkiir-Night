@@ -59,6 +59,7 @@ anims/RESET = SubResource( 3 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AnimationPlayer"]
 stream = ExtResource( 151 )
+bus = "SFX"
 
 [node name="Sprite" type="Sprite" parent="AnimationPlayer"]
 position = Vector2( -3, 37 )

@@ -7,7 +7,12 @@ func _ready():
 
 func _on_Button_pressed():
 	emit_signal("choice_selected", 0)
+	$Select.play()
 
 
 func _on_Button2_pressed():
 	emit_signal("choice_selected", 1)
+	$Select.play()
+
+func _on_Button_mouse_entered():
+	$Hover.play()

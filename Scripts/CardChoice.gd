@@ -63,6 +63,7 @@ func _on_Back_pressed():
 	choicefocus = choices.nobody
 	$Menu.visible = false
 	$Prompt.text = defaulttext
+	$Back.play()
 
 
 #click outside buttons to back out
@@ -76,15 +77,25 @@ func _on_BackOut_input_event(_viewport, event, _shape_idx):
 #emit usable signal that gives
 func _on_Orbit_pressed():
 	emit_signal("card_selected", "orbit", choicefocus)
-
+	$Select.play()
+	
 func _on_Ship_pressed():
 	emit_signal("card_selected", "ship", choicefocus)
+	$Select.play()
 	
 func _on_Worm_pressed():
 	emit_signal("card_selected", "worm", choicefocus)
+	$Select.play()
 
 func _on_Raye_pressed():
 	emit_signal("card_selected", "raye", choicefocus)
+	$Select.play()
 
-func _on_Coolworm_toggled(button_pressed):
-	emit_signal("card_selected", "cool worm", choicefocus)
+func _on_Coolworm_pressed():
+	emit_signal("card_selected", "coolworm", choicefocus)
+	$Select.play()
+
+func _on_button_mouse_entered():
+	$Hover.play()
+
+
