@@ -46,6 +46,6 @@ func receiveClick():
 
 	nextNode.listeningForClicks = true 
 
-	if(nextNode.get_child_count() > 0):
+	if(nextNode.get_child_count() == 1):
 		nextNode.get_child(0).play()
 
