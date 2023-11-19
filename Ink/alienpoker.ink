@@ -1043,7 +1043,7 @@ ANNIE: Sayonara, shitheads.
 
 //Aniline destroyed the space station, killing you and everyone else aboard. The CHAGTAD® Demolition Company was sued by a certain xenophage’s large and litigious family, who received eighty-three quintillion CHAGbucks™ in compensation. Now bankrupt, CHAGTAD® was unable to demolish the Earth, and the larger galaxy soon forgot about the little blue planet.
 
-*[next]-> END
+*[next]->last
 
 //--------------------robot ending-----------------------------
 ==endingrobot==
@@ -1084,8 +1084,7 @@ ROBOT: NOW.
 ~loadScene("endingrobot5")
 //YOU LOST!!!!!!!!
 //After winning(?) the Pbouxhkiir match, 3b42dd00-903a-47b8-87b8-47e0-4447-fcf1-2bed-a6a4-dcf3-484c-9f5420547c893ba1 repeatedly hit the detonate button for thirty minutes, destroying the Earth thousands of times. There is no planet for you to return to, but inexplicably, Annie let you crash at her place. The two of you probably went all kinds of zany adventures, which might sound cool, but don’t kid yourself here, you absolutely lost.
-
-*[next]-> END
+*[next]->last
 
 
 //--------------------annie ending-----------------------------
@@ -1113,7 +1112,7 @@ ANNIE: Earth gone! No more Earth! And now, no more casino!
 ~loadScene("endingannie3")
 //YOU LOST!!!!!!!!
 //In an impressive display of bad sportsmanstarship, Aniline prematurely destroyed the Earth. 2.37 seconds later, she destroyed the Primox Alpha (the CHAGTAD® Company Casino ship), killing you and everyone else aboard. But for those 2.37 seconds, you were the last surviving Earthling. No Earthling had ever been as alone as you were for those 2.37 seconds. Every person you had ever known and every place you had ever seen, all gone, with your memory as the single testament to their existence. There is no word for the emotion such a person would feel. On the bright side, there was very little time for you to realize how very, very, VERY sad you should have felt about the whole thing.
-*[next]-> END
+*[next]->last
 
 //--------------------xeno ending-----------------------------
 ==endingxeno==
@@ -1154,5 +1153,9 @@ ROBOT: Now.
 ~loadScene("endingxeno5")
 //YOU LOST!!!!!!!!
 //While you were busy being torn to pieces, chewed, then regurgitated into the awaiting mandibles of autoparoxymorphic paralarvae, Aniline and 3b42dd00-903a-47b8-87b8-47e0-4447-fcf1-2bed-a6a4-dcf3-484c-9f5420547c893ba1 both pressed the detonation button simultaneously. The Earth was destroyed, of course, but at least you weren’t around to see it.
+*[next]->last
+
+==last==
+~loadScene("last")
 *[next]-> END
 
