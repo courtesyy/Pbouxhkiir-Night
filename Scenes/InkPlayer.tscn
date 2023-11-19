@@ -43,6 +43,6 @@ bus = "Music"
 stream = ExtResource( 4 )
 bus = "Music"
 
-[node name="SceneParent" type="Node" parent="."]
+[node name="SceneParent" type="Node2D" parent="."]
 
 [node name="dummy child" type="Node" parent="SceneParent"]

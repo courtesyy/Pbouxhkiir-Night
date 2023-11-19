@@ -2,18 +2,20 @@ extends CanvasItem
 
 onready var textLabel = $BubbleMargin/TextMargin/Text
 
+onready var sound = $ShowSound
+
 func _ready():
 	pass
 
 # called when displayed for the first time
-func display():
-	print_debug("displaying a bubble")
-	#set this visible so the other event triggers on visibility change 
-	#on visibiliyu change, it will play a sound
-	show();
-
-func setText(text):
+func displayBubble(text):
+	print("displaying bubble with ", text)
+	playSoundIfExists()
 	textLabel.text = text
-	
-func _on_SpeechBubble_visibility_changed():
-	$ShowSound.play()
+	show()
+
+func playSoundIfExists():
+	if(sound != null):
+		sound.play()
+	else:
+		print_debug("no sound on this bubble")

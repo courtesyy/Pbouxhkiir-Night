@@ -78,7 +78,6 @@ var _ink_player = InkPlayerFactory.create()
 #onready var _title_label = $LoadingAnimationPlayer/CenterContainer/VBoxContainer/TitleLabel
 onready var loadingScreen = $LoadingScreen
 onready var choicesParent = $ChoicesParent
-onready var speechBubblesParent = $SpeechBubblesParent
 
 # ############################################################################ #
 # Lifecycle
@@ -150,11 +149,24 @@ func _continued(text, tags):
 # display new line from the script 
 #so in this case, reveal next speech bubble
 func _add_label(text):
+
+	#print("displaying: ", text)
+
 #	var label = LineLabel.instance()
 #	label.text = text
 #
 #	_story_vbox_container.add_child(label)
-	print("displaying: ", text)
+
+	# ok so this is where we display the next 
+
+	if(lastScene == null):
+		return 
+	
+	#########
+
+	# but then how to wait?
+
+	
 	pass
 
 
