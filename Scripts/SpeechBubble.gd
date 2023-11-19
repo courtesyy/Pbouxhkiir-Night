@@ -9,9 +9,15 @@ func _ready():
 
 # called when displayed for the first time
 func displayBubble(text):
-	sound.play()
+	playSoundIfExists()
 	textLabel.text = text
 	show()
 	
 func _on_SpeechBubble_visibility_changed():
-	$ShowSound.play()
+	playSoundIfExists()
+
+func playSoundIfExists():
+	if(sound != null):
+		sound.play()
+	else:
+		print_debug("no sound on this bubble")

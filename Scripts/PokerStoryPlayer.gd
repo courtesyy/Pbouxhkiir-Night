@@ -78,7 +78,6 @@ var _ink_player = InkPlayerFactory.create()
 #onready var _title_label = $LoadingAnimationPlayer/CenterContainer/VBoxContainer/TitleLabel
 onready var loadingScreen = $LoadingScreen
 onready var choicesParent = $ChoicesParent
-onready var speechBubblesParent = $SpeechBubblesParent
 
 # ############################################################################ #
 # Lifecycle
