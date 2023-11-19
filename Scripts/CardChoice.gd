@@ -92,7 +92,7 @@ func _on_Raye_pressed():
 	$Select.play()
 
 func _on_Coolworm_pressed():
-	emit_signal("card_selected", "coolworm", choicefocus)
+	emit_signal("card_selected", "cool worm", choicefocus)
 	$Select.play()
 
 func _on_button_mouse_entered():
