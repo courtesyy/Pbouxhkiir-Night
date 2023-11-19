@@ -345,6 +345,7 @@ ANNIE: Ok Computer, do you have any uterusi?
 ROBOT: I’m a robot. Why would I?
 *[next]->turn3annie2
 ==turn3annie2==
+~loadScene("turn3annie2")
 ANNIE: I swear to God-
 ANNIE: Rayguns, do you have any rayguns?
 *[next]->
