@@ -31,3 +31,9 @@ text = "LOADING..."
 [node name="Xeno" type="Node2D" parent="Endings"]
 
 [node name="Robot" type="Node2D" parent="Endings"]
+
+[node name="SongPlayer" type="Node2D" parent="."]
+
+[node name="Song1" type="AudioStreamPlayer" parent="SongPlayer"]
+
+[node name="Song2" type="AudioStreamPlayer" parent="SongPlayer"]

@@ -2,16 +2,9 @@ extends Node
 
 
 
-
-
 #VARIABLES TO OBSERVE 
 #todo: card, ending 
-var variablesArray = ["RobotRage"];
-
-
-
-
-
+var variablesArray = ["choiceMode", "ending"];
 
 
 
@@ -296,16 +289,21 @@ func _connect_optional_signals():
 #exteneral fuctions 
 
 func bindPokerFunctions():
-	_ink_player.bind_external_function("drawCard", self, "drawCard")
-	_ink_player.bind_external_function("drawCardPlayer", self, "drawCardPlayer")
-	_ink_player.bind_external_function("moveCard", self, "moveCard")
-	_ink_player.bind_external_function("giveCardPlayer", self, "giveCardPlayer")
-	_ink_player.bind_external_function("drawCardAll", self, "drawCardAll")
-	_ink_player.bind_external_function("checkCard", self, "checkCard")
-	_ink_player.bind_external_function("randomCardType", self, "randomCardType")
+	_ink_player.bind_external_function("drawCard", self, "drawCard", false)
+	_ink_player.bind_external_function("drawCardPlayer", self, "drawCardPlayer", false)
+	_ink_player.bind_external_function("moveCard", self, "moveCard", false)
+	_ink_player.bind_external_function("giveCardPlayer", self, "giveCardPlayer", false)
+	_ink_player.bind_external_function("drawCardAll", self, "drawCardAll", false)
+	_ink_player.bind_external_function("checkCard", self, "checkCard", false)
+	_ink_player.bind_external_function("randomCardType", self, "randomCardType", false)
 	_ink_player.bind_external_function("changeSprite", self, "changeSprite")
+	_ink_player.bind_external_function("toggleAnnieVisibility", self, "toggleAnnieVisibility")
+	_ink_player.bind_external_function("musicPlay", self, "musicPlay")
+	_ink_player.bind_external_function("musicStop", self, "musicStop")
 
-# give a given character a card from the deck. "robot" "annie" or "xeno"
+
+
+# give a given character a card from the deck. "robot" "annie" "xeno" or "player"
 func drawCard(character):
 	print_debug("called draw card for ", character)
 	pass 
@@ -345,6 +343,29 @@ func randomCardType():
 # change a character sprite ($Xeno, $Annie, $Robot) in “Characters.tscn” to a different sprite
 # looks unused
 func changeSprite():
+	pass
+
+# toggle hide/show on annie sprite 
+func toggleAnnieVisibility():
+	print_debug("called toggle annie visibility")
+	pass
+
+
+onready var song1Player = $SongPlayer/Song1
+onready var song2Player = $SongPlayer/Song2
+# play either "song1" or "song2"
+func musicPlay(song):
+	if(song == "song1"):
+		song1Player.play()
+	elif(song == "song2"):
+		song2Player.play()
+	else:
+		printerr("song named ", song, " not recognised!")
+
+func musicStop():
+	print_debug("calling stop music")
+	song1Player.stop()
+	song2Player.stop()
 	pass
 
 # load next chunk of dialogue
