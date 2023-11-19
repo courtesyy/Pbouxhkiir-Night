@@ -43,17 +43,38 @@ func checkCard(character, card):
 	var hand = getHand(character)
 	return hand.hasCard(card)
 
-# character asks player for a card
-func CharAsksPlayerCard():
-	pass
-
-# character asks another player for a card 
-func CharAsksCharCard():
-	pass
-
-func PlayerAsksCharCard():
-	pass
-
+# returns correct/incorrect index 
+#*[ROBOT (correct)]->turn1playerrobottrue
+#*[ROBOT (incorrect)]->turn1playerrobotfalse
+#*[ANNIE (correct)]->turn1playerannietrue
+#*[ANNIE (incorrect)]->turn1playeranniefalse
+#*[XENOPHAGE (correct)]->turn1playerxenotrue
+#*[XENOPHAGE (incorrect)]->turn1playerxenofalse
+func askForCard(character, card):
+	var correct = checkCard(character, card)
+	if(correct):
+		moveCard(character, "player", card)
+	else:
+		drawFromDeck("player")
+	
+	if(character == "robot"):
+		if(correct):
+			return 0 
+		else: 
+			return 1
+	elif(character == "annie"):
+		if(correct):
+			return 2
+		else: 
+			return 3
+	elif(character == "xeno"):
+		if(correct):
+			return 4
+		else: 
+			return 5
+	
+	print("ERR")
+	return 0
 
 func SetupHands():
 

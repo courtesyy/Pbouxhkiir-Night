@@ -106,7 +106,7 @@ func _ready():
 # ############################################################################ #
 
 func _continue_story():
-	#print_debug("calling continue_story")
+	print_debug("calling continue_story")
 	if USE_SIGNALS:
 		#print_debug("using signals")
 		_ink_player.continue_story()
@@ -139,6 +139,8 @@ func _loaded(successfully: bool):
 
 
 func _continued(text, tags):
+
+	print("continued with ", text)
 
 	#print_debug("called continued signal reciever")
 	_add_label(text)
@@ -366,17 +368,6 @@ func randomCardType():
 	var rand = randi() % validSuits.size()
 	return validSuits[rand]
 
-# change a character sprite ($Xeno, $Annie, $Robot) in “Characters.tscn” to a different sprite
-# looks unused
-func changeSprite():
-	pass
-
-# toggle hide/show on annie sprite 
-func toggleAnnieVisibility():
-	print("called toggle annie visibility")
-	# no longer used 
-	pass
-
 
 onready var song1Player = $SongPlayer/Song1
 onready var song2Player = $SongPlayer/Song2
@@ -425,3 +416,14 @@ func loadScene(sceneName):
 func makeChoice(index):
 	print("MADE CHOICE REGISTERED ")
 	_choice_selected(index)
+
+
+func askForCard(character, card):
+
+	print("asking ", character, " for ", card)
+
+	var result = cardManager.askForCard(character, card)
+
+	_choice_selected(result)
+
+	pass

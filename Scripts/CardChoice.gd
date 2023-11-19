@@ -4,6 +4,11 @@ enum choices {nobody, xeno, annie, robot}
 var choicefocus = choices.nobody
 var defaulttext = "Your turn! Poke a player to get a card."
 
+
+var character = "xeno"
+var card = "worm"
+
+
 func _ready():
 	choicefocus = choices.nobody
 	$Prompt.text = defaulttext
@@ -39,6 +44,7 @@ func _on_AreaXeno_input_event(_viewport, event, _shape_idx):
 				choicefocus = choices.xeno
 				$Prompt.text = "Poke for which card?"
 				$Menu.visible = true
+				character = "xeno"
 
 #select annie
 func _on_AreaAnnie_input_event(_viewport, event, _shape_idx):
@@ -48,6 +54,7 @@ func _on_AreaAnnie_input_event(_viewport, event, _shape_idx):
 				choicefocus = choices.annie
 				$Prompt.text = "Poke for which card?"
 				$Menu.visible = true
+				character = "annie"
 
 #select robot
 func _on_AreaRobot_input_event(_viewport, event, _shape_idx):
@@ -57,6 +64,7 @@ func _on_AreaRobot_input_event(_viewport, event, _shape_idx):
 				choicefocus = choices.robot
 				$Prompt.text = "Poke for which card?"
 				$Menu.visible = true
+				character = "robot"
 
 #back button
 func _on_Back_pressed():
@@ -74,28 +82,44 @@ func _on_BackOut_input_event(_viewport, event, _shape_idx):
 				$Menu.visible = false
 				$Prompt.text = defaulttext
 
+
+#"orbit", "ship", "worm", "cool worm", "raye",
+
 #emit usable signal that gives
 func _on_Orbit_pressed():
-	emit_signal("card_selected", "orbit", choicefocus)
+	#emit_signal("card_selected", "orbit", choicefocus)
 	$Select.play()
+	card = "orbit"
+	submit()
 	
 func _on_Ship_pressed():
-	emit_signal("card_selected", "ship", choicefocus)
+	##emit_signal("card_selected", "ship", choicefocus)
 	$Select.play()
+	card = "ship"
+	submit()
 	
 func _on_Worm_pressed():
-	emit_signal("card_selected", "worm", choicefocus)
+	#emit_signal("card_selected", "worm", choicefocus)
 	$Select.play()
+	card = "worm"
+	submit()
 
 func _on_Raye_pressed():
-	emit_signal("card_selected", "raye", choicefocus)
+	##emit_signal("card_selected", "raye", choicefocus)
 	$Select.play()
+	card = "raye"
+	submit()
 
 func _on_Coolworm_pressed():
-	emit_signal("card_selected", "cool worm", choicefocus)
+	#emit_signal("card_selected", "cool worm", choicefocus)
 	$Select.play()
+	card = "cool worm"
+	submit()
 
 func _on_button_mouse_entered():
 	$Hover.play()
 
 
+
+func submit():
+	get_parent().get_parent().askForCard(character, card)

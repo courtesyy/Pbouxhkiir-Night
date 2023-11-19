@@ -31,8 +31,8 @@ func _on_Proceed_pressed():
 		counter = counter + 1
 	else: 
 		# this will tell ink to continue and make the first choice 
-		emit_signal("choice_selected", 1)
-		get_parent().get_parent().makeChoice(1)
+		#emit_signal("choice_selected", 0)
+		get_parent().get_parent().makeChoice(0)
 
 	#emit_signal("dialogue_done")
 
