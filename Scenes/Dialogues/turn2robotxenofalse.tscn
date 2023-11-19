@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Dialogues/-DialogueParent.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Bubbles/SpeechBubbleXeno.tscn" type="PackedScene" id=2]
+
+[node name="Control" instance=ExtResource( 1 )]
+
+[node name="SpeechBubbleXeno" parent="Dialogues" index="0" instance=ExtResource( 2 )]
+margin_left = 409.0
+margin_top = 185.0
+margin_right = 409.0
+margin_bottom = 185.0
+
+[node name="BubbleMargin" parent="Dialogues/SpeechBubbleXeno" index="0"]
+margin_top = -9.0
+margin_right = 216.0
+
+[node name="Bubble" parent="Dialogues/SpeechBubbleXeno/BubbleMargin" index="0"]
+margin_right = 216.0
+margin_bottom = 94.0
+
+[node name="Text" parent="Dialogues/SpeechBubbleXeno/BubbleMargin" index="1"]
+margin_top = 14.0
+margin_right = 216.0
+margin_bottom = 79.0
+text = "I don’t have it. Stop talking and go fish."
+
+[node name="Tails" parent="Dialogues/SpeechBubbleXeno" index="1"]
+margin_left = 46.0
+margin_right = 46.0
+
+[node name="TailBoxConnector" parent="Dialogues/SpeechBubbleXeno/Tails" index="0"]
+visible = false
+
+[node name="TailPointer" parent="Dialogues/SpeechBubbleXeno/Tails" index="1"]
+position = Vector2( 42, 193 )
+points = PoolVector2Array( -22, -113, -34, -81, -32, -58, -52, -39, -75, -15 )
+
+[editable path="Dialogues/SpeechBubbleXeno"]
