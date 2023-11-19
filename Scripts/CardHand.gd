@@ -80,9 +80,20 @@ func giveCard(card, newHand):
 # give a random card to the other person from this hand 
 func giveRandom(newHand):
 	## pick a random card type from what's in the hand and ask for it 
-	var randIndex = randi() % cardCount
-	var randomCardName = get_child(randIndex).cardtype
+	var randomCardName = pickRandom()
 	giveCard(randomCardName, newHand)
+
+func giveRandomEnforced(newHand, ignoredSuit):
+	var randomCardName = pickRandom(ignoredSuit)
+	giveCard(randomCardName, newHand)
+
+func pickRandom(ignoredSuit = "NONE"):
+	var randIndex = randi() % cardCount
+	var c = get_child(randIndex)
+	if(ignoredSuit == "NONE" || (c.cardSuit != ignoredSuit)):
+		return c.cardtype # success 
+	else: 
+		return pickRandom(ignoredSuit)
 
 
 func doFormatHand():

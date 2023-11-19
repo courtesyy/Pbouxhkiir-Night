@@ -31,6 +31,7 @@ func showNextChoice(choiceType):
 	pass
 
 
+# not using, ink does this now 
 func loadNextChunk():
 
 	print("RAN OUT OF BUBBLES, SHOULD LOAD NEXT CHUNK")
@@ -43,7 +44,7 @@ func loadNextChunk():
 	var scene_instance = nextChunk.instance()
 	get_parent().add_child(scene_instance)
 
-	##delete this 
+	##delete this scene
 	queue_free()
 	pass
 

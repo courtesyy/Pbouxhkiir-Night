@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cardCoolworm.png-9473fa296078d84177497046e042caa1.stex"
+path="res://.import/cardCool worm.png-789342841034c278dafaf37aed50e689.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Cards/cardCoolworm.png"
-dest_files=[ "res://.import/cardCoolworm.png-9473fa296078d84177497046e042caa1.stex" ]
+source_file="res://Sprites/Cards/cardCool worm.png"
+dest_files=[ "res://.import/cardCool worm.png-789342841034c278dafaf37aed50e689.stex" ]
 
 [params]
 

@@ -37,3 +37,7 @@ text = "LOADING..."
 [node name="Song1" type="AudioStreamPlayer" parent="SongPlayer"]
 
 [node name="Song2" type="AudioStreamPlayer" parent="SongPlayer"]
+
+[node name="SceneParent" type="Node" parent="."]
+
+[node name="dummy child" type="Node" parent="SceneParent"]
