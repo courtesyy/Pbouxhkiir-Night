@@ -985,9 +985,10 @@ XENOPHAGE: Robot, you understand everybody else in this room is also butch, righ
 ANNIE: Are you finally asking somebody else for a card?
 XENOPHAGE: What are you talking about?
 XENOPHAGE: Anyways, Annie, do you have any uteruses?
+*[next]->turn8xenocont
+==turn8xenocont==
 ANNIE: YOU! YOU! YOU! YOU! YOU!
 XENOPHAGE: Anyways, it’s the human’s turn!
-
 {
     - RobotRage>3:
         * -> endingrobot

@@ -3,7 +3,7 @@
 [ext_resource path="res://Scenes/Characters.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/DialogueParent.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/Characters/xenoFocus.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/Characters/annieAngry.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Characters/annieShocked.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Bubbles/SpeechBubbleAnnie.tscn" type="PackedScene" id=5]
 
 [sub_resource type="StyleBoxFlat" id=1]
@@ -26,50 +26,29 @@ texture = ExtResource( 4 )
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="SpeechBubbleAnnie" parent="Dialogues" instance=ExtResource( 5 )]
-margin_left = 459.0
-margin_top = 55.0
-margin_right = 459.0
-margin_bottom = 55.0
-
-[node name="BubbleMargin" parent="Dialogues/SpeechBubbleAnnie" index="0"]
-margin_right = 207.0
-margin_bottom = 70.0
-
-[node name="Bubble" parent="Dialogues/SpeechBubbleAnnie/BubbleMargin" index="0"]
-margin_right = 207.0
-margin_bottom = 92.0
-
-[node name="Text" parent="Dialogues/SpeechBubbleAnnie/BubbleMargin" index="1"]
-margin_top = 22.0
-margin_right = 207.0
-margin_bottom = 69.0
-text = "Okay, human, give me your goddamn {card}."
-
-[node name="Tails" parent="Dialogues/SpeechBubbleAnnie" index="1"]
-visible = false
-
 [node name="SpeechBubbleAnnie2" parent="Dialogues" instance=ExtResource( 5 )]
-margin_left = 441.0
-margin_top = 164.0
-margin_right = 441.0
-margin_bottom = 164.0
+margin_left = 482.0
+margin_top = 131.0
+margin_right = 482.0
+margin_bottom = 131.0
 
 [node name="BubbleMargin" parent="Dialogues/SpeechBubbleAnnie2" index="0"]
-margin_right = 243.0
+margin_top = -13.0
+margin_right = 195.0
 margin_bottom = 75.0
 
 [node name="Bubble" parent="Dialogues/SpeechBubbleAnnie2/BubbleMargin" index="0"]
-margin_right = 243.0
-margin_bottom = 97.0
+margin_right = 195.0
+margin_bottom = 88.0
 
 [node name="Text" parent="Dialogues/SpeechBubbleAnnie2/BubbleMargin" index="1"]
-margin_top = 12.0
-margin_right = 243.0
-margin_bottom = 84.0
-text = "If you give me some shitty card you’re gonna die right here right now."
+margin_top = 20.0
+margin_right = 195.0
+margin_bottom = 67.0
+text = "YES! A light! A light in the darkness!"
 
 [node name="TailBoxConnector" parent="Dialogues/SpeechBubbleAnnie2/Tails" index="0"]
+visible = false
 position = Vector2( 142, 35 )
 points = PoolVector2Array( -79, -79, -78, -52 )
 
@@ -88,5 +67,4 @@ custom_styles/normal = SubResource( 1 )
 [connection signal="pressed" from="Proceed" to="." method="_on_Proceed_pressed"]
 
 [editable path="Characters"]
-[editable path="Dialogues/SpeechBubbleAnnie"]
 [editable path="Dialogues/SpeechBubbleAnnie2"]
