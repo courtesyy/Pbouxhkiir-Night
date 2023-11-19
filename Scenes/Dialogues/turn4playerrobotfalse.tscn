@@ -35,10 +35,10 @@ visible = false
 points = PoolVector2Array( 5, -127, 43, -63 )
 
 [node name="SpeechBubbleXeno" parent="Dialogues" index="1" instance=ExtResource( 3 )]
-margin_left = 427.0
-margin_top = 171.0
-margin_right = 427.0
-margin_bottom = 171.0
+margin_left = 439.0
+margin_top = 165.0
+margin_right = 439.0
+margin_bottom = 165.0
 
 [node name="BubbleMargin" parent="Dialogues/SpeechBubbleXeno" index="0"]
 margin_right = 198.0
@@ -56,13 +56,13 @@ text = "You said it wasn’t gonna do that."
 visible = false
 
 [node name="TailPointer" parent="Dialogues/SpeechBubbleXeno/Tails" index="1"]
-points = PoolVector2Array( -117, -104, -116, -92, -101, -74, -115, -42, -142, -26, -144, -5, -132, 14, -132, 39, -151, 54, -162, 70, -178, 57, -198, 72 )
+points = PoolVector2Array( -117, -104, -116, -92, -101, -74, -115, -42, -142, -26, -144, -5, -132, 14, -132, 39, -151, 54, -162, 70 )
 
 [node name="SpeechBubbleRobot2" parent="Dialogues" index="2" instance=ExtResource( 2 )]
-margin_left = 591.0
-margin_top = 278.0
-margin_right = 591.0
-margin_bottom = 278.0
+margin_left = 585.0
+margin_top = 261.0
+margin_right = 585.0
+margin_bottom = 261.0
 
 [node name="BubbleMargin" parent="Dialogues/SpeechBubbleRobot2" index="0"]
 margin_left = -21.0
@@ -87,10 +87,10 @@ visible = false
 points = PoolVector2Array( 5, -127, 43, -63 )
 
 [node name="SpeechBubbleRobot3" parent="Dialogues" index="3" instance=ExtResource( 2 )]
-margin_left = 638.0
-margin_top = 391.0
-margin_right = 638.0
-margin_bottom = 391.0
+margin_left = 632.0
+margin_top = 374.0
+margin_right = 632.0
+margin_bottom = 374.0
 
 [node name="BubbleMargin" parent="Dialogues/SpeechBubbleRobot3" index="0"]
 margin_top = -47.0
@@ -115,10 +115,10 @@ points = PoolVector2Array( -82, -73, -82, -56 )
 points = PoolVector2Array( 2, -183, 65, -203 )
 
 [node name="SpeechBubbleXeno2" parent="Dialogues" index="4" instance=ExtResource( 3 )]
-margin_left = 452.0
-margin_top = 473.0
-margin_right = 452.0
-margin_bottom = 473.0
+margin_left = 488.0
+margin_top = 413.0
+margin_right = 488.0
+margin_bottom = 413.0
 
 [node name="BubbleMargin" parent="Dialogues/SpeechBubbleXeno2" index="0"]
 margin_right = 198.0

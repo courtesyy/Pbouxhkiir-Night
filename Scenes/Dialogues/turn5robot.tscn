@@ -28,7 +28,7 @@ margin_bottom = 72.0
 margin_top = 12.0
 margin_right = 182.0
 margin_bottom = 59.0
-text = "Annie, do you have any-"
+text = "Aniline, do you have any-"
 
 [node name="TailBoxConnector" parent="Dialogues/SpeechBubbleRobot/Tails" index="0"]
 visible = false

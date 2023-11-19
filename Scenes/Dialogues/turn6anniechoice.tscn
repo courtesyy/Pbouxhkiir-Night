@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/DialogueChoice.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/ChoiceBubble.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/Characters/annieCard2.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Characters.tscn" type="PackedScene" id=11]
+
+[node name="CardChoice" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Characters" parent="." instance=ExtResource( 11 )]
+
+[node name="Annie" parent="Characters" index="1"]
+texture = ExtResource( 3 )
+
+[node name="Menu" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ChoiceBubble" parent="Menu" instance=ExtResource( 2 )]
+margin_left = 365.0
+margin_top = 294.0
+margin_right = 365.0
+margin_bottom = 294.0
+
+[node name="Text" parent="Menu/ChoiceBubble/BubbleMargin" index="1"]
+text = "It sucks."
+
+[node name="ChoiceBubble2" parent="Menu" instance=ExtResource( 2 )]
+margin_left = 623.0
+margin_top = 294.0
+margin_right = 623.0
+margin_bottom = 294.0
+
+[node name="Text" parent="Menu/ChoiceBubble2/BubbleMargin" index="1"]
+text = "It’s really good, actually."
+
+[connection signal="pressed" from="Menu/ChoiceBubble/BubbleMargin/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Menu/ChoiceBubble2/BubbleMargin/Button" to="." method="_on_Button2_pressed"]
+
+[editable path="Characters"]
+[editable path="Menu/ChoiceBubble"]
+[editable path="Menu/ChoiceBubble2"]

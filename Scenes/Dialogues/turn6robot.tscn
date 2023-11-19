@@ -1,0 +1,95 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Dialogues/-DialogueParent.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Bubbles/SpeechBubbleRobot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/Characters/annieRight.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Bubbles/SpeechBubbleAnnie.tscn" type="PackedScene" id=4]
+
+[node name="Control" instance=ExtResource( 1 )]
+
+[node name="Annie" parent="Characters" index="1"]
+texture = ExtResource( 3 )
+
+[node name="SpeechBubbleRobot" parent="Dialogues" index="0" instance=ExtResource( 2 )]
+margin_left = 553.0
+margin_top = 31.0
+margin_right = 553.0
+margin_bottom = 31.0
+
+[node name="BubbleMargin" parent="Dialogues/SpeechBubbleRobot" index="0"]
+margin_right = 235.0
+margin_bottom = 77.0
+
+[node name="Bubble" parent="Dialogues/SpeechBubbleRobot/BubbleMargin" index="0"]
+margin_right = 235.0
+margin_bottom = 99.0
+
+[node name="Text" parent="Dialogues/SpeechBubbleRobot/BubbleMargin" index="1"]
+margin_top = 13.0
+margin_right = 235.0
+margin_bottom = 85.0
+text = "Aniline, are you going to have to use the restroom again?"
+
+[node name="TailBoxConnector" parent="Dialogues/SpeechBubbleRobot/Tails" index="0"]
+visible = false
+
+[node name="TailPointer" parent="Dialogues/SpeechBubbleRobot/Tails" index="1"]
+position = Vector2( 285, 132 )
+points = PoolVector2Array( -62, -66, -13, -27 )
+
+[node name="SpeechBubbleAnnie" parent="Dialogues" index="1" instance=ExtResource( 4 )]
+margin_left = 425.0
+margin_top = 139.0
+margin_right = 425.0
+margin_bottom = 139.0
+
+[node name="BubbleMargin" parent="Dialogues/SpeechBubbleAnnie" index="0"]
+margin_right = 190.0
+margin_bottom = 64.0
+
+[node name="Bubble" parent="Dialogues/SpeechBubbleAnnie/BubbleMargin" index="0"]
+margin_right = 190.0
+margin_bottom = 86.0
+
+[node name="Text" parent="Dialogues/SpeechBubbleAnnie/BubbleMargin" index="1"]
+margin_top = 19.0
+margin_right = 190.0
+margin_bottom = 66.0
+text = "Weird thing to ask somebody, dude."
+
+[node name="TailBoxConnector" parent="Dialogues/SpeechBubbleAnnie/Tails" index="0"]
+visible = false
+
+[node name="TailPointer" parent="Dialogues/SpeechBubbleAnnie/Tails" index="1"]
+points = PoolVector2Array( -49, -126, -40, -45 )
+
+[node name="SpeechBubbleRobot2" parent="Dialogues" index="2" instance=ExtResource( 2 )]
+margin_left = 629.0
+margin_top = 209.0
+margin_right = 629.0
+margin_bottom = 209.0
+
+[node name="BubbleMargin" parent="Dialogues/SpeechBubbleRobot2" index="0"]
+margin_right = 215.0
+margin_bottom = 88.0
+
+[node name="Bubble" parent="Dialogues/SpeechBubbleRobot2/BubbleMargin" index="0"]
+margin_right = 215.0
+margin_bottom = 110.0
+
+[node name="Text" parent="Dialogues/SpeechBubbleRobot2/BubbleMargin" index="1"]
+margin_top = 19.0
+margin_right = 215.0
+margin_bottom = 91.0
+text = "I- you- give me your {card}! Do you have any {card}s?!"
+
+[node name="TailBoxConnector" parent="Dialogues/SpeechBubbleRobot2/Tails" index="0"]
+visible = false
+
+[node name="TailPointer" parent="Dialogues/SpeechBubbleRobot2/Tails" index="1"]
+points = PoolVector2Array( 33, -166, 71, -168 )
+
+[editable path="Characters"]
+[editable path="Dialogues/SpeechBubbleRobot"]
+[editable path="Dialogues/SpeechBubbleAnnie"]
+[editable path="Dialogues/SpeechBubbleRobot2"]
