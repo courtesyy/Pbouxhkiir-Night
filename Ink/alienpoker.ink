@@ -78,7 +78,7 @@ ROBOT: …
 ->turn1annie
 
 ==turn1annie==
-~loadScene(turn1annie)
+~loadScene("turn1annie")
 ANNIE: Alright, now it’s my turn.
 ANNIE: You have an orbit, I can feel it.
 ROBOT: I don’t.
@@ -98,7 +98,7 @@ XENOPHAGE: Ah well.
 //-----------turn 1 (player)-------------
 ==turn1player==
 ~choiceMode = "card"
-~loadScene(turn1player)
+~loadScene("turn1player")
 *[ROBOT (correct)]->turn1playerrobottrue
 *[ROBOT (incorrect)]->turn1playerrobotfalse
 *[ANNIE (correct)]->turn1playerannietrue
@@ -257,7 +257,7 @@ ANNIE: No, go fish.
 //-----------turn 2 (player)-------------
 ==turn2player==
 ~choiceMode = "card"
-~loadScene(turn2player)
+~loadScene("turn2player")
 *[ROBOT (correct)]->turn2playerrobottrue
 *[ROBOT (incorrect)]->turn2playerrobotfalse
 *[ANNIE (correct)]->turn2playerannietrue
@@ -525,7 +525,7 @@ ANNIE: Yeah, probably. Don’t have your card, by the way.
 //TALKING CARD: Player!
 //TALKING CARD: Keep your eyes open, and the best player can be read like a holo-book!
 ~choiceMode = "card"
-~loadScene(turn4player)
+~loadScene("turn4player")
 *[ROBOT (correct)]->turn4playerrobottrue
 *[ROBOT (incorrect)]->turn4playerrobotfalse
 *[ANNIE (correct)]->turn4playerannietrue
@@ -645,7 +645,7 @@ ROBOT: damn.
 //TALKING CARD: Did you know that if you lined up every Pbouxhkiir card ever made…
 //TALKING CARD: …they would be the length of a school bus?
 ~choiceMode = "card"
-~loadScene(turn5player)
+~loadScene("turn5player")
 *[ROBOT (correct)]->turn5playerrobot
 *[ROBOT (incorrect)]->turn5playerrobot
 *[ANNIE (correct)]->turn5playerannie
@@ -772,7 +772,7 @@ ANNIE: Nope! Fish your oversized heart out.
 //TALKING CARD: Player!
 //TALKING CARD: Roll me up and use me as a drinking straw!
 ~choiceMode = "card"
-~loadScene(turn6player)
+~loadScene("turn6player")
 *[ROBOT (correct)]->turn6playerrobot
 *[ROBOT (incorrect)]->turn6playerrobot
 *[ANNIE (correct)]->turn6playerannietrue
@@ -878,7 +878,7 @@ XENOPHAGE: Alright, I’ll go fish. Yeesh.
 //talking card is wet
 //TALKING CARD: I’m wet now!
 ~choiceMode = "card"
-~loadScene(turn7player)
+~loadScene("turn7player")
 *[ROBOT (correct)]->turn7playerrobot
 *[ROBOT (incorrect)]->turn7playerrobot
 *[ANNIE (correct)]->turn7playerannietrue

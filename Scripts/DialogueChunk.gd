@@ -5,7 +5,7 @@ var id = 0
 var index = 0
 var bubbleCount = 0
 
-export var nextChunk : Resource # the next scene 
+#export var nextChunk : Resource # the next scene 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,7 +20,8 @@ func _ready():
 func showNextBubble():
 	if(index == bubbleCount):
 		#load next chunk 
-		loadNextChunk()
+		#loadNextChunk()
+		pass
 	else:
 		get_child(index).display()
 		index = index + 1
@@ -32,21 +33,21 @@ func showNextChoice(choiceType):
 
 
 # not using, ink does this now 
-func loadNextChunk():
+#func loadNextChunk():
 
-	print("RAN OUT OF BUBBLES, SHOULD LOAD NEXT CHUNK")
+	##print("RAN OUT OF BUBBLES, SHOULD LOAD NEXT CHUNK")
 
-	if(!nextChunk):
-		printerr("NO NEXT CHUNK GIVEN TO THIS CHUNK")
+	#if(!nextChunk):
+		#printerr("NO NEXT CHUNK GIVEN TO THIS CHUNK")
 		#TODO make things happen when it hits the ending 
 	
 	#instantiate the next chunk
-	var scene_instance = nextChunk.instance()
-	get_parent().add_child(scene_instance)
+	#var scene_instance = nextChunk.instance()
+	#get_parent().add_child(scene_instance)
 
 	##delete this scene
-	queue_free()
-	pass
+	#queue_free()
+	#pass
 
 
 

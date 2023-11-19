@@ -390,18 +390,21 @@ func nextScene():
 
 
 onready var sceneParent = $SceneParent
+var lastScene = null
 # load a dialogue chunk 
 func loadScene(sceneName):
 
-	print(">>>>>>>>>>>>>>>>>>>> loading scene ", sceneName)
-
-	var previousScene = sceneParent.get_child()
+	print(">>>>>>> loading scene ", sceneName)
 
 	# load the new scene 
 	var newScenePath = "res://Scenes/Dialogues/" + sceneName + ".tscn"
-	var newScene = load(newScenePath).instance()
+	var newSceneLoad = load(newScenePath)
+	var newScene = newSceneLoad.instance()
 	sceneParent.add_child(newScene)
 
 	# unload the previous scene 
-	previousScene.queue_free()
+	if(lastScene != null):
+		lastScene.queue_free()
+	
+	lastScene = newScene
 
