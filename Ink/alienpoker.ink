@@ -31,8 +31,6 @@ EXTERNAL checkCard(char,card)
 //return true or false
 EXTERNAL randomCardType()
 //pick random card type from “orbit”, “ship”, “worm”, "raye", "cool worm"
-EXTERNAL toggleAnnieVisibility()
-//hide annie
 EXTERNAL musicPlay(song) 
 //"song1" or "song2"
 EXTERNAL musicStop()
@@ -337,8 +335,10 @@ ROBOT: Whatever.
 ~loadScene("turn3annie")
 ANNIE: Ok Computer, do you have any uterusi?
 ROBOT: I’m a robot. Why would I?
+->turn3annie2
+==turn3annie2==
 ANNIE: I swear to God-
-ANNIE: rayguns, do you have any rayguns?
+ANNIE: Rayguns, do you have any rayguns?
 {
     - checkCard("robot","ship") == true:
         ->turn3annierobottrue
@@ -401,8 +401,7 @@ ROBOT: Here, take it. It makes no difference.
  -> turn4robot
 ==turn3playerrobotfalse==
 ~loadScene("turn3playerrobotfalse")
-ROBOT: What an absurd question.
-ROBOT: Of course I don’t have that, go fish.
+ROBOT: What an absurd question. Of course I don’t have that, go fish.
 ~drawCardPlayer()
 ~RobotRage++
  -> turn4robot
@@ -422,7 +421,7 @@ ANNIE: I wouldn’t be caught dead with a {card}.
 
 ==turn3playerxenotrue==
 ~loadScene("turn3playerxenotrue")
-XENOPHAGE: Sadly, yes.
+XENOPHAGE: Sadly, I have it.
 ~moveCard("xeno","player",card)
 ~XenoRage++
  -> turn4robot
@@ -475,8 +474,7 @@ ANNIE: And the honor of blowing up that sweet, sweet planet.
 -> turn4anniecont
 ==turn4annieplayerfalse==
 ~loadScene("turn4annieplayerfalse")
-ANNIE: Crap.
-ANNIE: Guess you really want that prize money, huh?
+ANNIE: Crap. Guess you really want that prize money, huh?
 ANNIE: Oh, or you want to blow up that planet? Me too buddy, me too.
 ~drawCard("annie")
 -> turn4anniecont
@@ -492,7 +490,8 @@ ANNIE: Yeah, you tell ‘em.
 ~loadScene("turn4anniecont2")
 XENOPHAGE: Wait, what’s wrong with Earth?
 XENOPHAGE: I’ve never been.
-ROBOT: According to my logic circuits, humans are the stupidest, dumbest, dustiest life forms, and they get really judgemental when you post photos of your living space.
+ROBOT: According to my logic circuits, humans are the stupidest, dumbest, dustiest life forms.
+ROBOT: And they get really judgemental when you post photos of your living space.
 XENOPHAGE: I’m uh. I’m sorry for bringing it up.
 *[next] -> turn4xeno
 
@@ -524,6 +523,7 @@ ANNIE: Yeah, probably. Don’t have your card, by the way.
 
 //-----------turn 4 (player)-------------
 ==turn4player==
+//TALKING CARD: Player!
 //TALKING CARD: Keep your eyes open, and the best player can be read like a holo-book!
 ~choiceMode = "card"
 ~loadScene(turn4player)
@@ -541,10 +541,9 @@ ROBOT: What an astute mind! Yes, yes I have it.
 -> turn5robot
 ==turn4playerrobotfalse==
 ~loadScene("turn4playerrobotfalse")
-ROBOT: No, I don't have that. See, this is why AI will replace most jobs within the next 10 years.
+ROBOT: No, I don't have it. See, this is why AI will replace most jobs within the next 10 years.
 XENOPHAGE: You said it wasn’t gonna do that.
-ROBOT: No, I said it’d make new jobs.
-ROBOT: You can’t have new jobs without eliminating old jobs.
+ROBOT: No, I said it’d make new jobs. You can’t have new jobs without eliminating old jobs.
 ROBOT: The job market wouldn’t fit all of them.
 XENOPHAGE: I hope your job goes first.
 ~drawCardPlayer()
@@ -584,7 +583,8 @@ XENOPHAGE: ‘Fraid not, go fish.
 ~card = randomCardType()
 ROBOT: Annie, do you have any-
 ANNIE: Sorry I have to go pee like so bad.
-~toggleAnnieVisibility()
+->turn5robot2
+==turn5robot2==
 ROBOT: Alright, xenophage. Do you have any {card}s?
 {
     - checkCard("xeno",card) == true:
@@ -594,12 +594,14 @@ ROBOT: Alright, xenophage. Do you have any {card}s?
 } 
 ==turn5robotxenotrue==
 ~loadScene("turn5robotxenotrue")
-XENOPHAGE: *sigh* you’re welcome, Annie. Here.
+XENOPHAGE: *sigh* 
+XENOPHAGE: You’re welcome, Annie. Here.
 ~moveCard("xeno","robot",card)
 -> turn5annie
 ==turn5robotxenofalse==
 ~loadScene("turn5robotxenofalse")
-XENOPHAGE: Nope, should’ve waited on Annie. Go fish. 
+XENOPHAGE: Nope, should’ve waited on Annie.
+XENOPHAGE: Go fish. 
 ~drawCard("robot")
 -> turn5annie
 
@@ -635,7 +637,7 @@ XENOPHAGE: Annie, do you have that weird talking card? I like that one.
 ROBOT: We literally just learned that the human possesses Gooeddoby.
 XENOPHAGE: In that case-
 ANNIE: That was your turn. Go fish.
-XENOPHAGE: …
+XENOPHAGE: ...
 ROBOT: damn.
 ->turn5player
 
@@ -660,7 +662,7 @@ ROBOT: Thank me later.
 ->turn6robot
 ==turn5playerannie==
 ~loadScene("turn5playerannie")
-ANNIE: UGH, fine. Here you g-
+ANNIE: UGH, fine. Here you go
 ROBOT: And here, I throw myself in front of a metaphorical laser bullet for you.
 ANNIE: What?
 ROBOT: I’ll give the human a card instead. You’re welcome.
@@ -669,9 +671,9 @@ ROBOT: I’ll give the human a card instead. You’re welcome.
 ->turn6robot
 ==turn5playerxeno==
 ~loadScene("turn5playerxeno")
-XENOPHAGE: A fascinating guess, although-
+XENOPHAGE: A fascinating guess, although
 ROBOT: Don’t worry. I have a card that I shall give in your stead.
-XENOPHAGE: You really don’t have to do tha-
+XENOPHAGE: You really don’t have to do that
 ROBOT: Don’t worry a single fibre of your being, my friend.
 ~giveCardPlayer("AI1")
 ~XenoRage++

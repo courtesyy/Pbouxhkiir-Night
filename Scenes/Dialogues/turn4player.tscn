@@ -8,46 +8,49 @@
 [node name="TalkingCard" parent="." index="2" instance=ExtResource( 2 )]
 
 [node name="BubbleMargin" parent="TalkingCard/SpeechBubble" index="0"]
-margin_right = 254.0
-margin_bottom = 71.0
+margin_left = 76.5082
+margin_top = 44.3438
+margin_right = 164.508
+margin_bottom = 102.344
 
 [node name="Bubble" parent="TalkingCard/SpeechBubble/BubbleMargin" index="0"]
-margin_right = 254.0
-margin_bottom = 93.0
+margin_right = 87.0
+margin_bottom = 58.0
 
 [node name="Text" parent="TalkingCard/SpeechBubble/BubbleMargin" index="1"]
-margin_top = 10.0
-margin_right = 254.0
-margin_bottom = 82.0
-text = "Player! You are chosen, and thus I have revealed myself to you!"
+margin_top = 18.0
+margin_right = 87.0
+margin_bottom = 40.0
+text = "Player!"
 
-[node name="TailBoxConnector" parent="TalkingCard/SpeechBubble/Tails" index="0"]
+[node name="Tails" parent="TalkingCard/SpeechBubble" index="1"]
 visible = false
 
-[node name="TailPointer" parent="TalkingCard/SpeechBubble/Tails" index="1"]
-visible = false
+[node name="SpeechBubble2" parent="TalkingCard" index="1"]
+margin_left = -129.368
+margin_top = -267.06
+margin_right = -129.368
+margin_bottom = -267.06
 
 [node name="BubbleMargin" parent="TalkingCard/SpeechBubble2" index="0"]
-margin_left = -31.0
-margin_right = 322.0
-margin_bottom = 93.0
+margin_right = 264.0
+margin_bottom = 84.0
 
 [node name="Bubble" parent="TalkingCard/SpeechBubble2/BubbleMargin" index="0"]
-margin_right = 353.0
-margin_bottom = 115.0
+margin_right = 264.0
+margin_bottom = 106.0
 
 [node name="Text" parent="TalkingCard/SpeechBubble2/BubbleMargin" index="1"]
-margin_top = 21.0
-margin_right = 353.0
-margin_bottom = 93.0
-text = "Heed my words: do not poke any one of your opponents too many times, lest you agitate them and enter NEMESIS MODE."
+margin_right = 264.0
+text = "Keep your eyes open, and the best opponent can be read
+like a holo-book!"
 
 [node name="TailBoxConnector" parent="TalkingCard/SpeechBubble2/Tails" index="0"]
-position = Vector2( 166.376, 19.7857 )
-points = PoolVector2Array( -81.3577, -95.1731, -79.78, -34.1198 )
+position = Vector2( 216.919, 30.8379 )
+points = PoolVector2Array( -108.98, -89.087, -105.908, -48.2022 )
 
 [node name="TailPointer" parent="TalkingCard/SpeechBubble2/Tails" index="1"]
-points = PoolVector2Array( -90.8906, -97.0158, -85.6003, -53.2892 )
+points = PoolVector2Array( -123.99, -104.751, -110.797, -62.6209 )
 
 [editable path="TalkingCard"]
 [editable path="TalkingCard/SpeechBubble"]
