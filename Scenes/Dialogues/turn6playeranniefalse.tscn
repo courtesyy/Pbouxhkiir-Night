@@ -33,7 +33,7 @@ margin_bottom = 97.0
 margin_top = 12.0
 margin_right = 219.0
 margin_bottom = 84.0
-text = "Do I have any *wheeze* hahahaaaaa man. Do I have any cards."
+text = "Do I have any *wheeze* hahahaaaaa man. Do I have any *pfffffffffft*"
 
 [node name="Tails" parent="Dialogues/SpeechBubbleAnnie" index="1"]
 visible = false
