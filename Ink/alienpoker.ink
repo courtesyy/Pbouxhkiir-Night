@@ -337,8 +337,10 @@ ROBOT: Whatever.
 ~loadScene("turn3annie")
 ANNIE: Ok Computer, do you have any uterusi?
 ROBOT: I’m a robot. Why would I?
+->turn3annie2
+==turn3annie2==
 ANNIE: I swear to God-
-ANNIE: rayguns, do you have any rayguns?
+ANNIE: Rayguns, do you have any rayguns?
 {
     - checkCard("robot","ship") == true:
         ->turn3annierobottrue
@@ -401,8 +403,7 @@ ROBOT: Here, take it. It makes no difference.
  -> turn4robot
 ==turn3playerrobotfalse==
 ~loadScene("turn3playerrobotfalse")
-ROBOT: What an absurd question.
-ROBOT: Of course I don’t have that, go fish.
+ROBOT: What an absurd question. Of course I don’t have that, go fish.
 ~drawCardPlayer()
 ~RobotRage++
  -> turn4robot
@@ -422,7 +423,7 @@ ANNIE: I wouldn’t be caught dead with a {card}.
 
 ==turn3playerxenotrue==
 ~loadScene("turn3playerxenotrue")
-XENOPHAGE: Sadly, yes.
+XENOPHAGE: Sadly, I have it.
 ~moveCard("xeno","player",card)
 ~XenoRage++
  -> turn4robot
@@ -475,8 +476,7 @@ ANNIE: And the honor of blowing up that sweet, sweet planet.
 -> turn4anniecont
 ==turn4annieplayerfalse==
 ~loadScene("turn4annieplayerfalse")
-ANNIE: Crap.
-ANNIE: Guess you really want that prize money, huh?
+ANNIE: Crap. Guess you really want that prize money, huh?
 ANNIE: Oh, or you want to blow up that planet? Me too buddy, me too.
 ~drawCard("annie")
 -> turn4anniecont

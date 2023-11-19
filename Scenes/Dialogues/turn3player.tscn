@@ -6,3 +6,49 @@
 [node name="CardChoice" instance=ExtResource( 1 )]
 
 [node name="TalkingCard" parent="." index="2" instance=ExtResource( 2 )]
+
+[node name="BubbleMargin" parent="TalkingCard/SpeechBubble" index="0"]
+margin_right = 254.0
+margin_bottom = 71.0
+
+[node name="Bubble" parent="TalkingCard/SpeechBubble/BubbleMargin" index="0"]
+margin_right = 254.0
+margin_bottom = 93.0
+
+[node name="Text" parent="TalkingCard/SpeechBubble/BubbleMargin" index="1"]
+margin_top = 10.0
+margin_right = 254.0
+margin_bottom = 82.0
+text = "Player! You are chosen, and thus I have revealed myself to you!"
+
+[node name="TailBoxConnector" parent="TalkingCard/SpeechBubble/Tails" index="0"]
+visible = false
+
+[node name="TailPointer" parent="TalkingCard/SpeechBubble/Tails" index="1"]
+visible = false
+
+[node name="BubbleMargin" parent="TalkingCard/SpeechBubble2" index="0"]
+margin_left = -31.0
+margin_right = 322.0
+margin_bottom = 93.0
+
+[node name="Bubble" parent="TalkingCard/SpeechBubble2/BubbleMargin" index="0"]
+margin_right = 353.0
+margin_bottom = 115.0
+
+[node name="Text" parent="TalkingCard/SpeechBubble2/BubbleMargin" index="1"]
+margin_top = 21.0
+margin_right = 353.0
+margin_bottom = 93.0
+text = "Heed my words: do not poke any one of your opponents too many times, lest you agitate them and enter NEMESIS MODE."
+
+[node name="TailBoxConnector" parent="TalkingCard/SpeechBubble2/Tails" index="0"]
+position = Vector2( 166.376, 19.7857 )
+points = PoolVector2Array( -81.3577, -95.1731, -79.78, -34.1198 )
+
+[node name="TailPointer" parent="TalkingCard/SpeechBubble2/Tails" index="1"]
+points = PoolVector2Array( -90.8906, -97.0158, -85.6003, -53.2892 )
+
+[editable path="TalkingCard"]
+[editable path="TalkingCard/SpeechBubble"]
+[editable path="TalkingCard/SpeechBubble2"]
