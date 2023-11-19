@@ -92,7 +92,7 @@ text = "…"
 points = PoolVector2Array( 663, -73, 667, 47 )
 
 [node name="TailPointer" parent="Dialogues/SpeechBubbleRobot2/Tails" index="1"]
-points = PoolVector2Array( 640, 57, 729, 18 )
+points = PoolVector2Array( 640, 57, 682, 57 )
 
 [editable path="Characters"]
 [editable path="Dialogues/SpeechBubbleRobot"]

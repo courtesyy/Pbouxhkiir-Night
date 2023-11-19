@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/SpeechBubble.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sprites/cardTalking.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/SpeechBubble.gd" type="Script" id=3]
+
+[node name="TalkingCard" type="Node2D"]
+position = Vector2( 972, 558 )
+rotation = 0.0749771
+
+[node name="SpeechBubble" type="Control" parent="." instance=ExtResource( 1 )]
+margin_left = -122.0
+margin_top = -423.0
+margin_right = -122.0
+margin_bottom = -423.0
+script = ExtResource( 3 )
+
+[node name="SpeechBubble2" type="Control" parent="." instance=ExtResource( 1 )]
+margin_left = -160.0
+margin_top = -282.0
+margin_right = -160.0
+margin_bottom = -282.0
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[connection signal="visibility_changed" from="SpeechBubble" to="SpeechBubble" method="_on_SpeechBubble_visibility_changed"]
+[connection signal="visibility_changed" from="SpeechBubble2" to="SpeechBubble2" method="_on_SpeechBubble_visibility_changed"]

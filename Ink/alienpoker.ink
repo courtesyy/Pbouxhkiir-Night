@@ -8,11 +8,10 @@ DialogueScene
 DialogueChoice (not done) 	emits signal dialogue_choice(choice)
 	choice should return an int starting from 0 (0, 1, 2, etc)
 
-
 Important values:
 Card: “orbit”, “ship”, “worm”, "raye", "cool worm"
 Event cards: "AI1", "AI2", "AI3"
-Char: “xeno”, “annie”, “robot” 
+Char: “xeno”, “annie”, “robot”, "player"
 */
 
 
