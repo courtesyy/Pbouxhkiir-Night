@@ -28,7 +28,7 @@ EXTERNAL giveCardPlayer(card)
 //give player a specific card
 EXTERNAL drawCardAll()
 //all 3 opponents do drawCard() and player does drawCardPlayer()
-EXTERNAL checkCard(char,suit)
+EXTERNAL checkCard(char,card)
 //return true or false
 EXTERNAL randomCardType()
 //pick random card type from “orbit”, “ship”, “worm”, "raye", "cool worm"
@@ -165,9 +165,13 @@ ROBOT: I’ve put all of your dialogue into an AI text generator…
 XENOPHAGE: Ah Christ, here we go again.
 ROBOT: It told me in your voice that you have a {card}.
 ROBOT: Anyways, like I’ve been telling you, AI is creating trillions of new jobs…
-//CHECK CARD
-->turn2robotxenotrue
-->turn2robotxenofalse
+{
+    - RobotRage>3:
+        ->turn2robotxenotrue
+    - else:
+        ->turn2robotxenofalse
+} 
+
 ==turn2robotxenotrue==
 ~loadScene("turn2robotxenotrue")
 XENOPHAGE: Here’s the card. Just stop talking.
