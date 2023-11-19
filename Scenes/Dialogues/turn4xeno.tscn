@@ -135,10 +135,10 @@ position = Vector2( 103, 139 )
 points = PoolVector2Array( -54, -76, -44, -38 )
 
 [node name="SpeechBubbleXeno3" parent="Dialogues" instance=ExtResource( 5 )]
-margin_left = 345.0
-margin_top = 526.0
-margin_right = 345.0
-margin_bottom = 526.0
+margin_left = 374.0
+margin_top = 484.0
+margin_right = 374.0
+margin_bottom = 484.0
 
 [node name="BubbleMargin" parent="Dialogues/SpeechBubbleXeno3" index="0"]
 margin_right = 167.0
@@ -159,7 +159,7 @@ visible = false
 
 [node name="TailPointer" parent="Dialogues/SpeechBubbleXeno3/Tails" index="1"]
 position = Vector2( 61, 52 )
-points = PoolVector2Array( -15, -70, -16, -81, -42, -85, -58, -106 )
+points = PoolVector2Array( -15, -70, -16, -81, -42, -89, -73, -83 )
 
 [node name="Proceed" type="Button" parent="."]
 margin_right = 1285.0

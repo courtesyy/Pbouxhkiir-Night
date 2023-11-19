@@ -139,10 +139,10 @@ position = Vector2( 236, 110 )
 points = PoolVector2Array( -61, -73, -38, -55 )
 
 [node name="SpeechBubbleAnnie6" parent="Dialogues" index="5" instance=ExtResource( 2 )]
-margin_left = 365.0
-margin_top = 533.0
-margin_right = 365.0
-margin_bottom = 533.0
+margin_left = 360.0
+margin_top = 472.0
+margin_right = 360.0
+margin_bottom = 472.0
 
 [node name="BubbleMargin" parent="Dialogues/SpeechBubbleAnnie6" index="0"]
 margin_right = 135.0
@@ -163,7 +163,7 @@ visible = false
 
 [node name="TailPointer" parent="Dialogues/SpeechBubbleAnnie6/Tails" index="1"]
 position = Vector2( 185, 58 )
-points = PoolVector2Array( -59, -72, -40, -88 )
+points = PoolVector2Array( -56, -47, -36, -55 )
 
 [editable path="Dialogues/SpeechBubbleAnnie"]
 [editable path="Dialogues/SpeechBubbleAnnie2"]
