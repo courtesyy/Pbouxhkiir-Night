@@ -825,7 +825,7 @@ ANNIE: Thank God.
 ==turn7annie==
 ~loadScene("turn7annie")
 ~card = randomCardType()
-ANNIE: Robot-
+ANNIE: Robot...
 ANNIE: Wait, no. Xenophage, give me your {card}.
 {
     - checkCard("xeno",card) == true:
@@ -853,7 +853,7 @@ ANNIE: You can just say “go fish.” Just say “go fish.”
 ~card = randomCardType()
 XENOPHAGE: Hey Annie, do you have any {card}s?
 ANNIE: Hey xenophage, do you have a problem?
-XENOPHAGE: Annie…
+XENOPHAGE: Annie...
 {
     - checkCard("annie",card) == true:
         ->turn7xenoannietrue
@@ -895,7 +895,7 @@ ROBOT: A fellow good taste haver, I see.
 ==turn7playerannietrue==
 ~loadScene("turn7playerannietrue")
 ANNIE: Yeah, here.
-ANNIE: Wow, really happy about that huh?
+ANNIE: Wow, really happy about that, huh?
 ANNIE: It’s just a game. It’s just a game, dude.
 ANNIE: It’s sad that you care this much.
 ~moveCard("annie","player",card)
@@ -1051,7 +1051,8 @@ ROBOT: NOW.
 ==endingrobot5==
 ~loadScene("endingrobot5")
 YOU LOST!!!!!!!!
-After winning(?) the Pbouxhkiir match, 3b42dd00-903a-47b8-87b8-47e0-4447-fcf1-2bed-a6a4-dcf3-484c-9f5420547c893ba1 repeatedly hit the detonate button for thirty minutes, destroying the Earth thousands of times. 
+After winning(?) the Pbouxhkiir match, 3b42dd00-903a-47b8-87b8-47e0-4447-fcf1-2bed-a6a4-dcf3-484c-9f5420547c893ba1 repeatedly hit the detonate button for thirty minutes, destroying the Earth thousands of times.
+There is no planet for you to return to, but inexplicably, Annie let you crash at her place. The two of you probably went all kinds of zany adventures, which might sound cool, but don’t kid yourself here, you absolutely lost.
 
 -> END
 
