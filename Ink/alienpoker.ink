@@ -53,7 +53,6 @@ VAR XenoRage = 0
 
 
 ==start==
-~loadScene("splashscreen")
 /*
 You are formally invited to Pbouxhkiir Night on the Primox Alpha
 Sponsored by the CHAGTAD® Demolition Company.
@@ -795,7 +794,7 @@ ANNIE: You can have my {card}. But you’ll never have a girlfriend.
 ->turn7robot
 ==turn6playeranniefalse==
 ~loadScene("turn6playeranniefalse")
-ANNIE: Do I have any *wheeze* hahahaaaaa man.Do I have any {card}s.
+ANNIE: Do I have any *wheeze* hahahaaaaa man. Do I have any {card}s.
 ANNIE: Fuck yourself.
 ~drawCardPlayer()
 ~AnnieRage++
@@ -813,13 +812,12 @@ XENOPHAGE: Got none. Hook, line, and go fish.
 ~XenoRage++
 ->turn7robot
 
-
 //--------------------turn 7-----------------------------
 ==turn7robot==
 ~loadScene("turn7robot")
 ~drawCardAll()
 ROBOT: Aniline.
-ANNIE: Robot.
+ANNIE: 3b42dd00-903a-47b8-87b8-47e0-4447-fcf1-2bed-a6a4-dcf3-484c-9f5420547c893ba1.
 ROBOT: Give me my AI card back, you don’t deserve it.
 ANNIE: Thank God.
 *[next]->turn7annie
