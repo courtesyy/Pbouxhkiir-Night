@@ -8,6 +8,7 @@ export (bool)var shouldStartInvisible = false
 #export (NodePath)onready var nextNode = get_node(nextNode) as Node2D
 export (NodePath) var nextNodePath
 var nextNode
+var sounds = 0
 
 var secondsBeforeClickable = 0.25;
 
@@ -35,10 +36,14 @@ func _process(delta):
 func receiveClick():
 
 	if(!listeningForClicks || secondsBeforeClickable > 0.0):
+
 		return
 
 	listeningForClicks = false;
 	nextNode.show()
+
+	sounds = sounds + 1
+
 	nextNode.listeningForClicks = true 
 
 
