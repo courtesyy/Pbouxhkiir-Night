@@ -2,6 +2,7 @@ extends Node
 
 
 #true for the player hand to make it look nice 
+export (bool)var shuffleStart = false
 export (bool)var formatHand = false 
 export (int)var containerWidth = 1000
 export (int)var yPos = 500
@@ -14,60 +15,77 @@ var screenWidth = 1280
 
 var cardCount = 0
 
+#used to shuffle without actually shuffling 
+var indexMap = []
+
 # parent of a hand 
 ## has a position 
 # has a bunch of cards 
 # could potentially control layout
 
 func _ready():
-	# when we start, load our children as our hand
-	# TODO 
 
 	# keep track of how many in cardCount
 	cardCount = get_child_count()
 
 	# then, shuffle ourself 
+	indexMap.resize(cardCount)
+	for i in cardCount:
+		indexMap[i] = i
+	if(shuffleStart):
+		indexMap.shuffle()
 
 	screenWidth = get_viewport().size.x
 	midpoint = (screenWidth / 2)
-	# - (cardWidth / 2) + ((screenWidth - containerWidth) / 2)
 
-	formatHand()
+	doFormatHand()
 
 # does this hand have a card of a suit?
 func hasCard(suit):
 
-	#TODO 
+	for i in cardCount:
+		if(get_child(i).isSuit(suit)):
+			return true
 
-	return true
+	return false
 
+#returns index of card of type, -1 if not found 
+func findCard(type):
+	for i in cardCount: 
+		if(get_child(i).cardtype == type):
+			return i
+	return -1
 
 
 # take a card out of this hand and put it in the other hand 
 func giveCard(card, newHand):
 
-	if(!hasCard(card)):
+	var indexOfCardType = findCard(card)
+
+	if(indexOfCardType == -1):
 		printerr("asked to give card ", card, " but didnt have it!")
 		return
 
-	# TODO move card
+	# move card
+	var cardToMove = get_child(indexOfCardType)
+	cardToMove.get_parent().remove_child(cardToMove)
+	newHand.add_child(cardToMove)
 	
 	cardCount = cardCount - 1
 	newHand.cardCount = newHand.cardCount + 1
-	formatHand()
-	newHand.formatHand()
+	doFormatHand()
+	newHand.doFormatHand()
 
 
 # give a random card to the other person from this hand 
 func giveRandom(newHand):
-	## TODO pick a random card type from what's in the hand and ask for it 
-	var randomCardName = ""
-	# TODO 
-
+	## pick a random card type from what's in the hand and ask for it 
+	var randIndex = randi() % cardCount
+	var randomCardName = get_child(randIndex).cardtype
 	giveCard(randomCardName, newHand)
 
 
-func formatHand():
+func doFormatHand():
 
 	if(!formatHand): ##hides offscreen 
 		formatFrom(-1000, 0)
