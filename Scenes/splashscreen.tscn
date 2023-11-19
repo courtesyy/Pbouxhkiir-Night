@@ -46,7 +46,7 @@ shouldStartInvisible = true
 nextNodePath = NodePath("../2")
 
 [node name="Menusound1" type="AudioStreamPlayer2D" parent="Sprites/1"]
-position = Vector2( 639, 371 )
+position = Vector2( 623, 267 )
 stream = ExtResource( 8 )
 bus = "SFX"
 
@@ -58,7 +58,7 @@ shouldStartInvisible = true
 nextNodePath = NodePath("../3")
 
 [node name="Menusound2" type="AudioStreamPlayer2D" parent="Sprites/2"]
-position = Vector2( 635, 371 )
+position = Vector2( 637, 399 )
 stream = ExtResource( 8 )
 bus = "SFX"
 
@@ -70,7 +70,7 @@ shouldStartInvisible = true
 nextNodePath = NodePath("../..")
 
 [node name="Menusound2" type="AudioStreamPlayer2D" parent="Sprites/3"]
-position = Vector2( 634, 372 )
+position = Vector2( 638, 580 )
 stream = ExtResource( 9 )
 bus = "SFX"
 

@@ -16,4 +16,4 @@ func setText(text):
 	textLabel.text = text
 	
 func _on_SpeechBubble_visibility_changed():
-	pass # play a sound
+	$ShowSound.play()
