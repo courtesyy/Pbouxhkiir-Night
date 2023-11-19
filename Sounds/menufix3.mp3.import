@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/menufix3.mp3-d7feae0fb23a472da5fec52cbf4fcde1.mp3str"
+
+[deps]
+
+source_file="res://Sounds/menufix3.mp3"
+dest_files=[ "res://.import/menufix3.mp3-d7feae0fb23a472da5fec52cbf4fcde1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

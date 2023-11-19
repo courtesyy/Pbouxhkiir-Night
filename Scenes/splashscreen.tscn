@@ -8,7 +8,7 @@
 [ext_resource path="res://Sprites/splashScreen2.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/ClickLink.gd" type="Script" id=7]
 [ext_resource path="res://Sounds/menufix1.mp3" type="AudioStream" id=8]
-[ext_resource path="res://Sounds/menusound3.mp3" type="AudioStream" id=10]
+[ext_resource path="res://Sounds/menufix3.mp3" type="AudioStream" id=9]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
@@ -45,12 +45,20 @@ script = ExtResource( 7 )
 shouldStartInvisible = true
 nextNodePath = NodePath("../2")
 
+[node name="Menusound1" type="AudioStreamPlayer2D" parent="Sprites/1"]
+stream = ExtResource( 8 )
+bus = "SFX"
+
 [node name="2" type="Sprite" parent="Sprites"]
 texture = ExtResource( 6 )
 centered = false
 script = ExtResource( 7 )
 shouldStartInvisible = true
 nextNodePath = NodePath("../3")
+
+[node name="Menusound2" type="AudioStreamPlayer2D" parent="Sprites/2"]
+stream = ExtResource( 8 )
+bus = "SFX"
 
 [node name="3" type="Sprite" parent="Sprites"]
 texture = ExtResource( 5 )
@@ -59,15 +67,11 @@ script = ExtResource( 7 )
 shouldStartInvisible = true
 nextNodePath = NodePath("../..")
 
+[node name="Menusound2" type="AudioStreamPlayer2D" parent="Sprites/3"]
+stream = ExtResource( 9 )
+bus = "SFX"
+
 [node name="Sounds" type="Node" parent="."]
-
-[node name="Menusound1" type="AudioStreamPlayer2D" parent="Sounds"]
-stream = ExtResource( 8 )
-bus = "SFX"
-
-[node name="Menusound2" type="AudioStreamPlayer2D" parent="Sounds"]
-stream = ExtResource( 10 )
-bus = "SFX"
 
 [connection signal="pressed" from="Proceed" to="." method="_on_Proceed_pressed"]
 [connection signal="pressed" from="Proceed" to="Sprites/0" method="receiveClick"]
