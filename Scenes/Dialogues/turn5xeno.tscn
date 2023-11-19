@@ -1,0 +1,206 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/Characters.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/DialogueParent.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/Characters/xenoTilt.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Characters/annieLeft.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Bubbles/SpeechBubbleXeno.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Bubbles/SpeechBubbleAnnie.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Bubbles/SpeechBubbleRobot.tscn" type="PackedScene" id=7]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="Characters" parent="." instance=ExtResource( 1 )]
+
+[node name="Xeno" parent="Characters" index="0"]
+texture = ExtResource( 3 )
+
+[node name="Annie" parent="Characters" index="1"]
+texture = ExtResource( 4 )
+
+[node name="Dialogues" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="SpeechBubbleXeno" parent="Dialogues" instance=ExtResource( 5 )]
+margin_left = 317.0
+margin_top = 51.0
+margin_right = 317.0
+margin_bottom = 51.0
+
+[node name="BubbleMargin" parent="Dialogues/SpeechBubbleXeno" index="0"]
+margin_right = 317.0
+margin_bottom = 84.0
+
+[node name="Bubble" parent="Dialogues/SpeechBubbleXeno/BubbleMargin" index="0"]
+margin_right = 317.0
+margin_bottom = 106.0
+
+[node name="Text" parent="Dialogues/SpeechBubbleXeno/BubbleMargin" index="1"]
+margin_top = 20.0
+margin_right = 317.0
+margin_bottom = 85.0
+text = "Annie, do you have that weird talking card? I like that one."
+
+[node name="Tails" parent="Dialogues/SpeechBubbleXeno" index="1"]
+visible = false
+
+[node name="SpeechBubbleRobot" parent="Dialogues" instance=ExtResource( 7 )]
+margin_left = 561.0
+margin_top = 134.0
+margin_right = 561.0
+margin_bottom = 134.0
+
+[node name="BubbleMargin" parent="Dialogues/SpeechBubbleRobot" index="0"]
+margin_right = 229.0
+margin_bottom = 71.0
+
+[node name="Bubble" parent="Dialogues/SpeechBubbleRobot/BubbleMargin" index="0"]
+margin_right = 229.0
+margin_bottom = 93.0
+
+[node name="Text" parent="Dialogues/SpeechBubbleRobot/BubbleMargin" index="1"]
+margin_top = 10.0
+margin_right = 229.0
+margin_bottom = 82.0
+text = "We literally just learned that the human possesses Gooeddoby."
+
+[node name="TailBoxConnector" parent="Dialogues/SpeechBubbleRobot/Tails" index="0"]
+visible = false
+position = Vector2( 20, 88 )
+
+[node name="TailPointer" parent="Dialogues/SpeechBubbleRobot/Tails" index="1"]
+points = PoolVector2Array( 45, -127, 135, -93 )
+
+[node name="SpeechBubbleXeno2" parent="Dialogues" instance=ExtResource( 5 )]
+margin_left = 384.0
+margin_top = 219.0
+margin_right = 384.0
+margin_bottom = 219.0
+
+[node name="BubbleMargin" parent="Dialogues/SpeechBubbleXeno2" index="0"]
+margin_right = 159.0
+margin_bottom = 48.0
+
+[node name="Bubble" parent="Dialogues/SpeechBubbleXeno2/BubbleMargin" index="0"]
+margin_right = 159.0
+margin_bottom = 70.0
+
+[node name="Text" parent="Dialogues/SpeechBubbleXeno2/BubbleMargin" index="1"]
+margin_top = 19.0
+margin_right = 159.0
+margin_bottom = 50.0
+text = "In that case-"
+
+[node name="TailBoxConnector" parent="Dialogues/SpeechBubbleXeno2/Tails" index="0"]
+position = Vector2( 185, 3 )
+points = PoolVector2Array( -45, -93, -51, -20 )
+
+[node name="TailPointer" parent="Dialogues/SpeechBubbleXeno2/Tails" index="1"]
+position = Vector2( 117, 159 )
+points = PoolVector2Array( -49, -115, -47, -92, -37, -69, -60, -41, -46, -11, -20, 10, -17, 29, -26, 41, -42, 46 )
+
+[node name="SpeechBubbleAnnie" parent="Dialogues" instance=ExtResource( 6 )]
+margin_left = 491.0
+margin_top = 242.0
+margin_right = 491.0
+margin_bottom = 242.0
+
+[node name="BubbleMargin" parent="Dialogues/SpeechBubbleAnnie" index="0"]
+margin_right = 146.0
+margin_bottom = 62.0
+
+[node name="Bubble" parent="Dialogues/SpeechBubbleAnnie/BubbleMargin" index="0"]
+margin_right = 146.0
+margin_bottom = 84.0
+
+[node name="Text" parent="Dialogues/SpeechBubbleAnnie/BubbleMargin" index="1"]
+margin_top = 18.0
+margin_right = 146.0
+margin_bottom = 65.0
+text = "That was your turn. Go fish."
+
+[node name="TailBoxConnector" parent="Dialogues/SpeechBubbleAnnie/Tails" index="0"]
+visible = false
+
+[node name="TailPointer" parent="Dialogues/SpeechBubbleAnnie/Tails" index="1"]
+points = PoolVector2Array( -138, -126, -147, -55 )
+
+[node name="SpeechBubbleXeno3" parent="Dialogues" instance=ExtResource( 5 )]
+margin_left = 666.0
+margin_top = 438.0
+margin_right = 666.0
+margin_bottom = 438.0
+
+[node name="BubbleMargin" parent="Dialogues/SpeechBubbleXeno3" index="0"]
+margin_right = 101.0
+margin_bottom = 51.0
+
+[node name="Bubble" parent="Dialogues/SpeechBubbleXeno3/BubbleMargin" index="0"]
+margin_right = 101.0
+margin_bottom = 73.0
+
+[node name="Text" parent="Dialogues/SpeechBubbleXeno3/BubbleMargin" index="1"]
+margin_top = 21.0
+margin_right = 101.0
+margin_bottom = 52.0
+text = "..."
+
+[node name="TailBoxConnector" parent="Dialogues/SpeechBubbleXeno3/Tails" index="0"]
+visible = false
+
+[node name="TailPointer" parent="Dialogues/SpeechBubbleXeno3/Tails" index="1"]
+position = Vector2( 90, 125 )
+points = PoolVector2Array( -53, -79, -60, -29, -79, 4, -117, 15, -158, 10, -176, 23, -182, 40, -206, 47, -242, 33, -271, -26, -292, -63, -321, -94 )
+
+[node name="SpeechBubbleRobot2" parent="Dialogues" instance=ExtResource( 7 )]
+margin_left = 721.0
+margin_top = 520.0
+margin_right = 721.0
+margin_bottom = 520.0
+
+[node name="BubbleMargin" parent="Dialogues/SpeechBubbleRobot2" index="0"]
+margin_right = 104.0
+margin_bottom = 49.0
+
+[node name="Bubble" parent="Dialogues/SpeechBubbleRobot2/BubbleMargin" index="0"]
+margin_right = 104.0
+margin_bottom = 71.0
+
+[node name="Text" parent="Dialogues/SpeechBubbleRobot2/BubbleMargin" index="1"]
+margin_top = 24.0
+margin_right = 104.0
+margin_bottom = 46.0
+text = "damn."
+
+[node name="TailBoxConnector" parent="Dialogues/SpeechBubbleRobot2/Tails" index="0"]
+visible = false
+
+[node name="TailPointer" parent="Dialogues/SpeechBubbleRobot2/Tails" index="1"]
+position = Vector2( 152, 37 )
+points = PoolVector2Array( -57, -52, 7, -122 )
+
+[node name="Proceed" type="Button" parent="."]
+margin_right = 1285.0
+margin_bottom = 726.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 1 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = SubResource( 1 )
+custom_styles/normal = SubResource( 1 )
+
+[connection signal="pressed" from="Proceed" to="." method="_on_Proceed_pressed"]
+
+[editable path="Characters"]
+[editable path="Dialogues/SpeechBubbleXeno"]
+[editable path="Dialogues/SpeechBubbleRobot"]
+[editable path="Dialogues/SpeechBubbleXeno2"]
+[editable path="Dialogues/SpeechBubbleAnnie"]
+[editable path="Dialogues/SpeechBubbleXeno3"]
+[editable path="Dialogues/SpeechBubbleRobot2"]

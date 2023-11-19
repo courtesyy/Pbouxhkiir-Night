@@ -7,47 +7,54 @@
 
 [node name="TalkingCard" parent="." index="2" instance=ExtResource( 2 )]
 
+[node name="SpeechBubble" parent="TalkingCard" index="0"]
+margin_left = -125.197
+margin_top = -411.779
+margin_right = -125.197
+margin_bottom = -411.779
+
 [node name="BubbleMargin" parent="TalkingCard/SpeechBubble" index="0"]
-margin_left = 76.5082
-margin_top = 44.3438
-margin_right = 164.508
-margin_bottom = 102.344
+margin_left = -1.0
+margin_top = 25.0
+margin_right = 221.0
+margin_bottom = 122.0
 
 [node name="Bubble" parent="TalkingCard/SpeechBubble/BubbleMargin" index="0"]
-margin_right = 87.0
-margin_bottom = 58.0
+margin_right = 222.0
+margin_bottom = 97.0
 
 [node name="Text" parent="TalkingCard/SpeechBubble/BubbleMargin" index="1"]
-margin_top = 18.0
-margin_right = 87.0
-margin_bottom = 40.0
-text = "Player!"
+margin_top = 12.0
+margin_right = 222.0
+margin_bottom = 84.0
+text = "Did you know that if you lined up every Pbouxhkiir card ever made…"
 
 [node name="Tails" parent="TalkingCard/SpeechBubble" index="1"]
 visible = false
 
 [node name="SpeechBubble2" parent="TalkingCard" index="1"]
-margin_left = -129.368
-margin_top = -267.06
-margin_right = -129.368
-margin_bottom = -267.06
+margin_left = -118.549
+margin_top = -269.878
+margin_right = -118.549
+margin_bottom = -269.878
 
 [node name="BubbleMargin" parent="TalkingCard/SpeechBubble2" index="0"]
-margin_right = 264.0
+margin_top = 2.0
+margin_right = 214.0
 margin_bottom = 84.0
 
 [node name="Bubble" parent="TalkingCard/SpeechBubble2/BubbleMargin" index="0"]
-margin_right = 264.0
-margin_bottom = 106.0
+margin_right = 214.0
+margin_bottom = 82.0
 
 [node name="Text" parent="TalkingCard/SpeechBubble2/BubbleMargin" index="1"]
-margin_right = 264.0
-text = "Keep your eyes open, and the best opponent can be read
-like a holo-book!"
+margin_right = 214.0
+margin_bottom = 64.0
+text = "…they would be the length of a school bus?"
 
 [node name="TailBoxConnector" parent="TalkingCard/SpeechBubble2/Tails" index="0"]
-position = Vector2( 216.919, 30.8379 )
-points = PoolVector2Array( -108.98, -89.087, -105.908, -48.2022 )
+position = Vector2( 254.841, 55.0654 )
+points = PoolVector2Array( -109.302, -80.0374, -108.9, -47.9775 )
 
 [node name="TailPointer" parent="TalkingCard/SpeechBubble2/Tails" index="1"]
 points = PoolVector2Array( -123.99, -104.751, -110.797, -62.6209 )

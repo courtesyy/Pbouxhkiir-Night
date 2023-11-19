@@ -1,0 +1,124 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Dialogues/-DialogueParent.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Bubbles/SpeechBubbleRobot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Bubbles/SpeechBubbleXeno.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/Characters/xenoFocus.png" type="Texture" id=4]
+
+[node name="Control" instance=ExtResource( 1 )]
+
+[node name="Xeno" parent="Characters" index="0"]
+texture = ExtResource( 4 )
+
+[node name="SpeechBubbleXeno" parent="Dialogues" index="0" instance=ExtResource( 3 )]
+margin_left = 396.0
+margin_top = 143.0
+margin_right = 396.0
+margin_bottom = 143.0
+
+[node name="BubbleMargin" parent="Dialogues/SpeechBubbleXeno" index="0"]
+margin_right = 182.0
+margin_bottom = 72.0
+
+[node name="Bubble" parent="Dialogues/SpeechBubbleXeno/BubbleMargin" index="0"]
+margin_right = 182.0
+margin_bottom = 94.0
+
+[node name="Text" parent="Dialogues/SpeechBubbleXeno/BubbleMargin" index="1"]
+margin_top = 14.0
+margin_right = 182.0
+margin_bottom = 79.0
+text = "A fascinating guess, although"
+
+[node name="TailBoxConnector" parent="Dialogues/SpeechBubbleXeno/Tails" index="0"]
+visible = false
+
+[node name="TailPointer" parent="Dialogues/SpeechBubbleXeno/Tails" index="1"]
+position = Vector2( 82, 144 )
+points = PoolVector2Array( -52, -77, -55, -59, -53, -47, -64, -24 )
+
+[node name="SpeechBubbleRobot" parent="Dialogues" index="1" instance=ExtResource( 2 )]
+margin_left = 485.0
+margin_top = 197.0
+margin_right = 485.0
+margin_bottom = 197.0
+
+[node name="BubbleMargin" parent="Dialogues/SpeechBubbleRobot" index="0"]
+margin_right = 208.0
+margin_bottom = 77.0
+
+[node name="Bubble" parent="Dialogues/SpeechBubbleRobot/BubbleMargin" index="0"]
+margin_right = 208.0
+margin_bottom = 99.0
+
+[node name="Text" parent="Dialogues/SpeechBubbleRobot/BubbleMargin" index="1"]
+margin_top = 13.0
+margin_right = 208.0
+margin_bottom = 85.0
+text = "Don’t worry. I have a card that I shall give in your stead."
+
+[node name="TailBoxConnector" parent="Dialogues/SpeechBubbleRobot/Tails" index="0"]
+visible = false
+
+[node name="TailPointer" parent="Dialogues/SpeechBubbleRobot/Tails" index="1"]
+position = Vector2( 260, 114 )
+points = PoolVector2Array( -57, -56, 1, -57 )
+
+[node name="SpeechBubbleXeno2" parent="Dialogues" index="2" instance=ExtResource( 3 )]
+margin_left = 393.0
+margin_top = 312.0
+margin_right = 393.0
+margin_bottom = 312.0
+
+[node name="BubbleMargin" parent="Dialogues/SpeechBubbleXeno2" index="0"]
+margin_right = 182.0
+margin_bottom = 72.0
+
+[node name="Bubble" parent="Dialogues/SpeechBubbleXeno2/BubbleMargin" index="0"]
+margin_right = 182.0
+margin_bottom = 94.0
+
+[node name="Text" parent="Dialogues/SpeechBubbleXeno2/BubbleMargin" index="1"]
+margin_top = 14.0
+margin_right = 182.0
+margin_bottom = 79.0
+text = "You really don’t have to do that"
+
+[node name="TailBoxConnector" parent="Dialogues/SpeechBubbleXeno2/Tails" index="0"]
+visible = false
+
+[node name="TailPointer" parent="Dialogues/SpeechBubbleXeno2/Tails" index="1"]
+points = PoolVector2Array( -131, -116, -133, -79, -145, -57, -142, -47, -133, -39, -131, -15, -140, -8, -153, -10, -169, -28, -204, -43 )
+
+[node name="SpeechBubbleRobot2" parent="Dialogues" index="3" instance=ExtResource( 2 )]
+margin_left = 484.0
+margin_top = 339.0
+margin_right = 484.0
+margin_bottom = 339.0
+
+[node name="BubbleMargin" parent="Dialogues/SpeechBubbleRobot2" index="0"]
+margin_right = 232.0
+margin_bottom = 86.0
+
+[node name="Bubble" parent="Dialogues/SpeechBubbleRobot2/BubbleMargin" index="0"]
+margin_right = 232.0
+margin_bottom = 108.0
+
+[node name="Text" parent="Dialogues/SpeechBubbleRobot2/BubbleMargin" index="1"]
+margin_top = 18.0
+margin_right = 232.0
+margin_bottom = 90.0
+text = "Don’t worry a single segment of your very long body, my friend."
+
+[node name="TailBoxConnector" parent="Dialogues/SpeechBubbleRobot2/Tails" index="0"]
+visible = false
+
+[node name="TailPointer" parent="Dialogues/SpeechBubbleRobot2/Tails" index="1"]
+position = Vector2( 287, 113 )
+points = PoolVector2Array( -61, -97, -18, -104 )
+
+[editable path="Characters"]
+[editable path="Dialogues/SpeechBubbleXeno"]
+[editable path="Dialogues/SpeechBubbleRobot"]
+[editable path="Dialogues/SpeechBubbleXeno2"]
+[editable path="Dialogues/SpeechBubbleRobot2"]
