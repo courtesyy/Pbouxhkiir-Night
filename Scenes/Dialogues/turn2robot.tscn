@@ -77,7 +77,7 @@ margin_bottom = 78.0
 margin_top = 15.0
 margin_right = 214.0
 margin_bottom = 62.0
-text = "It told me in your voice that you have a {card}."
+text = "It told me in your voice that you have a raye."
 
 [node name="TailBoxConnector" parent="Dialogues/SpeechBubbleRobot2/Tails" index="0"]
 points = PoolVector2Array( -178, -259, -101, -196 )

@@ -16,18 +16,19 @@ margin_right = 511.0
 margin_bottom = 169.0
 
 [node name="BubbleMargin" parent="Dialogues/SpeechBubbleAnnie" index="0"]
-margin_right = 138.0
+margin_left = -25.0
+margin_right = 163.0
 margin_bottom = 61.0
 
 [node name="Bubble" parent="Dialogues/SpeechBubbleAnnie/BubbleMargin" index="0"]
-margin_right = 138.0
+margin_right = 188.0
 margin_bottom = 83.0
 
 [node name="Text" parent="Dialogues/SpeechBubbleAnnie/BubbleMargin" index="1"]
 margin_top = 18.0
-margin_right = 138.0
+margin_right = 188.0
 margin_bottom = 65.0
-text = "Take it and get out of here."
+text = "I wouldn’t be caught dead with that card."
 
 [node name="TailBoxConnector" parent="Dialogues/SpeechBubbleAnnie/Tails" index="0"]
 visible = false

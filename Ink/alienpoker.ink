@@ -108,7 +108,7 @@ XENOPHAGE: Ah well.
 *[XENOPHAGE (incorrect)]->turn1playerxenofalse
 ==turn1playerrobottrue==
 ~loadScene("turn1playerrobottrue")
-ROBOT: Do I look like I’m made of {card}s?
+ROBOT: Do I look like I’m made of cards?
 ROBOT: Because I’m not. That wouldn’t be logical.
 ROBOT: …FINE. HERE YOU GO.
 ~moveCard("robot","player",card)
@@ -156,7 +156,7 @@ XENOPHAGE: Go fish!
 ==turn2robot==
 ~loadScene("turn2robot")
 ~drawCardAll()
-~card = randomCardType()
+~card = "raye"
 ROBOT: I’ve put all of your dialogue into an AI text generator…
 XENOPHAGE: Ah Christ, here we go again.
 ROBOT: It told me in your voice that you have a {card}.
@@ -240,7 +240,7 @@ ANNIE: God damn it.
 
 ==turn2xeno==
 ~loadScene("turn2xeno")
-~card = randomCardType()
+~card = "worm"
 XENOPHAGE: Anyways, Annie, do you have any {card}s?
 *[next]->
 {
@@ -317,7 +317,7 @@ XENOPHAGE: Nope, no card. Get your net.
 ==turn3robot==
 ~loadScene("turn3robot")
 ~drawCardAll()
-~card = randomCardType()
+~card = "orbit"
 ROBOT: Xenophage, do you have any {card}s?
 *[next]->
 {
@@ -370,7 +370,7 @@ ROBOT: My answer remains “no.”
 
 ==turn3xeno==
 ~loadScene("turn3xeno")
-~card = randomCardType()
+~card = "worm"
 XENOPHAGE: Annie, do you have any {card}s?
 *[next]->
 {
@@ -449,7 +449,7 @@ XENOPHAGE: Nada. Fish time.
 ==turn4robot==
 ~loadScene("turn4robot")
 ~drawCardAll()
-~card = randomCardType()
+~card = "ship"
 ROBOT: I used the AI again, and it told me your opinion on undocumented migrant farmworkers.
 ROBOT: I’m surprised that you’re advocating we do that.
 XENOPHAGE: Card. What card do you want.
@@ -462,10 +462,12 @@ ROBOT: Gimme a {card}.
         ->turn4robotxenofalse
 } 
 ==turn4robotxenotrue==
+~loadScene("turn4robotxenotrue")
 XENOPHAGE: Here.
 ~moveCard("xeno","robot",card)
 *[next]-> turn4annie
 ==turn4robotxenofalse==
+~loadScene("turn4robotxenofalse")
 XENOPHAGE: Go fish.
 ~drawCard("robot")
 *[next]-> turn4annie
@@ -511,7 +513,7 @@ XENOPHAGE: I’m uh. I’m sorry for bringing it up.
 
 ==turn4xeno==
 ~loadScene("turn4xeno")
-~card = randomCardType()
+~card = "raye"
 XENOPHAGE: Annie, do you have any {card}s?
 ANNIE: Yknow, I’m getting a real sense of deja vu.
 XENOPHAGE: Really?
@@ -595,7 +597,7 @@ XENOPHAGE: ‘Fraid not, go fish.
 ==turn5robot==
 ~loadScene("turn5robot")
 ~drawCardAll()
-~card = randomCardType()
+~card = "cool worm"
 ROBOT: Aniline, do you have any-
 ANNIE: Sorry I have to go pee like so bad.
 *[next]->turn5robot2
@@ -624,7 +626,7 @@ XENOPHAGE: Go fish.
 
 ==turn5annie==
 ~loadScene("turn5annie")
-~card = randomCardType()
+~card = "orbit"
 ANNIE: Hi guys, I'm back.
 ANNIE: Human, do you have Gooeddoby? 
 ANNIE: You know. The talking card.
@@ -701,7 +703,7 @@ ROBOT: Don’t worry a single segment of your very long body, my friend.
 ==turn6robot==
 ~loadScene("turn6robot")
 ~drawCardAll()
-~card = randomCardType()
+~card = "ship"
 ROBOT: Aniline, are you going to have to use the restroom again?
 ANNIE: Weird thing to ask somebody, dude.
 ROBOT: I- you- give me your {card}! Do you have any {card}s?!
@@ -762,7 +764,7 @@ ROBOT: Fiiiiine! Jeeeeez!
 
 ==turn6xeno==
 ~loadScene("turn6xeno")
-~card = randomCardType()
+~card = "orbit"
 XENOPHAGE: Annie, do you have a
 ROBOT: Do you want to ask me for a card?
 ROBOT: You can do that, you know.
@@ -845,7 +847,7 @@ ANNIE: Thank God.
 
 ==turn7annie==
 ~loadScene("turn7annie")
-~card = randomCardType()
+~card = "raye"
 ANNIE: Robot...
 ANNIE: Wait, no. Xenophage, give me your {card}.
 *[next]->
@@ -872,7 +874,7 @@ ANNIE: You can just say “go fish.” Just say “go fish.”
 
 ==turn7xeno==
 ~loadScene("turn7xeno")
-~card = randomCardType()
+~card = "worm"
 XENOPHAGE: Hey Annie, do you have any {card}s?
 ANNIE: Hey xenophage, do you have a problem?
 XENOPHAGE: Annie...
@@ -978,7 +980,7 @@ ANNIE: We’re skipping your turn!
 
 ==turn8annie==
 ~loadScene("turn8annie")
-~card = randomCardType()
+~card = "cool worm"
 ANNIE: Okay, human, give me your goddamn {card}.
 ANNIE: If you give me some shitty card you’re gonna die right here right now.
 *[next]->

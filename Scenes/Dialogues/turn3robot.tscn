@@ -23,7 +23,7 @@ margin_bottom = 87.0
 margin_top = 20.0
 margin_right = 188.0
 margin_bottom = 67.0
-text = "Xenophage, do you have any {card}s?"
+text = "Xenophage, do you have any orbits?"
 
 [node name="TailBoxConnector" parent="Dialogues/SpeechBubbleRobot/Tails" index="0"]
 visible = false

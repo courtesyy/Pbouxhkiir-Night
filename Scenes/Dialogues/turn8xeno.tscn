@@ -88,6 +88,9 @@ text = "What are you talking about?"
 position = Vector2( 181, 32 )
 points = PoolVector2Array( -75, -99, -74, -50 )
 
+[node name="TailPointer" parent="Dialogues/SpeechBubbleXeno2/Tails" index="1"]
+visible = false
+
 [node name="SpeechBubbleXeno3" parent="Dialogues" index="3" instance=ExtResource( 2 )]
 margin_left = 426.0
 margin_top = 253.0

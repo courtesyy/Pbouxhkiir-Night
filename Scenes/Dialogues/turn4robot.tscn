@@ -104,7 +104,7 @@ margin_bottom = 87.0
 margin_top = 32.0
 margin_right = 170.0
 margin_bottom = 54.0
-text = "Gimme a {card}."
+text = "Gimme a ship."
 
 [node name="TailBoxConnector" parent="Dialogues/SpeechBubbleRobot3/Tails" index="0"]
 visible = false

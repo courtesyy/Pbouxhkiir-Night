@@ -21,20 +21,20 @@ margin_right = 627.0
 margin_bottom = 158.0
 
 [node name="BubbleMargin" parent="Dialogues/SpeechBubbleRobot" index="0"]
-margin_left = -24.0
+margin_left = -51.0
 margin_top = -45.0
 margin_right = 185.0
 margin_bottom = 50.0
 
 [node name="Bubble" parent="Dialogues/SpeechBubbleRobot/BubbleMargin" index="0"]
-margin_right = 209.0
+margin_right = 236.0
 margin_bottom = 95.0
 
 [node name="Text" parent="Dialogues/SpeechBubbleRobot/BubbleMargin" index="1"]
 margin_top = 24.0
-margin_right = 209.0
+margin_right = 236.0
 margin_bottom = 71.0
-text = "Alright, xenophage. Do you have any {card}s?"
+text = "Alright, xenophage. Do you have any cool worms?"
 
 [node name="TailBoxConnector" parent="Dialogues/SpeechBubbleRobot/Tails" index="0"]
 visible = false
