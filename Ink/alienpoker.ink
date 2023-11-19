@@ -222,9 +222,9 @@ ANNIE: Whatever, do you have the card or not?
 *[next]->
 {
     - checkCard("player","ship") == true:
-        ->turn2playerannietrue
+        ->turn2annieplayertrue
     - else:
-        ->turn2playeranniefalse
+        ->turn2annieplayerfalse
 } 
 ==turn2annieplayertrue==
 ~loadScene("turn2annieplayertrue")
@@ -232,7 +232,7 @@ ANNIE: Cool, thanks.
 ~loadScene("turn2xeno")
 *[next]->turn2xeno
 ==turn2annieplayerfalse==
-~loadScene("turn2playeranniefalse")
+~loadScene("turn2annieplayerfalse")
 ANNIE: God damn it.
 ~drawCard("annie")
 *[next]->turn2xeno
@@ -396,7 +396,7 @@ XENOPHAGE: Okay, I’ll go fish.
 /*TALKING CARD: Player! You are chosen, and thus I have revealed myself to you!
 TALKING CARD: Heed my words: do not poke any one of your opponents too many times, lest you agitate them and enter NEMESIS MODE.*/
 ~choiceMode = "card"
-~loadScene(turn3player)
+~loadScene("turn3player")
 *[ROBOT (correct)]->turn3playerrobottrue
 *[ROBOT (incorrect)]->turn3playerrobotfalse
 *[ANNIE (correct)]->turn3playerannietrue
