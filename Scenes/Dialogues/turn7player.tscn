@@ -1,0 +1,90 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/CardChoice.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/TalkingCard.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/cardTalkingWet.png" type="Texture" id=3]
+
+[node name="CardChoice" instance=ExtResource( 1 )]
+
+[node name="TalkingCard" parent="." index="2" instance=ExtResource( 2 )]
+
+[node name="SpeechBubble" parent="TalkingCard" index="0"]
+visible = false
+margin_left = -166.353
+margin_top = -385.622
+margin_right = -166.353
+margin_bottom = -385.622
+
+[node name="BubbleMargin" parent="TalkingCard/SpeechBubble" index="0"]
+margin_left = 117.0
+margin_top = 70.0
+margin_right = 221.0
+margin_bottom = 122.0
+
+[node name="Bubble" parent="TalkingCard/SpeechBubble/BubbleMargin" index="0"]
+margin_right = 104.0
+margin_bottom = 52.0
+
+[node name="Text" parent="TalkingCard/SpeechBubble/BubbleMargin" index="1"]
+margin_top = 15.0
+margin_right = 104.0
+margin_bottom = 37.0
+text = "Player!"
+
+[node name="Tails" parent="TalkingCard/SpeechBubble" index="1"]
+visible = false
+
+[node name="SpeechBubble2" parent="TalkingCard" index="1"]
+margin_left = -46.9524
+margin_top = -291.301
+margin_right = -46.9524
+margin_bottom = -291.301
+
+[node name="BubbleMargin" parent="TalkingCard/SpeechBubble2" index="0"]
+margin_left = -27.0
+margin_top = 0.0
+margin_right = 112.0
+margin_bottom = 84.0
+
+[node name="Bubble" parent="TalkingCard/SpeechBubble2/BubbleMargin" index="0"]
+margin_right = 139.0
+margin_bottom = 84.0
+
+[node name="Text" parent="TalkingCard/SpeechBubble2/BubbleMargin" index="1"]
+margin_top = 31.0
+margin_right = 139.0
+margin_bottom = 53.0
+text = "I’m wet now!"
+
+[node name="TailBoxConnector" parent="TalkingCard/SpeechBubble2/Tails" index="0"]
+visible = false
+position = Vector2( 245.52, 77.8275 )
+points = PoolVector2Array( -109.153, -78.043, -108.9, -47.9775 )
+
+[node name="TailPointer" parent="TalkingCard/SpeechBubble2/Tails" index="1"]
+points = PoolVector2Array( -163.03, -103.824, -163.971, -49.6012 )
+
+[node name="Sprite" parent="TalkingCard" index="2"]
+texture = ExtResource( 3 )
+
+[node name="AreaOther" parent="." index="3"]
+visible = false
+
+[node name="AreaXeno" parent="." index="4"]
+visible = false
+
+[node name="AreaAnnie" parent="." index="5"]
+visible = false
+
+[node name="AreaRobot" parent="." index="6"]
+visible = false
+
+[node name="Menu" parent="." index="7"]
+visible = false
+
+[node name="Hover" parent="." index="8"]
+visible = false
+
+[editable path="TalkingCard"]
+[editable path="TalkingCard/SpeechBubble"]
+[editable path="TalkingCard/SpeechBubble2"]
