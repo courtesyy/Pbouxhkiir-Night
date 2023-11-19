@@ -5,7 +5,7 @@ extends Node
 export (bool)var shuffleStart = false
 export (bool)var formatHand = false 
 export (int)var containerWidth = 1000
-export (int)var yPos = 500
+export (int)var yPos = 560
 
 var cardWidth = 191
 var desiredPadding = -20

@@ -111,4 +111,9 @@ custom_styles/focus = SubResource( 5 )
 custom_styles/disabled = SubResource( 5 )
 custom_styles/normal = SubResource( 5 )
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1321.0
+margin_bottom = 736.0
+color = Color( 0, 0, 0, 1 )
+
 [connection signal="pressed" from="Proceed" to="." method="_on_Proceed_pressed"]

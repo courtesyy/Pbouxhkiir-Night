@@ -37,6 +37,8 @@ EXTERNAL musicPlay(song)
 //"song1" or "song2"
 EXTERNAL musicStop()
 EXTERNAL loadScene(scenename)
+EXTERNAL hideHand()
+EXTERNAL finalizeCorrectCard()
 
 //Variables:
 VAR ending = "neutral" //values: annie, robot, xeno, neutral. Determines which splash screen shows at the end.
@@ -107,10 +109,10 @@ XENOPHAGE: Ah well.
 *[XENOPHAGE (incorrect)]->turn1playerxenofalse
 ==turn1playerrobottrue==
 ~loadScene("turn1playerrobottrue")
-ROBOT: Do I look like I’m made of {card}s?
+ROBOT: Do I look like I’m made of cards?
 ROBOT: Because I’m not. That wouldn’t be logical.
 ROBOT: …FINE. HERE YOU GO.
-~moveCard("robot","player",card)
+~finalizeCorrectCard()
 ~RobotRage++
 *[next]-> turn2robot
 ==turn1playerrobotfalse==
@@ -125,7 +127,7 @@ ROBOT: Because I do not have that card.
 ~loadScene("turn1playerannietrue")
 ANNIE: God freaking dang it.
 ANNIE: Whatever, here’s your card.
-~moveCard("annie","player",card)
+~finalizeCorrectCard()
 ~AnnieRage++
 *[next]-> turn2robot
 ==turn1playeranniefalse==
@@ -140,7 +142,7 @@ ANNIE: No, go fish.
 ~loadScene("turn1playerxenotrue")
 XENOPHAGE: Awwwww dang.
 XENOPHAGE: Yeah, here’s your card.
-~moveCard("xeno","player",card)
+~finalizeCorrectCard()
 ~XenoRage++
 *[next]-> turn2robot
 ==turn1playerxenofalse==
@@ -155,7 +157,7 @@ XENOPHAGE: Go fish!
 ==turn2robot==
 ~loadScene("turn2robot")
 ~drawCardAll()
-~card = randomCardType()
+~card = "raye"
 ROBOT: I’ve put all of your dialogue into an AI text generator…
 XENOPHAGE: Ah Christ, here we go again.
 ROBOT: It told me in your voice that you have a {card}.
@@ -209,7 +211,7 @@ XENOPHAGE: Well, I’ll be damned.
 ANNIE: Whatever, do you have the card or not?
 *[next]->
 {
-    - checkCard("xeno",card) == true:
+    - checkCard("player", "ship") == true:
         ->turn2annieplayertrue
     - else:
         ->turn2annieplayerfalse
@@ -222,9 +224,9 @@ ANNIE: Whatever, do you have the card or not?
 *[next]->
 {
     - checkCard("player","ship") == true:
-        ->turn2playerannietrue
+        ->turn2annieplayertrue
     - else:
-        ->turn2playeranniefalse
+        ->turn2annieplayerfalse
 } 
 ==turn2annieplayertrue==
 ~loadScene("turn2annieplayertrue")
@@ -232,14 +234,14 @@ ANNIE: Cool, thanks.
 ~loadScene("turn2xeno")
 *[next]->turn2xeno
 ==turn2annieplayerfalse==
-~loadScene("turn2playeranniefalse")
+~loadScene("turn2annieplayerfalse")
 ANNIE: God damn it.
 ~drawCard("annie")
 *[next]->turn2xeno
 
 ==turn2xeno==
 ~loadScene("turn2xeno")
-~card = randomCardType()
+~card = "worm"
 XENOPHAGE: Anyways, Annie, do you have any {card}s?
 *[next]->
 {
@@ -275,7 +277,7 @@ ANNIE: No, go fish.
 ==turn2playerrobottrue==
 ~loadScene("turn2playerrobottrue")
 ROBOT: You have a sharp mind, human. It is yours.
-~moveCard("robot","player",card)
+~finalizeCorrectCard()
 ~RobotRage++
 *[next]-> turn3robot
 ==turn2playerrobotfalse==
@@ -288,7 +290,7 @@ ROBOT: A total misplay. Go fish.
 ==turn2playerannietrue==
 ~loadScene("turn2playerannietrue")
 ANNIE: Take it and leave.
-~moveCard("annie","player",card)
+~finalizeCorrectCard()
 ~AnnieRage++
 *[next]-> turn3robot
 ==turn2playeranniefalse==
@@ -302,7 +304,7 @@ ANNIE: I don’t have that card.
 ==turn2playerxenotrue==
 ~loadScene("turn2playerxenotrue")
 XENOPHAGE: Yup, I have it. Here you go.
-~moveCard("xeno","player",card)
+~finalizeCorrectCard()
 ~XenoRage++
 *[next]-> turn3robot
 ==turn2playerxenofalse==
@@ -316,7 +318,7 @@ XENOPHAGE: Nope, no card. Get your net.
 ==turn3robot==
 ~loadScene("turn3robot")
 ~drawCardAll()
-~card = randomCardType()
+~card = "orbit"
 ROBOT: Xenophage, do you have any {card}s?
 *[next]->
 {
@@ -345,11 +347,12 @@ ANNIE: Ok Computer, do you have any uterusi?
 ROBOT: I’m a robot. Why would I?
 *[next]->turn3annie2
 ==turn3annie2==
+~loadScene("turn3annie2")
 ANNIE: I swear to God-
 ANNIE: Rayguns, do you have any rayguns?
 *[next]->
 {
-    - checkCard("robot","ship") == true:
+    - checkCard("player","ship") == true:
         ->turn3annierobottrue
     - else:
         ->turn3annierobotfalse
@@ -368,7 +371,7 @@ ROBOT: My answer remains “no.”
 
 ==turn3xeno==
 ~loadScene("turn3xeno")
-~card = randomCardType()
+~card = "worm"
 XENOPHAGE: Annie, do you have any {card}s?
 *[next]->
 {
@@ -396,7 +399,7 @@ XENOPHAGE: Okay, I’ll go fish.
 /*TALKING CARD: Player! You are chosen, and thus I have revealed myself to you!
 TALKING CARD: Heed my words: do not poke any one of your opponents too many times, lest you agitate them and enter NEMESIS MODE.*/
 ~choiceMode = "card"
-~loadScene(turn3player)
+~loadScene("turn3player")
 *[ROBOT (correct)]->turn3playerrobottrue
 *[ROBOT (incorrect)]->turn3playerrobotfalse
 *[ANNIE (correct)]->turn3playerannietrue
@@ -406,7 +409,7 @@ TALKING CARD: Heed my words: do not poke any one of your opponents too many time
 ==turn3playerrobottrue==
 ~loadScene("turn3playerrobottrue")
 ROBOT: Here, take it. It makes no difference.
-~moveCard("robot","player",card)
+~finalizeCorrectCard()
 ~RobotRage++
  *[next]-> turn4robot
 ==turn3playerrobotfalse==
@@ -419,7 +422,7 @@ ROBOT: What an absurd question. Of course I don’t have that, go fish.
 ==turn3playerannietrue==
 ~loadScene("turn3playerannietrue")
 ANNIE: Take it and get out of here.
-~moveCard("annie","player",card)
+~finalizeCorrectCard()
 ~AnnieRage++
 *[next] -> turn4robot
 ==turn3playeranniefalse==
@@ -432,7 +435,7 @@ ANNIE: I wouldn’t be caught dead with a {card}.
 ==turn3playerxenotrue==
 ~loadScene("turn3playerxenotrue")
 XENOPHAGE: Sadly, I have it.
-~moveCard("xeno","player",card)
+~finalizeCorrectCard()
 ~XenoRage++
 *[next] -> turn4robot
 ==turn3playerxenofalse==
@@ -447,7 +450,7 @@ XENOPHAGE: Nada. Fish time.
 ==turn4robot==
 ~loadScene("turn4robot")
 ~drawCardAll()
-~card = randomCardType()
+~card = "ship"
 ROBOT: I used the AI again, and it told me your opinion on undocumented migrant farmworkers.
 ROBOT: I’m surprised that you’re advocating we do that.
 XENOPHAGE: Card. What card do you want.
@@ -460,10 +463,12 @@ ROBOT: Gimme a {card}.
         ->turn4robotxenofalse
 } 
 ==turn4robotxenotrue==
+~loadScene("turn4robotxenotrue")
 XENOPHAGE: Here.
 ~moveCard("xeno","robot",card)
 *[next]-> turn4annie
 ==turn4robotxenofalse==
+~loadScene("turn4robotxenofalse")
 XENOPHAGE: Go fish.
 ~drawCard("robot")
 *[next]-> turn4annie
@@ -509,7 +514,7 @@ XENOPHAGE: I’m uh. I’m sorry for bringing it up.
 
 ==turn4xeno==
 ~loadScene("turn4xeno")
-~card = randomCardType()
+~card = "raye"
 XENOPHAGE: Annie, do you have any {card}s?
 ANNIE: Yknow, I’m getting a real sense of deja vu.
 XENOPHAGE: Really?
@@ -549,7 +554,7 @@ ANNIE: Yeah, probably. Don’t have your card, by the way.
 ==turn4playerrobottrue==
 ~loadScene("turn4playerrobottrue")
 ROBOT: What an astute mind! Yes, yes I have it.
-~moveCard("robot","player",card)
+~finalizeCorrectCard()
 ~RobotRage++
 *[next]-> turn5robot
 ==turn4playerrobotfalse==
@@ -566,7 +571,7 @@ XENOPHAGE: I hope your job goes first.
 ==turn4playerannietrue==
 ~loadScene("turn4playerannietrue")
 ANNIE: You want it? You can have it. As a treat. 
-~moveCard("annie","player",card)
+~finalizeCorrectCard()
 ~AnnieRage++
 *[next]-> turn5robot
 ==turn4playeranniefalse==
@@ -579,7 +584,7 @@ ANNIE: I don’t have that, but I do have go fish.
 ==turn4playerxenotrue==
 ~loadScene("turn4playerxenotrue")
 XENOPHAGE: Dang, you’re good!
-~moveCard("xeno","player",card)
+~finalizeCorrectCard()
 ~XenoRage++
 *[next]-> turn5robot
 ==turn4playerxenofalse==
@@ -593,11 +598,12 @@ XENOPHAGE: ‘Fraid not, go fish.
 ==turn5robot==
 ~loadScene("turn5robot")
 ~drawCardAll()
-~card = randomCardType()
+~card = "cool worm"
 ROBOT: Aniline, do you have any-
 ANNIE: Sorry I have to go pee like so bad.
 *[next]->turn5robot2
 ==turn5robot2==
+~loadScene("turn5robot2")
 ROBOT: Alright, xenophage. Do you have any {card}s?
 *[next]->
 {
@@ -621,7 +627,7 @@ XENOPHAGE: Go fish.
 
 ==turn5annie==
 ~loadScene("turn5annie")
-~card = randomCardType()
+~card = "orbit"
 ANNIE: Hi guys, I'm back.
 ANNIE: Human, do you have Gooeddoby? 
 ANNIE: You know. The talking card.
@@ -698,7 +704,7 @@ ROBOT: Don’t worry a single segment of your very long body, my friend.
 ==turn6robot==
 ~loadScene("turn6robot")
 ~drawCardAll()
-~card = randomCardType()
+~card = "ship"
 ROBOT: Aniline, are you going to have to use the restroom again?
 ANNIE: Weird thing to ask somebody, dude.
 ROBOT: I- you- give me your {card}! Do you have any {card}s?!
@@ -739,7 +745,7 @@ ROBOT: They will do no such thing!
 *[next]->turn6anniechoice
 ==turn6anniechoice==
 ~choiceMode = "dialogue"
-~loadScene("")
+~loadScene("turn6anniechoice")
 *[It sucks.]->turn6annietrue 
 *[It’s really good, actually.]->turn6anniefalse 
 ==turn6annietrue==
@@ -759,7 +765,7 @@ ROBOT: Fiiiiine! Jeeeeez!
 
 ==turn6xeno==
 ~loadScene("turn6xeno")
-~card = randomCardType()
+~card = "orbit"
 XENOPHAGE: Annie, do you have a
 ROBOT: Do you want to ask me for a card?
 ROBOT: You can do that, you know.
@@ -807,7 +813,7 @@ ROBOT: Here you go.
 ==turn6playerannietrue==
 ~loadScene("turn6playerannietrue")
 ANNIE: You can have my {card}. But you’ll never have a girlfriend.
-~moveCard("annie","player",card)
+~finalizeCorrectCard()
 ~AnnieRage++
 *[next]->turn7robot
 ==turn6playeranniefalse==
@@ -820,7 +826,7 @@ ANNIE: Fuck yourself.
 ==turn6playerxenotrue==
 ~loadScene("turn6playerxenotrue")
 XENOPHAGE: What’s mine is yours.
-~moveCard("xeno","player",card)
+~finalizeCorrectCard()
 ~XenoRage++
 *[next]->turn7robot
 ==turn6playerxenofalse==
@@ -842,7 +848,7 @@ ANNIE: Thank God.
 
 ==turn7annie==
 ~loadScene("turn7annie")
-~card = randomCardType()
+~card = "raye"
 ANNIE: Robot...
 ANNIE: Wait, no. Xenophage, give me your {card}.
 *[next]->
@@ -869,7 +875,7 @@ ANNIE: You can just say “go fish.” Just say “go fish.”
 
 ==turn7xeno==
 ~loadScene("turn7xeno")
-~card = randomCardType()
+~card = "worm"
 XENOPHAGE: Hey Annie, do you have any {card}s?
 ANNIE: Hey xenophage, do you have a problem?
 XENOPHAGE: Annie...
@@ -918,7 +924,7 @@ ANNIE: Yeah, here.
 ANNIE: Wow, really happy about that, huh?
 ANNIE: It’s just a game. It’s just a game, dude.
 ANNIE: It’s sad that you care this much.
-~moveCard("annie","player",card)
+~finalizeCorrectCard()
 ~AnnieRage++
 *[next]->turn8robot
 ==turn7playeranniefalse==
@@ -930,7 +936,7 @@ ANNIE: Do you have any uh, do you have any, like, brain cells? Go fish. Asshole.
 ==turn7playerxenotrue==
 ~loadScene("turn7playerxenotrue")
 XENOPHAGE: Dang, I was one away from matching 10.
-~moveCard("xeno","player",card)
+~finalizeCorrectCard()
 ~XenoRage++
 *[next]->turn8robot
 ==turn7playerxenofalse==
@@ -975,7 +981,7 @@ ANNIE: We’re skipping your turn!
 
 ==turn8annie==
 ~loadScene("turn8annie")
-~card = randomCardType()
+~card = "cool worm"
 ANNIE: Okay, human, give me your goddamn {card}.
 ANNIE: If you give me some shitty card you’re gonna die right here right now.
 *[next]->
@@ -988,7 +994,7 @@ ANNIE: If you give me some shitty card you’re gonna die right here right now.
 ==turn8annieplayertrue==
 ~loadScene("turn8annieplayertrue")
 ANNIE: YES! A light! A light in the darkness!
-~moveCard("player","annie",card)
+~finalizeCorrectCard()
 *[next]->turn8xeno
 ==turn8annieplayerfalse==
 ~loadScene("turn8annieplayerfalse")
@@ -1004,6 +1010,7 @@ XENOPHAGE: What are you talking about?
 XENOPHAGE: Anyways, Annie, do you have any uteruses?
 *[next]->turn8xenocont
 ==turn8xenocont==
+~loadScene("turn8xenocont")
 ANNIE: YOU! YOU! YOU! YOU! YOU!
 XENOPHAGE: Anyways, it’s the human’s turn!
 *[next]->
@@ -1033,12 +1040,13 @@ ANNIE: Sayonara, shitheads.
 *[next]->endingneutral2
 
 ==endingneutral2==
+~hideHand()
 ~loadScene("endingneutral2")
 //YOU WON!!!!!!!!
 
 //Aniline destroyed the space station, killing you and everyone else aboard. The CHAGTAD® Demolition Company was sued by a certain xenophage’s large and litigious family, who received eighty-three quintillion CHAGbucks™ in compensation. Now bankrupt, CHAGTAD® was unable to demolish the Earth, and the larger galaxy soon forgot about the little blue planet.
 
-*[next]-> END
+*[next]->last
 
 //--------------------robot ending-----------------------------
 ==endingrobot==
@@ -1075,11 +1083,11 @@ ROBOT: NOW.
 *[next]->endingrobot5
 
 ==endingrobot5==
+~hideHand()
 ~loadScene("endingrobot5")
 //YOU LOST!!!!!!!!
 //After winning(?) the Pbouxhkiir match, 3b42dd00-903a-47b8-87b8-47e0-4447-fcf1-2bed-a6a4-dcf3-484c-9f5420547c893ba1 repeatedly hit the detonate button for thirty minutes, destroying the Earth thousands of times. There is no planet for you to return to, but inexplicably, Annie let you crash at her place. The two of you probably went all kinds of zany adventures, which might sound cool, but don’t kid yourself here, you absolutely lost.
-
-*[next]-> END
+*[next]->last
 
 
 //--------------------annie ending-----------------------------
@@ -1094,7 +1102,7 @@ XENOPHAGE: We’re just friends. You’re making this really awkward for us.
 ANNIE: Lies! You’re both kissing AND trying to take all my sweet sweet cards!
 *[next]->endingannie2
 ==endingannie2==
-~loadScene("endingannie")
+~loadScene("endingannie2")
 ~musicPlay("song2")
 ANNIE: So you know what? If I don’t get to have cards, you don’t get to have uncooked flesh!
 XENOPHAGE: Let’s uh, let's all settle down.
@@ -1103,10 +1111,11 @@ ANNIE: Give me that detonator. Click! There we go!
 ANNIE: Earth gone! No more Earth! And now, no more casino!
 *[next]->endingannie3
 ==endingannie3==
+~hideHand()
 ~loadScene("endingannie3")
 //YOU LOST!!!!!!!!
 //In an impressive display of bad sportsmanstarship, Aniline prematurely destroyed the Earth. 2.37 seconds later, she destroyed the Primox Alpha (the CHAGTAD® Company Casino ship), killing you and everyone else aboard. But for those 2.37 seconds, you were the last surviving Earthling. No Earthling had ever been as alone as you were for those 2.37 seconds. Every person you had ever known and every place you had ever seen, all gone, with your memory as the single testament to their existence. There is no word for the emotion such a person would feel. On the bright side, there was very little time for you to realize how very, very, VERY sad you should have felt about the whole thing.
-*[next]-> END
+*[next]->last
 
 //--------------------xeno ending-----------------------------
 ==endingxeno==
@@ -1143,8 +1152,13 @@ ROBOT: Now.
 *[next]->endingxeno5
 
 ==endingxeno5==
+~hideHand()
 ~loadScene("endingxeno5")
 //YOU LOST!!!!!!!!
 //While you were busy being torn to pieces, chewed, then regurgitated into the awaiting mandibles of autoparoxymorphic paralarvae, Aniline and 3b42dd00-903a-47b8-87b8-47e0-4447-fcf1-2bed-a6a4-dcf3-484c-9f5420547c893ba1 both pressed the detonation button simultaneously. The Earth was destroyed, of course, but at least you weren’t around to see it.
+*[next]->last
+
+==last==
+~loadScene("last")
 *[next]-> END
 

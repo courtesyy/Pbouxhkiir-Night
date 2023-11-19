@@ -78,10 +78,10 @@ margin_right = 215.0
 margin_bottom = 110.0
 
 [node name="Text" parent="Dialogues/SpeechBubbleRobot2/BubbleMargin" index="1"]
-margin_top = 19.0
+margin_top = 31.0
 margin_right = 215.0
-margin_bottom = 91.0
-text = "I- you- give me your {card}! Do you have any {card}s?!"
+margin_bottom = 78.0
+text = "I- you- give me your ship! Do you have any ships?!"
 
 [node name="TailBoxConnector" parent="Dialogues/SpeechBubbleRobot2/Tails" index="0"]
 visible = false

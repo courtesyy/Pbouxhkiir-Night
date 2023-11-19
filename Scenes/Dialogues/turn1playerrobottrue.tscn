@@ -23,7 +23,7 @@ margin_bottom = 86.0
 margin_top = 19.0
 margin_right = 190.0
 margin_bottom = 66.0
-text = "Do I look like I’m made of {card}s?"
+text = "Do I look like I’m made of cards?"
 
 [node name="Tails" parent="Dialogues/SpeechBubbleRobot" index="1"]
 visible = false

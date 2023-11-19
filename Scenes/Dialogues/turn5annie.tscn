@@ -156,7 +156,7 @@ margin_bottom = 79.0
 margin_top = 16.0
 margin_right = 135.0
 margin_bottom = 63.0
-text = "Robot, any {card}s?"
+text = "Robot, any orbits?"
 
 [node name="TailBoxConnector" parent="Dialogues/SpeechBubbleAnnie6/Tails" index="0"]
 visible = false

@@ -36,6 +36,9 @@ text = "SHUT UP. SHUT UP. SHUT UP. SHUT UP."
 [node name="Tails" parent="Dialogues/SpeechBubbleRobot" index="1"]
 visible = false
 
+[node name="TailBoxConnector" parent="Dialogues/SpeechBubbleRobot/Tails" index="0"]
+visible = false
+
 [node name="SpeechBubbleRobot2" parent="Dialogues" index="1" instance=ExtResource( 2 )]
 margin_left = 576.0
 margin_top = 116.0

@@ -29,7 +29,7 @@ margin_bottom = 97.0
 margin_top = 12.0
 margin_right = 219.0
 margin_bottom = 84.0
-text = "You can have my {card}. But you’ll never have a girlfriend."
+text = "You can have my card. But you’ll never have a girlfriend."
 
 [node name="TailBoxConnector" parent="Dialogues/SpeechBubbleAnnie/Tails" index="0"]
 visible = false

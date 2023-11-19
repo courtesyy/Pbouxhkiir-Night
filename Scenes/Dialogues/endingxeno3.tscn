@@ -6,7 +6,7 @@
 [ext_resource path="res://Sounds/xenoending.wav" type="AudioStream" id=4]
 [ext_resource path="res://Sprites/Characters/xenoTilt.png" type="Texture" id=5]
 [ext_resource path="res://scripts/meatnoises.gd" type="Script" id=6]
-[ext_resource path="res://Sprites/UI/bubbleRectBlack.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/UI/black.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Bubbles/SpeechBubbleAnnie.tscn" type="PackedScene" id=8]
 
 [node name="Control" instance=ExtResource( 1 )]
@@ -21,7 +21,7 @@ texture = ExtResource( 3 )
 
 [node name="Robot" parent="Characters" index="2"]
 position = Vector2( -118, -57 )
-scale = Vector2( 9.96, 5.72 )
+scale = Vector2( 14.28, 8.1 )
 texture = ExtResource( 7 )
 
 [node name="SpeechBubbleRobot" parent="Dialogues" index="0" instance=ExtResource( 2 )]

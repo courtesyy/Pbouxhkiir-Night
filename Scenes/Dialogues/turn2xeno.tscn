@@ -27,7 +27,7 @@ margin_bottom = 106.0
 margin_top = 20.0
 margin_right = 239.0
 margin_bottom = 85.0
-text = "Anyways, Annie, do you have any {card}s?"
+text = "Anyways, Annie, do you have any worms?"
 
 [node name="TailBoxConnector" parent="Dialogues/SpeechBubbleXeno/Tails" index="0"]
 visible = false

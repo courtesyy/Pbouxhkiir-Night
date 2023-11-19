@@ -6,7 +6,7 @@
 [ext_resource path="res://Sounds/xenoending.wav" type="AudioStream" id=4]
 [ext_resource path="res://Sprites/Characters/xenoTilt.png" type="Texture" id=5]
 [ext_resource path="res://scripts/meatnoises.gd" type="Script" id=6]
-[ext_resource path="res://Sprites/UI/bubbleRectBlack.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/UI/black.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Bubbles/SpeechBubbleAnnie.tscn" type="PackedScene" id=8]
 
 [node name="Control" instance=ExtResource( 1 )]
@@ -21,7 +21,7 @@ texture = ExtResource( 3 )
 
 [node name="Robot" parent="Characters" index="2"]
 position = Vector2( -118, -57 )
-scale = Vector2( 9.96, 5.72 )
+scale = Vector2( 14.39, 7.94 )
 texture = ExtResource( 7 )
 
 [node name="SpeechBubbleRobot" parent="Dialogues" index="0" instance=ExtResource( 2 )]
@@ -48,10 +48,10 @@ text = "What? All organic lifeforms do that."
 visible = false
 
 [node name="SpeechBubbleAnnie" parent="Dialogues" index="1" instance=ExtResource( 8 )]
-margin_left = 449.0
-margin_top = 365.0
-margin_right = 449.0
-margin_bottom = 365.0
+margin_left = 428.0
+margin_top = 210.0
+margin_right = 428.0
+margin_bottom = 210.0
 
 [node name="BubbleMargin" parent="Dialogues/SpeechBubbleAnnie" index="0"]
 margin_right = 184.0
@@ -71,10 +71,10 @@ text = "Quick, blow up the Earth while they’re both distracted."
 visible = false
 
 [node name="SpeechBubbleRobot2" parent="Dialogues" index="2" instance=ExtResource( 2 )]
-margin_left = 681.0
-margin_top = 419.0
-margin_right = 681.0
-margin_bottom = 419.0
+margin_left = 660.0
+margin_top = 264.0
+margin_right = 660.0
+margin_bottom = 264.0
 
 [node name="BubbleMargin" parent="Dialogues/SpeechBubbleRobot2" index="0"]
 margin_right = 217.0
@@ -94,10 +94,10 @@ text = "Agreed. Blowing it up on 1…"
 visible = false
 
 [node name="SpeechBubbleAnnie2" parent="Dialogues" index="3" instance=ExtResource( 8 )]
-margin_left = 539.0
-margin_top = 502.0
-margin_right = 539.0
-margin_bottom = 502.0
+margin_left = 518.0
+margin_top = 347.0
+margin_right = 518.0
+margin_bottom = 347.0
 
 [node name="BubbleMargin" parent="Dialogues/SpeechBubbleAnnie2" index="0"]
 margin_right = 101.0
@@ -117,10 +117,10 @@ text = "Two!"
 visible = false
 
 [node name="SpeechBubbleAnnie3" parent="Dialogues" index="4" instance=ExtResource( 8 )]
-margin_left = 685.0
-margin_top = 577.0
-margin_right = 685.0
-margin_bottom = 577.0
+margin_left = 664.0
+margin_top = 422.0
+margin_right = 664.0
+margin_bottom = 422.0
 
 [node name="BubbleMargin" parent="Dialogues/SpeechBubbleAnnie3" index="0"]
 margin_left = -31.0

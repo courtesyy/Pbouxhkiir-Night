@@ -32,6 +32,9 @@ text = "Speaking of the human, I think I’ve been treated rather unfairly tonig
 [node name="Tails" parent="Dialogues/SpeechBubbleRobot" index="1"]
 visible = false
 
+[node name="TailPointer" parent="Dialogues/SpeechBubbleRobot/Tails" index="1"]
+visible = false
+
 [node name="SpeechBubbleRobot2" parent="Dialogues" index="1" instance=ExtResource( 2 )]
 margin_left = 418.0
 margin_top = 129.0

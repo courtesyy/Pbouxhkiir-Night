@@ -54,7 +54,7 @@ margin_bottom = 79.0
 margin_top = 16.0
 margin_right = 191.0
 margin_bottom = 63.0
-text = "Wait, no. Xenophage, give me your {card}."
+text = "Wait, no. Xenophage, give me your raye."
 
 [node name="TailBoxConnector" parent="Dialogues/SpeechBubbleAnnie2/Tails" index="0"]
 position = Vector2( 192, 40 )
