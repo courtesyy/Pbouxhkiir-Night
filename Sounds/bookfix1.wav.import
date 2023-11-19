@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Book1.wav-102b9a55d2a70a056190524a1314cbc7.sample"
+path="res://.import/bookfix1.wav-9eb2fb8cc6be41e016171f6ef4335cf0.sample"
 
 [deps]
 
-source_file="res://Sounds/Book1.wav"
-dest_files=[ "res://.import/Book1.wav-102b9a55d2a70a056190524a1314cbc7.sample" ]
+source_file="res://Sounds/bookfix1.wav"
+dest_files=[ "res://.import/bookfix1.wav-9eb2fb8cc6be41e016171f6ef4335cf0.sample" ]
 
 [params]
 

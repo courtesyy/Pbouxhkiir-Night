@@ -14,4 +14,4 @@ func displayBubble(text):
 	show()
 	
 func _on_SpeechBubble_visibility_changed():
-	pass # play a sound
+	$ShowSound.play()

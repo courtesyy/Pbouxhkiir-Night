@@ -7,7 +7,7 @@
 [ext_resource path="res://Sprites/splashScreen3.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/splashScreen2.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/ClickLink.gd" type="Script" id=7]
-[ext_resource path="res://Sounds/menufix1.mp3" type="AudioStream" id=8]
+[ext_resource path="res://Sounds/menufix2.mp3" type="AudioStream" id=8]
 [ext_resource path="res://Sounds/menufix3.mp3" type="AudioStream" id=9]
 
 [sub_resource type="StyleBoxFlat" id=1]
@@ -46,6 +46,7 @@ shouldStartInvisible = true
 nextNodePath = NodePath("../2")
 
 [node name="Menusound1" type="AudioStreamPlayer2D" parent="Sprites/1"]
+position = Vector2( 623, 267 )
 stream = ExtResource( 8 )
 bus = "SFX"
 
@@ -57,6 +58,7 @@ shouldStartInvisible = true
 nextNodePath = NodePath("../3")
 
 [node name="Menusound2" type="AudioStreamPlayer2D" parent="Sprites/2"]
+position = Vector2( 637, 399 )
 stream = ExtResource( 8 )
 bus = "SFX"
 
@@ -68,6 +70,7 @@ shouldStartInvisible = true
 nextNodePath = NodePath("../..")
 
 [node name="Menusound2" type="AudioStreamPlayer2D" parent="Sprites/3"]
+position = Vector2( 638, 580 )
 stream = ExtResource( 9 )
 bus = "SFX"
 

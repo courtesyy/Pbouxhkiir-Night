@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/menuhover.mp3-b30fa1d6c3d93510081beaf5868e8f67.mp3str"
+
+[deps]
+
+source_file="res://Sounds/menuhover.mp3"
+dest_files=[ "res://.import/menuhover.mp3-b30fa1d6c3d93510081beaf5868e8f67.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
