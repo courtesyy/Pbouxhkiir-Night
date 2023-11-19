@@ -1,0 +1,172 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Sounds/annieexplosion.wav" type="AudioStream" id=1]
+[ext_resource path="res://Scripts/EndingEarthExplodes.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/Animation/fire.png" type="Texture" id=3]
+[ext_resource path="res://Sounds/firesfx.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Fonts/SketchnoteRegular.TTF" type="DynamicFontData" id=5]
+[ext_resource path="res://Sprites/youWonAnnie.png" type="Texture" id=6]
+
+[sub_resource type="Animation" id=2]
+resource_name = "EarthExplosion"
+length = 1.1
+loop = true
+tracks/0/type = "audio"
+tracks/0/path = NodePath("AudioStreamPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [  ],
+"times": PoolRealArray(  )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationPlayer/Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19 ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1 ]
+}
+
+[sub_resource type="DynamicFont" id=4]
+size = 21
+font_data = ExtResource( 5 )
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer2/Sprite2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "You lost"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer2/Sprite2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "You won"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer2/Sprite2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[node name="EndingEarthExplodes" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+bus = "SFX"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -28.476
+autoplay = true
+bus = "SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+method_call_mode = 1
+anims/EarthExplosion = SubResource( 2 )
+anims/RESET = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="AnimationPlayer"]
+position = Vector2( -17, -4 )
+scale = Vector2( 5.45417, 4.03889 )
+texture = ExtResource( 3 )
+centered = false
+hframes = 5
+vframes = 5
+frame = 1
+
+[node name="ColorRect" type="ColorRect" parent="AnimationPlayer"]
+margin_left = -17.0
+margin_top = 111.0
+margin_right = 1289.0
+margin_bottom = 603.0
+color = Color( 0, 0, 0, 0.819608 )
+
+[node name="Label" type="Label" parent="AnimationPlayer"]
+margin_left = 211.0
+margin_top = 308.0
+margin_right = 1050.0
+margin_bottom = 565.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Aniline destroyed the space station, killing you and everyone else aboard. The CHAGTAD® Demolition Company was sued by a certain xenophage’s large and litigious family, who received eighty-three quintillion CHAGbucks™ in compensation. Now bankrupt, CHAGTAD® was unable to demolish the Earth, and the larger galaxy soon forgot about the little blue planet."
+align = 1
+autowrap = true
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 5 )
+"anims/You lost" = SubResource( 6 )
+"anims/You won" = SubResource( 7 )
+
+[node name="Sprite2" type="Sprite" parent="AnimationPlayer2"]
+position = Vector2( 633, 184 )
+texture = ExtResource( 6 )
+hframes = 5
+
+[node name="Proceed" type="Button" parent="."]
+margin_right = 1285.0
+margin_bottom = 726.0
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
+
+[connection signal="pressed" from="Proceed" to="." method="_on_Proceed_pressed"]

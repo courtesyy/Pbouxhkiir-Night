@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Sprites/Animation/planetExplosion.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/EndingEarthExplodes.gd" type="Script" id=2]
+[ext_resource path="res://Fonts/SketchnoteRegular.TTF" type="DynamicFontData" id=3]
+[ext_resource path="res://Sprites/youLostXeno.png" type="Texture" id=4]
 [ext_resource path="res://Sounds/Explosion2.wav" type="AudioStream" id=151]
 
 [sub_resource type="Animation" id=2]
@@ -49,6 +51,13 @@ tracks/0/keys = {
 "values": [ 1 ]
 }
 
+[sub_resource type="DynamicFont" id=4]
+size = 21
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
 [node name="EndingEarthExplodes" type="Node2D"]
 script = ExtResource( 2 )
 
@@ -69,3 +78,36 @@ centered = false
 hframes = 5
 vframes = 12
 frame = 1
+
+[node name="ColorRect" type="ColorRect" parent="AnimationPlayer"]
+margin_left = -17.0
+margin_top = 111.0
+margin_right = 1289.0
+margin_bottom = 603.0
+color = Color( 0, 0, 0, 0.819608 )
+
+[node name="Label" type="Label" parent="AnimationPlayer"]
+margin_left = 211.0
+margin_top = 342.0
+margin_right = 1050.0
+margin_bottom = 565.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "While you were busy being torn to pieces, chewed, then regurgitated into the awaiting mandibles of autoparoxymorphic paralarvae, Aniline and 3b42dd00-903a-47b8-87b8-47e0-4447-fcf1-2bed-a6a4-dcf3-484c-9f5420547c893ba1 both pressed the detonation button simultaneously. The Earth was destroyed, of course, but at least you weren’t around to see it."
+align = 1
+autowrap = true
+
+[node name="YouLostXeno" type="Sprite" parent="AnimationPlayer/Label"]
+position = Vector2( 430, -92 )
+texture = ExtResource( 4 )
+
+[node name="Proceed" type="Button" parent="."]
+margin_right = 1285.0
+margin_bottom = 726.0
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 5 )
+
+[connection signal="pressed" from="Proceed" to="." method="_on_Proceed_pressed"]

@@ -1,0 +1,96 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Dialogues/-DialogueParent.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Bubbles/SpeechBubbleRobot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/Characters/annieRight.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Bubbles/SpeechBubbleAnnie.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Bubbles/SpeechBubbleXeno.tscn" type="PackedScene" id=5]
+
+[node name="Control" instance=ExtResource( 1 )]
+
+[node name="Annie" parent="Characters" index="1"]
+texture = ExtResource( 3 )
+
+[node name="SpeechBubbleXeno" parent="Dialogues" index="0" instance=ExtResource( 5 )]
+margin_left = 334.0
+margin_top = 25.0
+margin_right = 334.0
+margin_bottom = 25.0
+
+[node name="BubbleMargin" parent="Dialogues/SpeechBubbleXeno" index="0"]
+margin_right = 269.0
+margin_bottom = 99.0
+
+[node name="Bubble" parent="Dialogues/SpeechBubbleXeno/BubbleMargin" index="0"]
+margin_right = 269.0
+margin_bottom = 121.0
+
+[node name="Text" parent="Dialogues/SpeechBubbleXeno/BubbleMargin" index="1"]
+margin_top = 11.0
+margin_right = 269.0
+margin_bottom = 110.0
+text = "The human is probably targeting you because they’re from Earth. "
+
+[node name="TailBoxConnector" parent="Dialogues/SpeechBubbleXeno/Tails" index="0"]
+visible = false
+
+[node name="TailPointer" parent="Dialogues/SpeechBubbleXeno/Tails" index="1"]
+position = Vector2( 103, 170 )
+points = PoolVector2Array( -54, -78, -40, -36, -40, 10, -40, 50, -32, 111, -38, 168 )
+
+[node name="SpeechBubbleAnnie" parent="Dialogues" index="1" instance=ExtResource( 4 )]
+margin_left = 394.0
+margin_top = 153.0
+margin_right = 394.0
+margin_bottom = 153.0
+
+[node name="BubbleMargin" parent="Dialogues/SpeechBubbleAnnie" index="0"]
+margin_right = 218.0
+margin_bottom = 80.0
+
+[node name="Bubble" parent="Dialogues/SpeechBubbleAnnie/BubbleMargin" index="0"]
+margin_right = 218.0
+margin_bottom = 102.0
+
+[node name="Text" parent="Dialogues/SpeechBubbleAnnie/BubbleMargin" index="1"]
+margin_top = 15.0
+margin_right = 218.0
+margin_bottom = 87.0
+text = "Yeah, and you said you hate Earth. And that you’re gonna blow it up."
+
+[node name="TailBoxConnector" parent="Dialogues/SpeechBubbleAnnie/Tails" index="0"]
+visible = false
+
+[node name="TailPointer" parent="Dialogues/SpeechBubbleAnnie/Tails" index="1"]
+points = PoolVector2Array( -51, -109, -33, 3 )
+
+[node name="SpeechBubbleRobot" parent="Dialogues" index="2" instance=ExtResource( 2 )]
+margin_left = 448.0
+margin_top = 259.0
+margin_right = 448.0
+margin_bottom = 259.0
+
+[node name="BubbleMargin" parent="Dialogues/SpeechBubbleRobot" index="0"]
+margin_right = 312.0
+margin_bottom = 88.0
+
+[node name="Bubble" parent="Dialogues/SpeechBubbleRobot/BubbleMargin" index="0"]
+margin_right = 312.0
+margin_bottom = 110.0
+
+[node name="Text" parent="Dialogues/SpeechBubbleRobot/BubbleMargin" index="1"]
+margin_top = 19.0
+margin_right = 312.0
+margin_bottom = 91.0
+text = "Preposterous! Humans aren’t even FROM Earth. This is personal! And I intend to settle it personally!"
+
+[node name="TailBoxConnector" parent="Dialogues/SpeechBubbleRobot/Tails" index="0"]
+visible = false
+
+[node name="TailPointer" parent="Dialogues/SpeechBubbleRobot/Tails" index="1"]
+points = PoolVector2Array( 129, -173, 184, -175 )
+
+[editable path="Characters"]
+[editable path="Dialogues/SpeechBubbleXeno"]
+[editable path="Dialogues/SpeechBubbleAnnie"]
+[editable path="Dialogues/SpeechBubbleRobot"]

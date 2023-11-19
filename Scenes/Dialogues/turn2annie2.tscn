@@ -133,10 +133,10 @@ margin_right = 237.0
 margin_bottom = 94.0
 
 [node name="Text" parent="Dialogues/SpeechBubbleAnnie2/BubbleMargin" index="1"]
-margin_top = 11.0
+margin_top = 23.0
 margin_right = 237.0
-margin_bottom = 83.0
-text = "Humans love to incorporate their reproductive biology into iconography."
+margin_bottom = 70.0
+text = "Organic aliens love drawing their anatomy on stuff."
 
 [node name="TailBoxConnector" parent="Dialogues/SpeechBubbleAnnie2/Tails" index="0"]
 position = Vector2( 173, 36 )
