@@ -116,10 +116,10 @@ text = "EWWWWWWWW."
 visible = false
 
 [node name="SpeechBubbleAnnie3" parent="Dialogues" index="4" instance=ExtResource( 8 )]
-margin_left = 514.0
-margin_top = 517.0
-margin_right = 514.0
-margin_bottom = 517.0
+margin_left = 509.0
+margin_top = 474.0
+margin_right = 509.0
+margin_bottom = 474.0
 
 [node name="BubbleMargin" parent="Dialogues/SpeechBubbleAnnie3" index="0"]
 margin_left = -31.0
