@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/PokerStoryPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Ink/alienpoker.ink.json" type="Resource" id=2]
 [ext_resource path="res://Scenes/CardManager.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sounds/YOU_WIN_definitelyfinal.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Sounds/Dont_Come_to_Space_Brazilfinalmix.mp3" type="AudioStream" id=5]
 
 [node name="PokerStoryPlayer" type="Node"]
 script = ExtResource( 1 )
@@ -39,6 +40,7 @@ LOADING..."
 position = Vector2( 627, 350 )
 
 [node name="Song1" type="AudioStreamPlayer" parent="SongPlayer"]
+stream = ExtResource( 5 )
 bus = "Music"
 
 [node name="Song2" type="AudioStreamPlayer" parent="SongPlayer"]

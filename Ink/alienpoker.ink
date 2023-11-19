@@ -37,6 +37,7 @@ EXTERNAL musicPlay(song)
 //"song1" or "song2"
 EXTERNAL musicStop()
 EXTERNAL loadScene(scenename)
+EXTERNAL hideHand()
 
 //Variables:
 VAR ending = "neutral" //values: annie, robot, xeno, neutral. Determines which splash screen shows at the end.
@@ -599,6 +600,7 @@ ROBOT: Aniline, do you have any-
 ANNIE: Sorry I have to go pee like so bad.
 *[next]->turn5robot2
 ==turn5robot2==
+~loadScene("turn5robot2")
 ROBOT: Alright, xenophage. Do you have any {card}s?
 *[next]->
 {
@@ -740,7 +742,7 @@ ROBOT: They will do no such thing!
 *[next]->turn6anniechoice
 ==turn6anniechoice==
 ~choiceMode = "dialogue"
-~loadScene("")
+~loadScene("turn6anniechoice")
 *[It sucks.]->turn6annietrue 
 *[It’s really good, actually.]->turn6anniefalse 
 ==turn6annietrue==
@@ -1005,6 +1007,7 @@ XENOPHAGE: What are you talking about?
 XENOPHAGE: Anyways, Annie, do you have any uteruses?
 *[next]->turn8xenocont
 ==turn8xenocont==
+~loadScene("turn8xenocont")
 ANNIE: YOU! YOU! YOU! YOU! YOU!
 XENOPHAGE: Anyways, it’s the human’s turn!
 *[next]->
@@ -1034,6 +1037,7 @@ ANNIE: Sayonara, shitheads.
 *[next]->endingneutral2
 
 ==endingneutral2==
+~hideHand()
 ~loadScene("endingneutral2")
 //YOU WON!!!!!!!!
 
@@ -1076,6 +1080,7 @@ ROBOT: NOW.
 *[next]->endingrobot5
 
 ==endingrobot5==
+~hideHand()
 ~loadScene("endingrobot5")
 //YOU LOST!!!!!!!!
 //After winning(?) the Pbouxhkiir match, 3b42dd00-903a-47b8-87b8-47e0-4447-fcf1-2bed-a6a4-dcf3-484c-9f5420547c893ba1 repeatedly hit the detonate button for thirty minutes, destroying the Earth thousands of times. There is no planet for you to return to, but inexplicably, Annie let you crash at her place. The two of you probably went all kinds of zany adventures, which might sound cool, but don’t kid yourself here, you absolutely lost.
@@ -1104,6 +1109,7 @@ ANNIE: Give me that detonator. Click! There we go!
 ANNIE: Earth gone! No more Earth! And now, no more casino!
 *[next]->endingannie3
 ==endingannie3==
+~hideHand()
 ~loadScene("endingannie3")
 //YOU LOST!!!!!!!!
 //In an impressive display of bad sportsmanstarship, Aniline prematurely destroyed the Earth. 2.37 seconds later, she destroyed the Primox Alpha (the CHAGTAD® Company Casino ship), killing you and everyone else aboard. But for those 2.37 seconds, you were the last surviving Earthling. No Earthling had ever been as alone as you were for those 2.37 seconds. Every person you had ever known and every place you had ever seen, all gone, with your memory as the single testament to their existence. There is no word for the emotion such a person would feel. On the bright side, there was very little time for you to realize how very, very, VERY sad you should have felt about the whole thing.
@@ -1144,6 +1150,7 @@ ROBOT: Now.
 *[next]->endingxeno5
 
 ==endingxeno5==
+~hideHand()
 ~loadScene("endingxeno5")
 //YOU LOST!!!!!!!!
 //While you were busy being torn to pieces, chewed, then regurgitated into the awaiting mandibles of autoparoxymorphic paralarvae, Aniline and 3b42dd00-903a-47b8-87b8-47e0-4447-fcf1-2bed-a6a4-dcf3-484c-9f5420547c893ba1 both pressed the detonation button simultaneously. The Earth was destroyed, of course, but at least you weren’t around to see it.
