@@ -320,12 +320,16 @@ func bindPokerFunctions():
 	_ink_player.bind_external_function("changeSprite", self, "changeSprite")
 	_ink_player.bind_external_function("toggleAnnieVisibility", self, "toggleAnnieVisibility")
 	_ink_player.bind_external_function("musicPlay", self, "musicPlay")
-	_ink_player.bind_external_function("musicStop", self, "musicStop")
-	_ink_player.bind_external_function("loadScene", self, "loadScene")
-	_ink_player.bind_external_function("setupHands", self, "setupHands")
-
+	_ink_player.bind_external_function("musicStop", self, "musicStop", false)
+	_ink_player.bind_external_function("loadScene", self, "loadScene", false)
+	_ink_player.bind_external_function("setupHands", self, "setupHands", false)
+	_ink_player.bind_external_function("finalizeCorrectCard", self, "finalizeCorrectCard", false)
 
 onready var cardManager = $CardManager
+
+
+func finalizeCorrectCard():
+	cardManager.finalizeCorrectCard()
 
 # initial hand setup, call on card manager 
 func setupHands():
@@ -345,7 +349,7 @@ func drawCardPlayer():
 
 # move a card from one hand to another
 func moveCard(from, to, card):
-	print("called move card")
+	print("called move card from ", from, " to ", to, " card ", card )
 	cardManager.moveCard(from, to, card)
 
 # force give the player a specific card (these are stored in a special hand)
