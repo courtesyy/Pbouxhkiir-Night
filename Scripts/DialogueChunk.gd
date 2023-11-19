@@ -18,18 +18,13 @@ func _ready():
 #TODO pass the text
 
 func showNextBubble():
-	if(index == bubbleCount):
-		#load next chunk 
-		#loadNextChunk()
-		pass
-	else:
-		get_child(index).display()
-		index = index + 1
+	get_child(index).display()
+	index = index + 1
 
-func showNextChoice(choiceType):
+#func showNextChoice(choiceType):
 	#TODO 
 	#check if loading the card choice ui or the dialogue choice ui using ink variable choiceMode 
-	pass
+	#pass
 
 
 # not using, ink does this now 

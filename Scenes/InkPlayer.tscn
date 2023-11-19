@@ -13,9 +13,11 @@ title = "Pbouxhkiir Night at Primox Alpha"
 [node name="LoadingScreen" type="Node2D" parent="."]
 
 [node name="RichTextLabel" type="RichTextLabel" parent="LoadingScreen"]
-margin_right = 190.0
-margin_bottom = 109.0
-text = "LOADING..."
+margin_right = 747.0
+margin_bottom = 373.0
+text = "LOADING...
+LOADING...
+LOADING..."
 
 [node name="CardManager" parent="." instance=ExtResource( 3 )]
 

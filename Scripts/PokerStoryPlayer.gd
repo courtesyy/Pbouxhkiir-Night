@@ -108,7 +108,7 @@ func _ready():
 func _continue_story():
 	print_debug("calling continue_story")
 	if USE_SIGNALS:
-		print_debug("using signals")
+		#print_debug("using signals")
 		_ink_player.continue_story()
 	else:
 		while _ink_player.can_continue:
@@ -140,7 +140,9 @@ func _loaded(successfully: bool):
 
 func _continued(text, tags):
 
-	print_debug("called continued signal reciever")
+	print("continued with ", text)
+
+	#print_debug("called continued signal reciever")
 	_add_label(text)
 
 	_ink_player.continue_story()
@@ -198,6 +200,7 @@ func _ended():
 
 
 func _choice_selected(index):
+	print("GOT _CHOICE_SELECTED")
 	choicesParent.remove_child(_current_choice_container)
 	_current_choice_container.queue_free()
 
@@ -365,17 +368,6 @@ func randomCardType():
 	var rand = randi() % validSuits.size()
 	return validSuits[rand]
 
-# change a character sprite ($Xeno, $Annie, $Robot) in “Characters.tscn” to a different sprite
-# looks unused
-func changeSprite():
-	pass
-
-# toggle hide/show on annie sprite 
-func toggleAnnieVisibility():
-	print("called toggle annie visibility")
-	# no longer used 
-	pass
-
 
 onready var song1Player = $SongPlayer/Song1
 onready var song2Player = $SongPlayer/Song2
@@ -406,7 +398,7 @@ var lastScene = null
 # load a dialogue chunk 
 func loadScene(sceneName):
 
-	print(">>>>>>> loading scene ", sceneName)
+	print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> loading scene ", sceneName)
 
 	# load the new scene 
 	var newScenePath = "res://Scenes/Dialogues/" + sceneName + ".tscn"
@@ -420,3 +412,18 @@ func loadScene(sceneName):
 	
 	lastScene = newScene
 
+
+func makeChoice(index):
+	print("MADE CHOICE REGISTERED ")
+	_choice_selected(index)
+
+
+func askForCard(character, card):
+
+	print("asking ", character, " for ", card)
+
+	var result = cardManager.askForCard(character, card)
+
+	_choice_selected(result)
+
+	pass
