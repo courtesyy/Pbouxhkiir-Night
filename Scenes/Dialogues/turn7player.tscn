@@ -67,24 +67,6 @@ points = PoolVector2Array( -163.03, -103.824, -163.971, -49.6012 )
 [node name="Sprite" parent="TalkingCard" index="2"]
 texture = ExtResource( 3 )
 
-[node name="AreaOther" parent="." index="3"]
-visible = false
-
-[node name="AreaXeno" parent="." index="4"]
-visible = false
-
-[node name="AreaAnnie" parent="." index="5"]
-visible = false
-
-[node name="AreaRobot" parent="." index="6"]
-visible = false
-
-[node name="Menu" parent="." index="7"]
-visible = false
-
-[node name="Hover" parent="." index="8"]
-visible = false
-
 [editable path="TalkingCard"]
 [editable path="TalkingCard/SpeechBubble"]
 [editable path="TalkingCard/SpeechBubble2"]
