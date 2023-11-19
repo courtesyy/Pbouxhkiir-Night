@@ -1,0 +1,212 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Dialogues/-DialogueParent.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Bubbles/SpeechBubbleRobot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Bubbles/SpeechBubbleAnnie.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Bubbles/SpeechBubbleXeno.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sprites/Characters/annieRightAngry2.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Characters/xenoTilt.png" type="Texture" id=6]
+
+[node name="Control" instance=ExtResource( 1 )]
+
+[node name="Xeno" parent="Characters" index="0"]
+texture = ExtResource( 6 )
+
+[node name="Annie" parent="Characters" index="1"]
+texture = ExtResource( 5 )
+
+[node name="SpeechBubbleRobot" parent="Dialogues" index="0" instance=ExtResource( 2 )]
+margin_left = 769.0
+margin_top = 39.0
+margin_right = 769.0
+margin_bottom = 39.0
+
+[node name="BubbleMargin" parent="Dialogues/SpeechBubbleRobot" index="0"]
+margin_right = 135.0
+margin_bottom = 52.0
+
+[node name="Bubble" parent="Dialogues/SpeechBubbleRobot/BubbleMargin" index="0"]
+margin_right = 135.0
+margin_bottom = 74.0
+
+[node name="Text" parent="Dialogues/SpeechBubbleRobot/BubbleMargin" index="1"]
+margin_top = 13.0
+margin_right = 135.0
+margin_bottom = 60.0
+text = "No one asked you! "
+
+[node name="Tails" parent="Dialogues/SpeechBubbleRobot" index="1"]
+visible = false
+
+[node name="TailBoxConnector" parent="Dialogues/SpeechBubbleRobot/Tails" index="0"]
+visible = false
+
+[node name="TailPointer" parent="Dialogues/SpeechBubbleRobot/Tails" index="1"]
+position = Vector2( 178, 116 )
+points = PoolVector2Array( -53, -71, -37, -50 )
+
+[node name="SpeechBubbleAnnie" parent="Dialogues" index="1" instance=ExtResource( 3 )]
+margin_left = 494.0
+margin_top = 74.0
+margin_right = 494.0
+margin_bottom = 74.0
+
+[node name="BubbleMargin" parent="Dialogues/SpeechBubbleAnnie" index="0"]
+margin_right = 234.0
+margin_bottom = 66.0
+
+[node name="Bubble" parent="Dialogues/SpeechBubbleAnnie/BubbleMargin" index="0"]
+margin_right = 234.0
+margin_bottom = 88.0
+
+[node name="Text" parent="Dialogues/SpeechBubbleAnnie/BubbleMargin" index="1"]
+margin_top = 20.0
+margin_right = 234.0
+margin_bottom = 67.0
+text = "We do have butches! We a hundred percent do!"
+
+[node name="Tails" parent="Dialogues/SpeechBubbleAnnie" index="1"]
+visible = false
+
+[node name="SpeechBubbleRobot2" parent="Dialogues" index="2" instance=ExtResource( 2 )]
+margin_left = 699.0
+margin_top = 129.0
+margin_right = 699.0
+margin_bottom = 129.0
+
+[node name="BubbleMargin" parent="Dialogues/SpeechBubbleRobot2" index="0"]
+margin_right = 208.0
+margin_bottom = 67.0
+
+[node name="Bubble" parent="Dialogues/SpeechBubbleRobot2/BubbleMargin" index="0"]
+margin_right = 208.0
+margin_bottom = 89.0
+
+[node name="Text" parent="Dialogues/SpeechBubbleRobot2/BubbleMargin" index="1"]
+margin_top = 21.0
+margin_right = 208.0
+margin_bottom = 68.0
+text = "Yeah, well then, what does BUTCH stand for?"
+
+[node name="TailBoxConnector" parent="Dialogues/SpeechBubbleRobot2/Tails" index="0"]
+position = Vector2( 174, 37 )
+points = PoolVector2Array( -81, -79, -81, -54 )
+
+[node name="TailPointer" parent="Dialogues/SpeechBubbleRobot2/Tails" index="1"]
+points = PoolVector2Array( 8, -121, 15, -84 )
+
+[node name="SpeechBubbleAnnie2" parent="Dialogues" index="3" instance=ExtResource( 3 )]
+margin_left = 552.0
+margin_top = 173.0
+margin_right = 552.0
+margin_bottom = 173.0
+
+[node name="BubbleMargin" parent="Dialogues/SpeechBubbleAnnie2" index="0"]
+margin_right = 130.0
+margin_bottom = 49.0
+
+[node name="Bubble" parent="Dialogues/SpeechBubbleAnnie2/BubbleMargin" index="0"]
+margin_right = 130.0
+margin_bottom = 71.0
+
+[node name="Text" parent="Dialogues/SpeechBubbleAnnie2/BubbleMargin" index="1"]
+margin_top = 24.0
+margin_right = 130.0
+margin_bottom = 46.0
+text = "The fuck? "
+
+[node name="TailBoxConnector" parent="Dialogues/SpeechBubbleAnnie2/Tails" index="0"]
+position = Vector2( 106, 33 )
+points = PoolVector2Array( -75, -71, -74, -51 )
+
+[node name="TailPointer" parent="Dialogues/SpeechBubbleAnnie2/Tails" index="1"]
+points = PoolVector2Array( -162, -139, -178, -81, -164, -82, -156, -8 )
+
+[node name="SpeechBubbleXeno" parent="Dialogues" index="4" instance=ExtResource( 4 )]
+margin_left = 355.0
+margin_top = 199.0
+margin_right = 355.0
+margin_bottom = 199.0
+
+[node name="BubbleMargin" parent="Dialogues/SpeechBubbleXeno" index="0"]
+margin_right = 183.0
+margin_bottom = 73.0
+
+[node name="Bubble" parent="Dialogues/SpeechBubbleXeno/BubbleMargin" index="0"]
+margin_right = 183.0
+margin_bottom = 95.0
+
+[node name="Text" parent="Dialogues/SpeechBubbleXeno/BubbleMargin" index="1"]
+margin_top = 15.0
+margin_right = 183.0
+margin_bottom = 80.0
+text = "It doesn’t stand for anything!"
+
+[node name="TailBoxConnector" parent="Dialogues/SpeechBubbleXeno/Tails" index="0"]
+visible = false
+
+[node name="TailPointer" parent="Dialogues/SpeechBubbleXeno/Tails" index="1"]
+position = Vector2( 187, 143 )
+points = PoolVector2Array( -54, -75, -52, -19, -73, -1, -83, 18, -71, 45, -57, 56, -51, 62, -54, 69, -60, 72, -65, 78, -66, 85, -65, 90, -72, 90, -94, 95 )
+
+[node name="SpeechBubbleRobot3" parent="Dialogues" index="5" instance=ExtResource( 2 )]
+margin_left = 573.0
+margin_top = 259.0
+margin_right = 573.0
+margin_bottom = 259.0
+
+[node name="BubbleMargin" parent="Dialogues/SpeechBubbleRobot3" index="0"]
+margin_right = 154.0
+margin_bottom = 68.0
+
+[node name="Bubble" parent="Dialogues/SpeechBubbleRobot3/BubbleMargin" index="0"]
+margin_right = 154.0
+margin_bottom = 90.0
+
+[node name="Text" parent="Dialogues/SpeechBubbleRobot3/BubbleMargin" index="1"]
+margin_top = 9.0
+margin_right = 154.0
+margin_bottom = 81.0
+text = "Wrong! Binary Unconformed Terabyte"
+
+[node name="TailBoxConnector" parent="Dialogues/SpeechBubbleRobot3/Tails" index="0"]
+visible = false
+
+[node name="TailPointer" parent="Dialogues/SpeechBubbleRobot3/Tails" index="1"]
+position = Vector2( 205, 97 )
+points = PoolVector2Array( -56, -73, -15, -70 )
+
+[node name="SpeechBubbleAnnie3" parent="Dialogues" index="6" instance=ExtResource( 3 )]
+margin_left = 658.0
+margin_top = 304.0
+margin_right = 658.0
+margin_bottom = 304.0
+
+[node name="BubbleMargin" parent="Dialogues/SpeechBubbleAnnie3" index="0"]
+margin_right = 145.0
+margin_bottom = 54.0
+
+[node name="Bubble" parent="Dialogues/SpeechBubbleAnnie3/BubbleMargin" index="0"]
+margin_right = 145.0
+margin_bottom = 76.0
+
+[node name="Text" parent="Dialogues/SpeechBubbleAnnie3/BubbleMargin" index="1"]
+margin_top = 14.0
+margin_right = 145.0
+margin_bottom = 61.0
+text = "We’re skipping your turn!"
+
+[node name="TailBoxConnector" parent="Dialogues/SpeechBubbleAnnie3/Tails" index="0"]
+visible = false
+
+[node name="TailPointer" parent="Dialogues/SpeechBubbleAnnie3/Tails" index="1"]
+points = PoolVector2Array( -118, -133, -123, -71 )
+
+[editable path="Characters"]
+[editable path="Dialogues/SpeechBubbleRobot"]
+[editable path="Dialogues/SpeechBubbleAnnie"]
+[editable path="Dialogues/SpeechBubbleRobot2"]
+[editable path="Dialogues/SpeechBubbleAnnie2"]
+[editable path="Dialogues/SpeechBubbleXeno"]
+[editable path="Dialogues/SpeechBubbleRobot3"]
+[editable path="Dialogues/SpeechBubbleAnnie3"]
