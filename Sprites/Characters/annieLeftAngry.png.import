@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cardTalking.png-e78abaf5af6ca4ec773e87fb002c5812.stex"
+path="res://.import/annieLeftAngry.png-57adc9bbe20a0f3b52279357b82db90f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Cards/cardTalking.png"
-dest_files=[ "res://.import/cardTalking.png-e78abaf5af6ca4ec773e87fb002c5812.stex" ]
+source_file="res://Sprites/Characters/annieLeftAngry.png"
+dest_files=[ "res://.import/annieLeftAngry.png-57adc9bbe20a0f3b52279357b82db90f.stex" ]
 
 [params]
 

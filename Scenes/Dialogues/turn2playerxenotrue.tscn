@@ -6,34 +6,30 @@
 [node name="Control" instance=ExtResource( 1 )]
 
 [node name="SpeechBubbleXeno" parent="Dialogues" index="0" instance=ExtResource( 2 )]
-margin_left = 409.0
-margin_top = 185.0
-margin_right = 409.0
-margin_bottom = 185.0
+margin_left = 415.0
+margin_top = 212.0
+margin_right = 415.0
+margin_bottom = 212.0
 
 [node name="BubbleMargin" parent="Dialogues/SpeechBubbleXeno" index="0"]
-margin_top = -9.0
-margin_right = 216.0
+margin_right = 175.0
+margin_bottom = 64.0
 
 [node name="Bubble" parent="Dialogues/SpeechBubbleXeno/BubbleMargin" index="0"]
-margin_right = 216.0
-margin_bottom = 94.0
+margin_right = 175.0
+margin_bottom = 86.0
 
 [node name="Text" parent="Dialogues/SpeechBubbleXeno/BubbleMargin" index="1"]
-margin_top = 14.0
-margin_right = 216.0
-margin_bottom = 79.0
-text = "Here’s the card. Just stop talking."
-
-[node name="Tails" parent="Dialogues/SpeechBubbleXeno" index="1"]
-margin_left = 46.0
-margin_right = 46.0
+margin_top = 10.0
+margin_right = 175.0
+margin_bottom = 75.0
+text = "Yup, I have it. Here you go."
 
 [node name="TailBoxConnector" parent="Dialogues/SpeechBubbleXeno/Tails" index="0"]
 visible = false
 
 [node name="TailPointer" parent="Dialogues/SpeechBubbleXeno/Tails" index="1"]
-position = Vector2( 42, 193 )
-points = PoolVector2Array( -22, -113, -34, -81, -32, -58, -52, -39, -75, -15 )
+position = Vector2( 99, 168 )
+points = PoolVector2Array( -56, -110, -59, -95, -64, -74, -62, -34, -82, -11, -94, 20 )
 
 [editable path="Dialogues/SpeechBubbleXeno"]

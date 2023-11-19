@@ -593,6 +593,7 @@ ROBOT: Fiiiiine! Jeeeeez!
 XENOPHAGE: Annie, do you have a-
 ROBOT: Do you want to ask me for a card?
 ROBOT: You can do that, you know.
+ROBOT: Come to think of it…
 XENOPHAGE: Annie, do you have a {card}?
 *[has it]->turn6xenoannietrue
 *[doesn't]->turn6xenoanniefalse
