@@ -154,7 +154,7 @@ func _add_label(text):
 #	label.text = text
 #
 #	_story_vbox_container.add_child(label)
-	print_debug("displaying: ", text)
+	print("displaying: ", text)
 	pass
 
 
@@ -175,13 +175,13 @@ func _ended():
 	var winner = _ink_player.get_variable("ending")
 
 	if(winner == "annie"):
-		print_debug("ANNIE ENDING")
+		print("ANNIE ENDING")
 	elif(winner == "robot"):
-		print_debug("ROBOT ENDING")
+		print("ROBOT ENDING")
 	elif(winner == "xeno"):
-		print_debug("XENO ENDING")
+		print("XENO ENDING")
 	elif(winner == "neutral"):
-		print_debug("NEUTRAL ENDING")
+		print("NEUTRAL ENDING")
 
 
 
@@ -304,28 +304,36 @@ func bindPokerFunctions():
 	_ink_player.bind_external_function("musicPlay", self, "musicPlay")
 	_ink_player.bind_external_function("musicStop", self, "musicStop")
 	_ink_player.bind_external_function("loadScene", self, "loadScene")
+	_ink_player.bind_external_function("setupHands", self, "setupHands")
 
 
+onready var cardManager = $CardManager
+
+# initial hand setup, call on card manager 
+func setupHands():
+	print("setting up hands")
+	cardManager.SetupHands()
 
 # give a given character a card from the deck. "robot" "annie" "xeno" or "player"
 func drawCard(character):
-	print_debug("called draw card for ", character)
-	pass 
+	print("called draw card for ", character)
+	cardManager.drawFromDeck(character)
+
 
 # give the player a card from the deck 
 func drawCardPlayer():
-	print_debug("called draw card for player")
-	pass
+	print("called draw card for player")
+	cardManager.drawFromDeck("player")
 
 # move a card from one hand to another
 func moveCard(from, to, card):
-	print_debug("called move card")
-	pass
+	print("called move card")
+	cardManager.moveCard(from, to, card)
 
 # force give the player a specific card (these are stored in a special hand)
 func giveCardPlayer(card):
-	print_debug("called give card player ", card)
-	pass 
+	print("called give card player ", card)
+	cardManager.giveAICard(card)
 
 # all 4 players draw a card (at the beginning of each turn)
 func drawCardAll():
@@ -335,14 +343,15 @@ func drawCardAll():
 	drawCard("xeno")
 
 # return true if a character has the card, false if not 
-# this is unused 
-func checkCard(character):
-	pass 
+func checkCard(character, card):
+	return cardManager.checkCard(character, card)
 
+var validSuits = ["orbit", "ship", "worm", "cool worm", "raye"]
 # pick a random card type to ask for 
 func randomCardType():
-	print_debug("called pick random")
-	pass 
+	print("called pick random")
+	var rand = randi() % validSuits.size()
+	return validSuits[rand]
 
 # change a character sprite ($Xeno, $Annie, $Robot) in “Characters.tscn” to a different sprite
 # looks unused
@@ -351,7 +360,8 @@ func changeSprite():
 
 # toggle hide/show on annie sprite 
 func toggleAnnieVisibility():
-	print_debug("called toggle annie visibility")
+	print("called toggle annie visibility")
+	# no longer used 
 	pass
 
 
@@ -367,7 +377,7 @@ func musicPlay(song):
 		printerr("song named ", song, " not recognised!")
 
 func musicStop():
-	print_debug("calling stop music")
+	print("calling stop music")
 	song1Player.stop()
 	song2Player.stop()
 	pass
@@ -379,7 +389,19 @@ func nextScene():
 	pass
 
 
+onready var sceneParent = $SceneParent
+# load a dialogue chunk 
 func loadScene(sceneName):
-	pass
 
+	print(">>>>>>>>>>>>>>>>>>>> loading scene ", sceneName)
+
+	var previousScene = sceneParent.get_child()
+
+	# load the new scene 
+	var newScenePath = "res://Scenes/Dialogues/" + sceneName + ".tscn"
+	var newScene = load(newScenePath).instance()
+	sceneParent.add_child(newScene)
+
+	# unload the previous scene 
+	previousScene.queue_free()
 

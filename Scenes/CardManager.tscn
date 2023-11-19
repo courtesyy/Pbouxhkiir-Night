@@ -12,169 +12,265 @@ script = ExtResource( 1 )
 
 [node name="cat" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "cat"
+cardSuit = "SPECIAL"
 
 [node name="cat2" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "cat2"
+cardSuit = "SPECIAL"
 
 [node name="cowboy" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "cowboy"
+cardSuit = "SPECIAL"
 
 [node name="credit" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "credit"
+cardSuit = "SPECIAL"
 
 [node name="game" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "game"
+cardSuit = "SPECIAL"
 
 [node name="hole" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "hole"
+cardSuit = "SPECIAL"
 
 [node name="king" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "king"
+cardSuit = "SPECIAL"
 
 [node name="layers" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "layers"
+cardSuit = "SPECIAL"
 
 [node name="patrick" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "patrick"
+cardSuit = "SPECIAL"
 
 [node name="phone" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "phone"
+cardSuit = "SPECIAL"
 
 [node name="rahma" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "rahma"
+cardSuit = "SPECIAL"
 
 [node name="rana" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "rana"
+cardSuit = "SPECIAL"
 
 [node name="razor" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "razor"
+cardSuit = "SPECIAL"
 
 [node name="recursion" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "recursion"
+cardSuit = "SPECIAL"
 
 [node name="ted" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "ted"
+cardSuit = "SPECIAL"
 
 [node name="vase" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "vase"
+cardSuit = "SPECIAL"
 
 [node name="wanted" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "wanted"
+cardSuit = "SPECIAL"
 
 [node name="youwin" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "youwin"
+cardSuit = "SPECIAL"
 
 [node name="worm1" parent="Deck" instance=ExtResource( 3 )]
+cardSuit = "worm"
 
 [node name="worm2" parent="Deck" instance=ExtResource( 3 )]
+cardSuit = "worm"
 
 [node name="worm3" parent="Deck" instance=ExtResource( 3 )]
+cardSuit = "worm"
 
 [node name="worm4" parent="Deck" instance=ExtResource( 3 )]
+cardSuit = "worm"
 
 [node name="worm5" parent="Deck" instance=ExtResource( 3 )]
+cardSuit = "worm"
 
 [node name="worm6" parent="Deck" instance=ExtResource( 3 )]
+cardSuit = "worm"
 
 [node name="worm7" parent="Deck" instance=ExtResource( 3 )]
+cardSuit = "worm"
 
 [node name="worm8" parent="Deck" instance=ExtResource( 3 )]
+cardSuit = "worm"
+
+[node name="worm9" parent="Deck" instance=ExtResource( 3 )]
+cardSuit = "worm"
+
+[node name="worm10" parent="Deck" instance=ExtResource( 3 )]
+cardSuit = "worm"
 
 [node name="ship1" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "ship"
+cardSuit = "ship"
 
 [node name="ship2" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "ship"
+cardSuit = "ship"
 
 [node name="ship3" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "ship"
+cardSuit = "ship"
 
 [node name="ship4" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "ship"
+cardSuit = "ship"
 
 [node name="ship5" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "ship"
+cardSuit = "ship"
 
 [node name="ship6" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "ship"
+cardSuit = "ship"
 
 [node name="ship7" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "ship"
+cardSuit = "ship"
 
 [node name="ship8" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "ship"
+cardSuit = "ship"
+
+[node name="ship9" parent="Deck" instance=ExtResource( 3 )]
+cardtype = "ship"
+cardSuit = "ship"
+
+[node name="ship10" parent="Deck" instance=ExtResource( 3 )]
+cardtype = "ship"
+cardSuit = "ship"
 
 [node name="raye1" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "raye"
+cardSuit = "raye"
 
 [node name="raye2" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "raye"
+cardSuit = "raye"
 
 [node name="raye3" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "raye"
+cardSuit = "raye"
 
 [node name="raye4" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "raye"
+cardSuit = "raye"
 
 [node name="raye5" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "raye"
+cardSuit = "raye"
 
 [node name="raye6" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "raye"
+cardSuit = "raye"
 
 [node name="raye7" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "raye"
+cardSuit = "raye"
 
 [node name="raye8" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "raye"
+cardSuit = "raye"
+
+[node name="raye9" parent="Deck" instance=ExtResource( 3 )]
+cardtype = "raye"
+cardSuit = "raye"
+
+[node name="raye10" parent="Deck" instance=ExtResource( 3 )]
+cardtype = "raye"
+cardSuit = "raye"
 
 [node name="orbit1" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "orbit"
+cardSuit = "orbit"
 
 [node name="orbit2" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "orbit"
+cardSuit = "orbit"
 
 [node name="orbit3" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "orbit"
+cardSuit = "orbit"
 
 [node name="orbit4" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "orbit"
+cardSuit = "orbit"
 
 [node name="orbit5" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "orbit"
+cardSuit = "orbit"
 
 [node name="orbit6" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "orbit"
+cardSuit = "orbit"
 
 [node name="orbit7" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "orbit"
+cardSuit = "orbit"
 
 [node name="orbit8" parent="Deck" instance=ExtResource( 3 )]
 cardtype = "orbit"
+cardSuit = "orbit"
+
+[node name="orbit9" parent="Deck" instance=ExtResource( 3 )]
+cardtype = "orbit"
+cardSuit = "orbit"
+
+[node name="orbit10" parent="Deck" instance=ExtResource( 3 )]
+cardtype = "orbit"
+cardSuit = "orbit"
 
 [node name="coolworm1" parent="Deck" instance=ExtResource( 3 )]
-cardtype = "coolworm"
+cardtype = "cool worm"
+cardSuit = "cool worm"
 
 [node name="coolworm2" parent="Deck" instance=ExtResource( 3 )]
-cardtype = "coolworm"
+cardtype = "cool worm"
+cardSuit = "cool worm"
 
 [node name="coolworm3" parent="Deck" instance=ExtResource( 3 )]
-cardtype = "coolworm"
+cardtype = "cool worm"
+cardSuit = "cool worm"
 
 [node name="coolworm4" parent="Deck" instance=ExtResource( 3 )]
-cardtype = "coolworm"
+cardtype = "cool worm"
+cardSuit = "cool worm"
 
 [node name="coolworm5" parent="Deck" instance=ExtResource( 3 )]
-cardtype = "coolworm"
+cardtype = "cool worm"
+cardSuit = "cool worm"
 
 [node name="coolworm6" parent="Deck" instance=ExtResource( 3 )]
-cardtype = "coolworm"
+cardtype = "cool worm"
+cardSuit = "cool worm"
 
 [node name="coolworm7" parent="Deck" instance=ExtResource( 3 )]
-cardtype = "coolworm"
+cardtype = "cool worm"
+cardSuit = "cool worm"
 
 [node name="coolworm8" parent="Deck" instance=ExtResource( 3 )]
-cardtype = "coolworm"
+cardtype = "cool worm"
+cardSuit = "cool worm"
+
+[node name="coolworm9" parent="Deck" instance=ExtResource( 3 )]
+cardtype = "cool worm"
+cardSuit = "cool worm"
+
+[node name="coolworm10" parent="Deck" instance=ExtResource( 3 )]
+cardtype = "cool worm"
+cardSuit = "cool worm"
 
 [node name="SpecialCards" type="Node" parent="."]
 script = ExtResource( 1 )
