@@ -352,7 +352,7 @@ ANNIE: I swear to God-
 ANNIE: Rayguns, do you have any rayguns?
 *[next]->
 {
-    - checkCard("player","ship") == true:
+    - checkCard("robot","ship") == true:
         ->turn3annierobottrue
     - else:
         ->turn3annierobotfalse
