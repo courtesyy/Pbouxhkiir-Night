@@ -160,6 +160,7 @@ ROBOT: I’ve put all of your dialogue into an AI text generator…
 XENOPHAGE: Ah Christ, here we go again.
 ROBOT: It told me in your voice that you have a {card}.
 ROBOT: Anyways, like I’ve been telling you, AI is creating trillions of new jobs…
+*[next]->
 {
     - checkCard("xeno",card) == true:
         ->turn2robotxenotrue
@@ -206,6 +207,7 @@ ROBOT: Human, is this true?
 ANNIE: See? See?
 XENOPHAGE: Well, I’ll be damned.
 ANNIE: Whatever, do you have the card or not?
+*[next]->
 {
     - checkCard("xeno",card) == true:
         ->turn2annieplayertrue
@@ -217,6 +219,7 @@ ANNIE: Whatever, do you have the card or not?
 ROBOT: We’re playing with a Xentrati-style deck.
 ROBOT: Obviously, it’s a Xentrati uterus.
 ANNIE: Whatever, do you have the card or not?
+*[next]->
 {
     - checkCard("player","ship") == true:
         ->turn2playerannietrue
@@ -238,6 +241,7 @@ ANNIE: God damn it.
 ~loadScene("turn2xeno")
 ~card = randomCardType()
 XENOPHAGE: Anyways, Annie, do you have any {card}s?
+*[next]->
 {
     - checkCard("annie",card) == true:
         ->turn2xenoannietrue
@@ -314,6 +318,7 @@ XENOPHAGE: Nope, no card. Get your net.
 ~drawCardAll()
 ~card = randomCardType()
 ROBOT: Xenophage, do you have any {card}s?
+*[next]->
 {
     - checkCard("xeno",card) == true:
         ->turn3robotxenotrue
@@ -342,6 +347,7 @@ ROBOT: I’m a robot. Why would I?
 ==turn3annie2==
 ANNIE: I swear to God-
 ANNIE: Rayguns, do you have any rayguns?
+*[next]->
 {
     - checkCard("robot","ship") == true:
         ->turn3annierobottrue
@@ -364,6 +370,7 @@ ROBOT: My answer remains “no.”
 ~loadScene("turn3xeno")
 ~card = randomCardType()
 XENOPHAGE: Annie, do you have any {card}s?
+*[next]->
 {
     - checkCard("annie",card) == true:
         ->turn3xenoannietrue
@@ -445,6 +452,7 @@ ROBOT: I used the AI again, and it told me your opinion on undocumented migrant 
 ROBOT: I’m surprised that you’re advocating we do that.
 XENOPHAGE: Card. What card do you want.
 ROBOT: Gimme a {card}.
+*[next]->
 {
     - checkCard("xeno",card) == true:
         ->turn4robotxenotrue
@@ -463,6 +471,7 @@ XENOPHAGE: Go fish.
 ==turn4annie==
 ~loadScene("turn4annie")
 ANNIE: Hey human, you got any orbits?
+*[next]->
 {
     - checkCard("player","orbit") == true:
         ->turn4annieplayertrue
@@ -506,6 +515,7 @@ ANNIE: Yknow, I’m getting a real sense of deja vu.
 XENOPHAGE: Really?
 ANNIE: Yeahhh. Something about this feels familiar.
 XENOPHAGE: Probably your imagination.
+*[next]->
 {
     - checkCard("annie",card) == true:
         ->turn4xenoannietrue
@@ -589,6 +599,7 @@ ANNIE: Sorry I have to go pee like so bad.
 *[next]->turn5robot2
 ==turn5robot2==
 ROBOT: Alright, xenophage. Do you have any {card}s?
+*[next]->
 {
     - checkCard("xeno",card) == true:
         -> turn5robotxenotrue
@@ -617,6 +628,7 @@ ANNIE: You know. The talking card.
 ANNIE: To be clear, that’s not my turn. I don’t want that shit.
 ANNIE: I’m just wondering.
 ANNIE: Robot, any {card}s?
+*[next]->
 {
     - checkCard("robot",card) == true:
         -> turn5annierobottrue
@@ -690,6 +702,7 @@ ROBOT: Don’t worry a single segment of your very long body, my friend.
 ROBOT: Aniline, are you going to have to use the restroom again?
 ANNIE: Weird thing to ask somebody, dude.
 ROBOT: I- you- give me your {card}! Do you have any {card}s?!
+*[next]->
 {
     - checkCard("annie",card) == true:
         ->turn6robotannietrue
@@ -752,6 +765,7 @@ ROBOT: Do you want to ask me for a card?
 ROBOT: You can do that, you know.
 ROBOT: Wait a minute. Have you ever...
 XENOPHAGE: Annie, do you have a {card}?
+*[next]->
 {
     - checkCard("annie",card) == true:
         ->turn6xenoannietrue
@@ -831,6 +845,7 @@ ANNIE: Thank God.
 ~card = randomCardType()
 ANNIE: Robot...
 ANNIE: Wait, no. Xenophage, give me your {card}.
+*[next]->
 {
     - checkCard("xeno",card) == true:
         ->turn7anniexenotrue
@@ -858,6 +873,7 @@ ANNIE: You can just say “go fish.” Just say “go fish.”
 XENOPHAGE: Hey Annie, do you have any {card}s?
 ANNIE: Hey xenophage, do you have a problem?
 XENOPHAGE: Annie...
+*[next]->
 {
     - checkCard("annie",card) == true:
         ->turn7xenoannietrue
@@ -962,6 +978,7 @@ ANNIE: We’re skipping your turn!
 ~card = randomCardType()
 ANNIE: Okay, human, give me your goddamn {card}.
 ANNIE: If you give me some shitty card you’re gonna die right here right now.
+*[next]->
 {
     - checkCard("annie",card) == true:
         ->turn8annieplayertrue
@@ -989,6 +1006,7 @@ XENOPHAGE: Anyways, Annie, do you have any uteruses?
 ==turn8xenocont==
 ANNIE: YOU! YOU! YOU! YOU! YOU!
 XENOPHAGE: Anyways, it’s the human’s turn!
+*[next]->
 {
     - RobotRage>3:
         * -> endingrobot
