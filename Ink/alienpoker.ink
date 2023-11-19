@@ -54,8 +54,7 @@ VAR XenoRage = 0
 
 
 ==start==
-
-
+~loadScene("splashscreen")
 /*
 You are formally invited to Pbouxhkiir Night on the Primox Alpha
 Sponsored by the CHAGTAD® Demolition Company.
@@ -166,7 +165,7 @@ XENOPHAGE: Ah Christ, here we go again.
 ROBOT: It told me in your voice that you have a {card}.
 ROBOT: Anyways, like I’ve been telling you, AI is creating trillions of new jobs…
 {
-    - RobotRage>3:
+    - checkCard("xeno",card) == true:
         ->turn2robotxenotrue
     - else:
         ->turn2robotxenofalse
@@ -218,12 +217,15 @@ ANNIE: Whatever, do you have the card or not?
 ROBOT: We’re playing with a Xentrati-style deck.
 ROBOT: Obviously, it’s a Xentrati uterus.
 ANNIE: Whatever, do you have the card or not?
-//CHECK CARD
-->turn2annieplayertrue
-->turn2annieplayerfalse
+{
+    - checkCard("player","ship") == true:
+        ->turn2playerannietrue
+    - else:
+        ->turn2playeranniefalse
+} 
 ==turn2annieplayertrue==
-ANNIE: Cool, thanks.
 ~loadScene("turn2annieplayertrue")
+ANNIE: Cool, thanks.
 ~loadScene("turn2xeno")
 ->turn2xeno
 ==turn2annieplayerfalse==
@@ -236,9 +238,12 @@ ANNIE: God damn it.
 ~loadScene("turn2xeno")
 ~card = randomCardType()
 XENOPHAGE: Anyways, Annie, do you have any {card}s?
-//CHECK CARD
-->turn2xenoannietrue
-->turn2xenoanniefalse
+{
+    - checkCard("annie",card) == true:
+        ->turn2xenoannietrue
+    - else:
+        ->turn2xenoanniefalse
+} 
 ==turn2xenoannietrue==
 ~loadScene("turn2xenoannietrue")
 ANNIE: Ughhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
@@ -309,9 +314,12 @@ XENOPHAGE: Nope, no card. Get your net.
 ~drawCardAll()
 ~card = randomCardType()
 ROBOT: Xenophage, do you have any {card}s?
-//CHECK CARD
-->turn3robotxenotrue
-->turn3robotxenofalse
+{
+    - checkCard("xeno",card) == true:
+        ->turn3robotxenotrue
+    - else:
+        ->turn3robotxenofalse
+} 
 ==turn3robotxenotrue==
 ~loadScene("turn3robotxenotrue")
 XENOPHAGE: Ah, you got me.
@@ -332,9 +340,12 @@ ANNIE: Ok Computer, do you have any uterusi?
 ROBOT: I’m a robot. Why would I?
 ANNIE: I swear to God-
 ANNIE: rayguns, do you have any rayguns?
-//CHECK CARD
-->turn3annierobottrue
-->turn3annierobotfalse
+{
+    - checkCard("robot","ship") == true:
+        ->turn3annierobottrue
+    - else:
+        ->turn3annierobotfalse
+} 
 ==turn3annierobottrue==
 ~loadScene("turn3annierobottrue")
 ROBOT: In that case, yes, and here you go.
@@ -351,22 +362,25 @@ ROBOT: My answer remains “no.”
 ~loadScene("turn3xeno")
 ~card = randomCardType()
 XENOPHAGE: Annie, do you have any {card}s?
-//CHECK CARD
-->turn3xenoannietrue
-->turn3xenoanniefalse
+{
+    - checkCard("annie",card) == true:
+        ->turn3xenoannietrue
+    - else:
+        ->turn3xenoanniefalse
+} 
 ==turn3xenoannietrue==
 ~loadScene("turn3xenoannietrue")
 ANNIE: Wow that’s crazy! I do!!
 XENOPHAGE: Ok, well, I’ll take them.
 ANNIE: Sounds great!!!!!!!!!!
 ~moveCard("annie","xeno",card)
-*[next]->turn3player
+->turn3player
 ==turn3xenoanniefalse==
 ~loadScene("turn3xenoanniefalse")
 ANNIE: Zilch.
 XENOPHAGE: Okay, I’ll go fish.
 ~drawCard("xeno")
-*[next]->turn3player
+->turn3player
 
 //-----------turn 3 (player)-------------
 ==turn3player==
@@ -385,40 +399,40 @@ TALKING CARD: Heed my words: do not poke any one of your opponents too many time
 ROBOT: Here, take it. It makes no difference.
 ~moveCard("robot","player",card)
 ~RobotRage++
-*[next] -> turn4robot
+ -> turn4robot
 ==turn3playerrobotfalse==
 ~loadScene("turn3playerrobotfalse")
 ROBOT: What an absurd question.
 ROBOT: Of course I don’t have that, go fish.
 ~drawCardPlayer()
 ~RobotRage++
-*[next] -> turn4robot
+ -> turn4robot
 
 ==turn3playerannietrue==
 ~loadScene("turn3playerannietrue")
 ANNIE: Take it and get out of here.
 ~moveCard("annie","player",card)
 ~AnnieRage++
-*[next] -> turn4robot
+ -> turn4robot
 ==turn3playeranniefalse==
 ~loadScene("turn3playeranniefalse")
 ANNIE: I wouldn’t be caught dead with a {card}.
 ~drawCardPlayer()
 ~AnnieRage++
-*[next] -> turn4robot
+ -> turn4robot
 
 ==turn3playerxenotrue==
 ~loadScene("turn3playerxenotrue")
 XENOPHAGE: Sadly, yes.
 ~moveCard("xeno","player",card)
 ~XenoRage++
-*[next] -> turn4robot
+ -> turn4robot
 ==turn3playerxenofalse==
 ~loadScene("turn3playerxenofalse")
 XENOPHAGE: Nada. Fish time.
 ~drawCardPlayer()
 ~XenoRage++
-*[next] -> turn4robot
+ -> turn4robot
 
 
 //--------------------turn 4-----------------------------
@@ -430,9 +444,12 @@ ROBOT: I used the AI again, and it told me your opinion on undocumented migrant 
 ROBOT: I’m surprised that you’re advocating we do that.
 XENOPHAGE: Card. What card do you want.
 ROBOT: Gimme a {card}.
-//CHECK CARD
-->turn4robotxenotrue
-->turn4robotxenofalse
+{
+    - checkCard("xeno",card) == true:
+        ->turn4robotxenotrue
+    - else:
+        ->turn4robotxenofalse
+} 
 ==turn4robotxenotrue==
 XENOPHAGE: Here.
 ~moveCard("xeno","robot",card)
@@ -445,9 +462,12 @@ XENOPHAGE: Go fish.
 ==turn4annie==
 ~loadScene("turn4annie")
 ANNIE: Hey human, you got any orbits?
-//CHECK CARD
-->turn4annieplayertrue
-->turn4annieplayerfalse
+{
+    - checkCard("player","orbit") == true:
+        ->turn4annieplayertrue
+    - else:
+        ->turn4annieplayerfalse
+} 
 ==turn4annieplayertrue==
 ~loadScene("turn4annieplayertrue")
 ANNIE: Heh, better play harder if you want that prize money.
@@ -485,9 +505,12 @@ ANNIE: Yknow, I’m getting a real sense of deja vu.
 XENOPHAGE: Really?
 ANNIE: Yeahhh. Something about this feels familiar.
 XENOPHAGE: Probably your imagination.
-//CHECK CARD
-->turn4xenoannietrue
-->turn4xenoanniefalse
+{
+    - checkCard("annie",card) == true:
+        ->turn4xenoannietrue
+    - else:
+        ->turn4xenoanniefalse
+} 
 ==turn4xenoannietrue==
 ~loadScene("turn4xenoannietrue")
 ANNIE: Yeah, probably. Here’s your card, I guess.
@@ -564,9 +587,12 @@ ROBOT: Annie, do you have any-
 ANNIE: Sorry I have to go pee like so bad.
 ~toggleAnnieVisibility()
 ROBOT: Alright, xenophage. Do you have any {card}s?
-//CHECK CARD
--> turn5robotxenotrue
--> turn5robotxenofalse
+{
+    - checkCard("xeno",card) == true:
+        -> turn5robotxenotrue
+    - else:
+        -> turn5robotxenofalse
+} 
 ==turn5robotxenotrue==
 ~loadScene("turn5robotxenotrue")
 XENOPHAGE: *sigh* you’re welcome, Annie. Here.
@@ -587,9 +613,12 @@ ANNIE: You know. The talking card.
 ANNIE: To be clear, that’s not my turn. I don’t want that shit.
 ANNIE: I’m just wondering.
 ANNIE: Robot, any {card}s?
-//CHECK CARD
--> turn5annierobottrue
--> turn5annierobotfalse
+{
+    - checkCard("robot",card) == true:
+        -> turn5annierobottrue
+    - else:
+        -> turn5annierobotfalse
+} 
 ==turn5annierobottrue==
 ~loadScene("turn5annierobottrue")
 ROBOT: Here.
@@ -657,9 +686,12 @@ ROBOT: Don’t worry a single fibre of your being, my friend.
 ROBOT: Annie, are you going to have to use the restroom again?
 ANNIE: Weird thing to ask somebody, dude.
 ROBOT: I- you- give me your {card}! Do you have any {card}s?!
-//CHECK CARD
-->turn6robotannietrue
-->turn6robotanniefalse
+{
+    - checkCard("annie",card) == true:
+        ->turn6robotannietrue
+    - else:
+        ->turn6robotanniefalse
+} 
 ==turn6robotannietrue==
 ~loadScene("turn6robotannietrue")
 ANNIE: Damn, should’ve stayed in the bathroom longer. Here you goooo.
@@ -713,9 +745,12 @@ ROBOT: Do you want to ask me for a card?
 ROBOT: You can do that, you know.
 ROBOT: Come to think of it…
 XENOPHAGE: Annie, do you have a {card}?
-//CHECK CARD
-->turn6xenoannietrue
-->turn6xenoanniefalse
+{
+    - checkCard("annie",card) == true:
+        ->turn6xenoannietrue
+    - else:
+        ->turn6xenoanniefalse
+} 
 ==turn6xenoannietrue==
 ~loadScene("turn6xenoannietrue")
 ANNIE: Here you go!
@@ -789,9 +824,12 @@ ANNIE: Thank God.
 ~card = randomCardType()
 ANNIE: Robot-
 ANNIE: Wait, no. Xenophage, give me your {card}.
-//CHECK CARD
-->turn7anniexenotrue
-->turn7anniexenofalse
+{
+    - checkCard("xeno",card) == true:
+        ->turn7anniexenotrue
+    - else:
+        ->turn7anniexenofalse
+} 
 ==turn7anniexenotrue==
 ~loadScene("turn7anniexenofalse")
 XENOPHAGE: Only if you say please.
@@ -813,9 +851,12 @@ ANNIE: You can just say “go fish.” Just say “go fish.”
 XENOPHAGE: Hey Annie, do you have any {card}s?
 ANNIE: Hey Xenophage, do you have a problem?
 XENOPHAGE: Annie…
-//CHECK CARD
-->turn7xenoannietrue
-->turn7xenoanniefalse
+{
+    - checkCard("annie",card) == true:
+        ->turn7xenoannietrue
+    - else:
+        ->turn7xenoanniefalse
+} 
 ==turn7xenoannietrue==
 ~loadScene("turn7xenoannietrue")
 ANNIE: Yes, YES I have it.
@@ -911,9 +952,12 @@ ANNIE: We’re skipping your turn!
 ~card = randomCardType()
 ANNIE: Okay, human, give me your goddamn {card}.
 ANNIE: If you give me some shitty card you’re gonna die right here right now.
-//CHECK CARD
-->turn8annieplayertrue
-->turn8annieplayerfalse
+{
+    - checkCard("annie",card) == true:
+        ->turn8annieplayertrue
+    - else:
+        ->turn8annieplayerfalse
+} 
 ==turn8annieplayertrue==
 ~loadScene("turn8annieplayertrue")
 ANNIE: YES! A light! A light in the darkness!
