@@ -1,6 +1,9 @@
 extends Node2D
 
 
+var inkPlayer = preload("res://Scenes/InkPlayer.tscn")
+
+
 var listeningForClicks = false;
 
 func _ready():
@@ -8,13 +11,26 @@ func _ready():
 
 
 func _on_Proceed_pressed():
-	#emit_signal("dialogue_done")
+	pass
+
+func _process(_delta):
+
 	if(listeningForClicks):
+
+		listeningForClicks = false;
 		
 		print_debug("starting ink")
 
-		#TODO instantiate the ink player, or emit a signal, or something 
+		# instantiate the ink player
 
+		var scene_instance = inkPlayer.instance()
+		get_parent().add_child(scene_instance)
+		
+
+		#hide itself 
+		hide()
+		##delete this 
+		queue_free()
 
 		return
 	pass

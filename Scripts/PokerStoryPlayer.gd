@@ -4,8 +4,8 @@ extends Node
 
 #VARIABLES TO OBSERVE 
 #todo: card, ending 
-var variablesArray = ["choiceMode", "ending"];
-
+#var variablesArray = ["ending", "choiceMode"];
+var variablesArray = []
 
 
 
@@ -167,6 +167,9 @@ func _prompt_choices(choices):
 		_current_choice_container.connect("choice_selected", self, "_choice_selected")
 
 
+		print("variable choice mode is ", _ink_player.get_variable("choiceMode"))
+
+
 func _ended():
 
 	var winner = _ink_player.get_variable("ending")
@@ -300,6 +303,7 @@ func bindPokerFunctions():
 	_ink_player.bind_external_function("toggleAnnieVisibility", self, "toggleAnnieVisibility")
 	_ink_player.bind_external_function("musicPlay", self, "musicPlay")
 	_ink_player.bind_external_function("musicStop", self, "musicStop")
+	_ink_player.bind_external_function("loadScene", self, "loadScene")
 
 
 
@@ -373,3 +377,9 @@ var sceneIndex = 0
 export (Array, PackedScene) var sceneList
 func nextScene():
 	pass
+
+
+func loadScene(sceneName):
+	pass
+
+

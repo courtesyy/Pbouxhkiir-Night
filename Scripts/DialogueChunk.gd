@@ -25,7 +25,7 @@ func showNextBubble():
 		get_child(index).display()
 		index = index + 1
 
-func showNextChoice():
+func showNextChoice(choiceType):
 	#TODO 
 	#check if loading the card choice ui or the dialogue choice ui using ink variable choiceMode 
 	pass
@@ -33,12 +33,14 @@ func showNextChoice():
 
 func loadNextChunk():
 
+	print("RAN OUT OF BUBBLES, SHOULD LOAD NEXT CHUNK")
+
 	if(!nextChunk):
 		printerr("NO NEXT CHUNK GIVEN TO THIS CHUNK")
 		#TODO make things happen when it hits the ending 
 	
 	#instantiate the next chunk
-	var scene_instance = nextChunk.instantiate()
+	var scene_instance = nextChunk.instance()
 	get_parent().add_child(scene_instance)
 
 	##delete this 
