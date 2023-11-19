@@ -19,3 +19,8 @@ func playSoundIfExists():
 		sound.play()
 	else:
 		print_debug("no sound on this bubble")
+	
+
+func _on_SpeechBubble_visibility_changed():
+	print("why is this here")
+

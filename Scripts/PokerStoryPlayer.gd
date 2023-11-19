@@ -106,9 +106,9 @@ func _ready():
 # ############################################################################ #
 
 func _continue_story():
-	print_debug("calling continue_story")
+	#print_debug("calling continue_story")
 	if USE_SIGNALS:
-		print_debug("using signals")
+		#print_debug("using signals")
 		_ink_player.continue_story()
 	else:
 		while _ink_player.can_continue:
@@ -140,7 +140,7 @@ func _loaded(successfully: bool):
 
 func _continued(text, tags):
 
-	print_debug("called continued signal reciever")
+	#print_debug("called continued signal reciever")
 	_add_label(text)
 
 	_ink_player.continue_story()
@@ -198,6 +198,7 @@ func _ended():
 
 
 func _choice_selected(index):
+	print("GOT _CHOICE_SELECTED")
 	choicesParent.remove_child(_current_choice_container)
 	_current_choice_container.queue_free()
 
@@ -406,7 +407,7 @@ var lastScene = null
 # load a dialogue chunk 
 func loadScene(sceneName):
 
-	print(">>>>>>> loading scene ", sceneName)
+	print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> loading scene ", sceneName)
 
 	# load the new scene 
 	var newScenePath = "res://Scenes/Dialogues/" + sceneName + ".tscn"
@@ -420,3 +421,7 @@ func loadScene(sceneName):
 	
 	lastScene = newScene
 
+
+func makeChoice(index):
+	print("MADE CHOICE REGISTERED ")
+	_choice_selected(index)
