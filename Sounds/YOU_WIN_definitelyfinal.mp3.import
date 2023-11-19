@@ -11,5 +11,5 @@ dest_files=[ "res://.import/YOU_WIN_definitelyfinal.mp3-75150056efa0f0d04ba92747
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
