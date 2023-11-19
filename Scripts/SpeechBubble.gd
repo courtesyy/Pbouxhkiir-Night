@@ -1,17 +1,17 @@
 extends CanvasItem
 
-onready var textLabel = $BubbleMargin/TextMargin/Text
+onready var textLabel = $BubbleMargin/Text
 
-onready var sound = $ShowSound
+onready var sound = $AudioStreamPlayer2D
 
 func _ready():
 	pass
 
 # called when displayed for the first time
-func displayBubble(text):
-	print("displaying bubble with ", text)
+func displayBubble():
+	#print("displaying bubble with ", text)
 	playSoundIfExists()
-	textLabel.text = text
+	#textLabel.text = text
 	show()
 
 func playSoundIfExists():
