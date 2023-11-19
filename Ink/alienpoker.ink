@@ -210,7 +210,7 @@ XENOPHAGE: Well, I’ll be damned.
 ANNIE: Whatever, do you have the card or not?
 *[next]->
 {
-    - checkCard("xeno",card) == true:
+    - checkCard("player", "ship") == true:
         ->turn2annieplayertrue
     - else:
         ->turn2annieplayerfalse
@@ -351,7 +351,7 @@ ANNIE: I swear to God-
 ANNIE: Rayguns, do you have any rayguns?
 *[next]->
 {
-    - checkCard("robot","ship") == true:
+    - checkCard("player","ship") == true:
         ->turn3annierobottrue
     - else:
         ->turn3annierobotfalse
@@ -1099,7 +1099,7 @@ XENOPHAGE: We’re just friends. You’re making this really awkward for us.
 ANNIE: Lies! You’re both kissing AND trying to take all my sweet sweet cards!
 *[next]->endingannie2
 ==endingannie2==
-~loadScene("endingannie")
+~loadScene("endingannie2")
 ~musicPlay("song2")
 ANNIE: So you know what? If I don’t get to have cards, you don’t get to have uncooked flesh!
 XENOPHAGE: Let’s uh, let's all settle down.
