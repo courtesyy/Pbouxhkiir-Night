@@ -9,12 +9,10 @@ func _ready():
 
 # called when displayed for the first time
 func displayBubble(text):
+	print("displaying bubble with ", text)
 	playSoundIfExists()
 	textLabel.text = text
 	show()
-	
-func _on_SpeechBubble_visibility_changed():
-	playSoundIfExists()
 
 func playSoundIfExists():
 	if(sound != null):

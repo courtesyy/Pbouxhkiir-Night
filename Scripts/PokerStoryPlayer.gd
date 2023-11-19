@@ -150,7 +150,7 @@ func _continued(text, tags):
 #so in this case, reveal next speech bubble
 func _add_label(text):
 
-	print("displaying: ", text)
+	#print("displaying: ", text)
 
 #	var label = LineLabel.instance()
 #	label.text = text
@@ -162,6 +162,8 @@ func _add_label(text):
 	if(lastScene == null):
 		return 
 	
+	#########
+
 	# but then how to wait?
 
 	
