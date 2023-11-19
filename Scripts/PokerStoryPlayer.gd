@@ -137,6 +137,9 @@ func _loaded(successfully: bool):
 	_continue_story()
 	_remove_loading_overlay()
 
+	#skip the starting with next thing 
+	_choice_selected(0)
+
 
 func _continued(text, tags):
 
@@ -174,11 +177,11 @@ func _add_label(text):
 
 func _prompt_choices(choices):
 	if !choices.empty():
-		_current_choice_container = ChoiceContainer.instance()
-		choicesParent.add_child(_current_choice_container)
+		#_current_choice_container = ChoiceContainer.instance()
+		#choicesParent.add_child(_current_choice_container)
 
-		_current_choice_container.create_choices(choices)
-		_current_choice_container.connect("choice_selected", self, "_choice_selected")
+		#_current_choice_container.create_choices(choices)
+		#_current_choice_container.connect("choice_selected", self, "_choice_selected")
 
 
 		print("variable choice mode is ", _ink_player.get_variable("choiceMode"))
@@ -201,8 +204,8 @@ func _ended():
 
 func _choice_selected(index):
 	print("GOT _CHOICE_SELECTED")
-	choicesParent.remove_child(_current_choice_container)
-	_current_choice_container.queue_free()
+	#choicesParent.remove_child(_current_choice_container)
+	#_current_choice_container.queue_free()
 
 	_ink_player.choose_choice_index(index)
 	_continue_story()

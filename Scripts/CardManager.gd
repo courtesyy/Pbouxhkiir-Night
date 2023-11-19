@@ -52,10 +52,11 @@ func checkCard(character, card):
 #*[XENOPHAGE (incorrect)]->turn1playerxenofalse
 func askForCard(character, card):
 	var correct = checkCard(character, card)
-	if(correct):
-		moveCard(character, "player", card)
-	else:
-		drawFromDeck("player")
+	#if(correct):
+	#	moveCard(character, "player", card)
+	#else:
+	#	drawFromDeck("player")
+	#	pass
 	
 	if(character == "robot"):
 		if(correct):
