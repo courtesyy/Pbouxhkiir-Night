@@ -22,5 +22,5 @@ func playSoundIfExists():
 	
 
 func _on_SpeechBubble_visibility_changed():
-	print("why is this here")
+	pass
 

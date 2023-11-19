@@ -122,4 +122,5 @@ func _on_button_mouse_entered():
 
 
 func submit():
+	print("asking for ", card, " from ", character)
 	get_parent().get_parent().askForCard(character, card)

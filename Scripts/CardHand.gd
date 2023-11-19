@@ -28,13 +28,6 @@ func _ready():
 	# keep track of how many in cardCount
 	cardCount = get_child_count()
 
-	# then, shuffle ourself 
-	indexMap.resize(cardCount)
-	for i in cardCount:
-		indexMap[i] = i
-	if(shuffleStart):
-		indexMap.shuffle()
-
 	screenWidth = get_viewport().size.x
 	midpoint = (screenWidth / 2)
 
@@ -45,20 +38,25 @@ func hasCard(suit):
 
 	for i in cardCount:
 		if(get_child(i).isSuit(suit)):
+			print("found ", suit, " at ", i)
 			return true
 
+	print("did not find ", suit)
 	return false
 
 #returns index of card of type, -1 if not found 
 func findCard(type):
 	for i in cardCount: 
 		if(get_child(i).cardtype == type):
+			print("found ", type, " at ", i)
 			return i
 	return -1
 
 
 # take a card out of this hand and put it in the other hand 
 func giveCard(card, newHand):
+
+	print("giving ", card)
 
 	var indexOfCardType = findCard(card)
 

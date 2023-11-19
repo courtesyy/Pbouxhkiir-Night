@@ -9,6 +9,9 @@ onready var handRobot = $HandRobot
 onready var specialCards = $SpecialCards # for the AI cards, cards force given to the player
 
 
+var storedCard = "ERR"
+var storedCharacter = "ERR"
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -51,6 +54,10 @@ func checkCard(character, card):
 #*[XENOPHAGE (correct)]->turn1playerxenotrue
 #*[XENOPHAGE (incorrect)]->turn1playerxenofalse
 func askForCard(character, card):
+
+	storedCharacter = character 
+	storedCard = card
+
 	var correct = checkCard(character, card)
 	#if(correct):
 	#	moveCard(character, "player", card)
@@ -76,6 +83,12 @@ func askForCard(character, card):
 	
 	print("ERR")
 	return 0
+
+
+func finalizeCorrectCard():
+	print("FINALIZE CORRECT CARD")
+	moveCard(storedCharacter, "player", storedCard)
+
 
 func SetupHands():
 
