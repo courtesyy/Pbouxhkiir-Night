@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/firesfx.mp3-96938c84d03cb0798b81bd0adefb007b.mp3str"
+
+[deps]
+
+source_file="res://Sounds/firesfx.mp3"
+dest_files=[ "res://.import/firesfx.mp3-96938c84d03cb0798b81bd0adefb007b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

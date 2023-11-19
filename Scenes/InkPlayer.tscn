@@ -37,9 +37,11 @@ text = "LOADING..."
 position = Vector2( 627, 350 )
 
 [node name="Song1" type="AudioStreamPlayer" parent="SongPlayer"]
+bus = "Music"
 
 [node name="Song2" type="AudioStreamPlayer" parent="SongPlayer"]
 stream = ExtResource( 4 )
+bus = "Music"
 
 [node name="SceneParent" type="Node2D" parent="."]
 
