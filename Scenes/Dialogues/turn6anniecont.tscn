@@ -53,7 +53,7 @@ margin_bottom = 64.0
 text = "Everybody help me make fun of it NOW."
 
 [node name="TailBoxConnector" parent="Dialogues/SpeechBubbleAnnie2/Tails" index="0"]
-visible = false
+points = PoolVector2Array( -34, -223, -36, -198 )
 
 [node name="TailPointer" parent="Dialogues/SpeechBubbleAnnie2/Tails" index="1"]
 position = Vector2( 162, 141 )
