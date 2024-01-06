@@ -323,6 +323,7 @@ func bindPokerFunctions():
 	_ink_player.bind_external_function("musicStop", self, "musicStop", false)
 	_ink_player.bind_external_function("loadScene", self, "loadScene", false)
 	_ink_player.bind_external_function("setupHands", self, "setupHands", false)
+	_ink_player.bind_external_function("hideHand", self, "hideHand", false)
 	_ink_player.bind_external_function("finalizeCorrectCard", self, "finalizeCorrectCard", false)
 
 onready var cardManager = $CardManager
@@ -330,6 +331,9 @@ onready var cardManager = $CardManager
 
 func finalizeCorrectCard():
 	cardManager.finalizeCorrectCard()
+	
+func hideHand():
+	cardManager.visible = false
 
 # initial hand setup, call on card manager 
 func setupHands():
