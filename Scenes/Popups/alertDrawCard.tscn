@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Fonts/SketchnoteRegular.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://Scripts/alertParent.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "New Anim"
+
+[node name="Control" type="Control"]
+script = ExtResource( 2 )
+
+[node name="Text" type="Label" parent="."]
+margin_left = 25.0
+margin_top = 34.0
+margin_right = 1260.0
+margin_bottom = 68.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Everybody drew a card!"
+align = 1
+autowrap = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+"anims/New Anim" = SubResource( 2 )
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

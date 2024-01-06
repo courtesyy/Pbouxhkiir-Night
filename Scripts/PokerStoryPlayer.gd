@@ -32,6 +32,7 @@ var LineLabel := load("res://examples/scenes/common/label.tscn") as PackedScene
 
 var InkGDProfiler := load("res://examples/scenes/common/profiler.gd") as GDScript
 
+var CardDrawAlert := load ("res://Scenes/Popups/alertDrawCard.tscn") as PackedScene
 
 # ############################################################################ #
 # Constants
@@ -367,6 +368,8 @@ func drawCardAll():
 	drawCard("robot")
 	drawCard("annie")
 	drawCard("xeno")
+	#"everybody drew a card!" alert
+	add_child(CardDrawAlert.instance())
 
 # return true if a character has the card, false if not 
 func checkCard(character, card):
