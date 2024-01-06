@@ -59,6 +59,9 @@ points = PoolVector2Array( -109.302, -80.0374, -108.9, -47.9775 )
 [node name="TailPointer" parent="TalkingCard/SpeechBubble2/Tails" index="1"]
 points = PoolVector2Array( -123.99, -104.751, -110.797, -62.6209 )
 
+[node name="VariableCardName" parent="Menu" index="4"]
+text = "The red one"
+
 [editable path="TalkingCard"]
 [editable path="TalkingCard/SpeechBubble"]
 [editable path="TalkingCard/SpeechBubble2"]

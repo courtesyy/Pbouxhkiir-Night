@@ -67,6 +67,9 @@ points = PoolVector2Array( -163.03, -103.824, -163.971, -49.6012 )
 [node name="Sprite" parent="TalkingCard" index="2"]
 texture = ExtResource( 3 )
 
+[node name="VariableCardName" parent="Menu" index="4"]
+text = "Raygun (???)"
+
 [editable path="TalkingCard"]
 [editable path="TalkingCard/SpeechBubble"]
 [editable path="TalkingCard/SpeechBubble2"]

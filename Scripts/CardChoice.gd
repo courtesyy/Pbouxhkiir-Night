@@ -116,6 +116,7 @@ func _on_Coolworm_pressed():
 	card = "cool worm"
 	submit()
 
+#button hover sound
 func _on_button_mouse_entered():
 	$Hover.play()
 
@@ -124,3 +125,19 @@ func _on_button_mouse_entered():
 func submit():
 	print("asking for ", card, " from ", character)
 	get_parent().get_parent().askForCard(character, card)
+
+#change label name to card hovering over
+func _on_Orbit_mouse_entered():
+	$Menu/CardName.text = "Orbit"
+func _on_Worm_mouse_entered():
+	$Menu/CardName.text = "Worm"
+func _on_Raye_mouse_entered():
+	$Menu/CardName.text = "Raye"
+func _on_Coolworm_mouse_entered():
+	$Menu/CardName.text = "Cool Worm"
+#name of the "ship" card can be changed because it is funny
+func _on_Ship_mouse_entered():
+	$Menu/CardName.text = $Menu/VariableCardName.text
+#remove label name when not hovering over card
+func _on_card_mouse_exited():
+	$Menu/CardName.text = ""
