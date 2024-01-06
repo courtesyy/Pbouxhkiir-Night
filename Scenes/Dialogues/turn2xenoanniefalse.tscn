@@ -93,7 +93,7 @@ margin_bottom = 38.0
 text = "No, go fish."
 
 [node name="TailBoxConnector" parent="Dialogues/SpeechBubbleAnnie2/Tails" index="0"]
-visible = false
+points = PoolVector2Array( 242, -263, 237, -200 )
 
 [node name="TailPointer" parent="Dialogues/SpeechBubbleAnnie2/Tails" index="1"]
 points = PoolVector2Array( 116, -153, 116, -121 )
