@@ -112,6 +112,9 @@ margin_right = 96.0
 margin_bottom = 44.0
 text = "NOW."
 
+[node name="TailBoxConnector" parent="Dialogues/SpeechBubbleRobot3/Tails" index="0"]
+visible = false
+
 [node name="TailPointer" parent="Dialogues/SpeechBubbleRobot3/Tails" index="1"]
 position = Vector2( 160, 104 )
 points = PoolVector2Array( -69, -75, -15, -63 )
