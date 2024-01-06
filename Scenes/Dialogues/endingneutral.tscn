@@ -3,7 +3,7 @@
 [ext_resource path="res://Scenes/Dialogues/-DialogueParent.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Bubbles/SpeechBubbleXeno.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Bubbles/SpeechBubbleAnnie.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Sprites/Characters/annieShocked.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Characters/annieShockedLeft.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Bubbles/SpeechBubbleRobot.tscn" type="PackedScene" id=5]
 
 [node name="Control" instance=ExtResource( 1 )]

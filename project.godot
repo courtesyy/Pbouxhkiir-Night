@@ -436,6 +436,10 @@ ui_click={
  ]
 }
 
+[mono]
+
+project/assembly_name="Pbouxhkiir Night"
+
 [physics]
 
 common/enable_pause_aware_picking=true
