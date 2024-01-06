@@ -59,7 +59,11 @@ text = "It’s statistically unlikely for the human to ask me for as many cards 
 position = Vector2( 260, 34 )
 points = PoolVector2Array( -66, -68, -65, -50 )
 
+[node name="TailPointer" parent="Dialogues/SpeechBubbleRobot2/Tails" index="1"]
+visible = false
+
 [node name="SpeechBubbleRobot3" parent="Dialogues" index="2" instance=ExtResource( 2 )]
+visible = false
 margin_left = 423.0
 margin_top = 235.0
 margin_right = 423.0
