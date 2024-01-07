@@ -34,6 +34,8 @@ var InkGDProfiler := load("res://examples/scenes/common/profiler.gd") as GDScrip
 
 var CardDrawAlert := load ("res://Scenes/Popups/alertDrawCard.tscn") as PackedScene
 
+var fadeOut := load ("res://Scenes/Popups/fadeOut.tscn") as PackedScene
+
 # ############################################################################ #
 # Constants
 # ############################################################################ #
@@ -85,7 +87,9 @@ onready var choicesParent = $ChoicesParent
 # ############################################################################ #
 
 func _ready():
+	add_child(fadeOut.instance())
 	add_child(_ink_player)
+
 
 	# Again, if you're just trying to figure out how to use
 	# inkgd, you can ignore this call.
