@@ -1,6 +1,22 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scripts/fadeIn.gd" type="Script" id=1]
+[sub_resource type="GDScript" id=4]
+script/source = "extends Node2D
+
+
+func _ready():
+	#connect signals
+	SignalBus.fadeIn.connect(fadeIn) 
+	SignalBus.fadeIn.connect(fadeOut) 
+	
+func fadeIn():
+	print(\"fade in\")
+	#$AnimationPlayer.play(\"FadeIn\")
+
+func fadeOut():
+	print (\"fade out\")
+	#$AnimationPlayer.play(\"FadeOut\")
+"
 
 [sub_resource type="Animation" id=1]
 resource_name = "FadeIn"
@@ -51,7 +67,7 @@ tracks/0/keys = {
 
 [node name="fadeInOut" type="Node2D"]
 modulate = Color( 1, 1, 1, 0 )
-script = ExtResource( 1 )
+script = SubResource( 4 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = -18.0

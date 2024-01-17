@@ -87,7 +87,6 @@ onready var choicesParent = $ChoicesParent
 # ############################################################################ #
 
 func _ready():
-	add_child(fadeOut.instance())
 	add_child(_ink_player)
 
 

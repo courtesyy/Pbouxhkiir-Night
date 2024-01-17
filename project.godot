@@ -411,6 +411,7 @@ config/icon="res://icon.png"
 [autoload]
 
 __InkRuntime="*res://addons/inkgd/runtime/static/ink_runtime.gd"
+SignalBus="*res://Scripts/signal_bus.gd"
 
 [display]
 
